@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load webpack_loader static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAAgency - Услуги Digital Маркетинга</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block schema %}
+    {% endblock %}
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+{% include 'includes/header.html' %}
+<main>
+{% block content %}
+{% endblock %}
+</main>
+{% include 'includes/footer.html' %}
+{% javascript_pack 'app' %}
+</body>
+</html>

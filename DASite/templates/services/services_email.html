@@ -1,0 +1,1328 @@
+{% extends "base.html" %}
+{% load webpack_loader static %}
+{% block schema %}
+<!-- Schema.org разметка для FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как быстро email-маркетинг начнет приносить результаты?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Email-маркетинг может начать приносить результаты уже после первой рассылки. Однако для достижения стабильных показателей и максимальной эффективности требуется 2-3 месяца регулярных кампаний. За это время мы сможем проанализировать поведение аудитории, протестировать различные подходы и оптимизировать стратегию."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие гарантии вы предоставляете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы гарантируем соблюдение всех норм законодательства о персональных данных и спаме, качественную техническую реализацию рассылок и прозрачную аналитику результатов. Мы также гарантируем минимальный процент доставляемости писем в зависимости от состояния вашей базы. Если кампания не достигает оговоренных KPI, мы проводим дополнительную оптимизацию бесплатно."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Для каких компаний подходит email-маркетинг?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Email-маркетинг эффективен практически для любого бизнеса: от интернет-магазинов и сервисных компаний до B2B-сектора и информационных проектов. Особенно хорошие результаты показывает в сферах, где важно регулярное взаимодействие с клиентами, образовательный контент и персонализированные предложения. Главное условие — наличие качественной базы контактов или стратегии ее наращивания."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Мои письма не будут попадать в спам?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы используем все современные технические протоколы (DKIM, SPF, DMARC) для защиты ваших писем от попадания в спам. Кроме того, мы следуем лучшим практикам по созданию контента, который не вызывает подозрений у спам-фильтров. Регулярный мониторинг репутации отправителя и «прогрев» домена также являются частью нашей стратегии. В результате, доставляемость писем в папку «Входящие» составляет не менее 95%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие метрики вы отслеживаете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы отслеживаем все ключевые метрики email-маркетинга: процент доставляемости, Open Rate (открытия), Click Rate (клики), процент отписок, конверсии, ROI кампаний. Также анализируем поведенческие факторы: время, проведенное за чтением письма, устройства, с которых открываются письма, популярные ссылки. Все эти данные предоставляются в наглядных отчетах с рекомендациями по улучшению показателей."
+          }
+        }
+      ]
+    }
+    </script>
+{% endblock %}
+{% block content %}
+<!-- Герой-секция услуги -->
+<section
+        class="pt-32 pb-20 bg-gradient-to-r from-blue-600 to-teal-500 text-white">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    Email-маркетинг для вашего бизнеса</h1>
+                <p class="text-xl mb-8 text-blue-100">Эффективные email-кампании для повышения лояльности клиентов, роста продаж и развития вашего бренда.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#form"
+                       class="px-8 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors duration-300 text-center">Заказать
+                        услугу</a>
+                    <a href="#benefits"
+                       class="px-8 py-3 border border-white text-white font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors duration-300 text-center">Узнать
+                        больше</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="/api/placeholder/600/400" alt="Email маркетинг"
+                     class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Что такое Email-маркетинг -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Что такое Email-маркетинг?</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Почему
+                Email-маркетинг остается одним из самых эффективных
+                инструментов digital-стратегии</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Высокий ROI</h3>
+                </div>
+                <p class="text-gray-600">Email-маркетинг обеспечивает один из самых высоких показателей возврата инвестиций среди всех маркетинговых каналов.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Персонализация</h3>
+                </div>
+                <p class="text-gray-600">Возможность персонализировать сообщения для каждого подписчика повышает эффективность коммуникации и конверсию.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Измеримые результаты</h3>
+                </div>
+                <p class="text-gray-600">Email-маркетинг предоставляет детальную аналитику и позволяет отслеживать эффективность каждой кампании в реальном времени.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Автоматизация</h3>
+                </div>
+                <p class="text-gray-600">Автоматические цепочки писем позволяют взаимодействовать с клиентами на всех этапах воронки продаж без ручного вмешательства.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Быстрый запуск</h3>
+                </div>
+                <p class="text-gray-600">Email-кампании можно запустить быстрее большинства других маркетинговых инструментов, получая результаты практически сразу.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Низкая стоимость</h3>
+                </div>
+                <p class="text-gray-600">По сравнению с другими каналами привлечения клиентов, email-маркетинг требует минимальных затрат при максимальной отдаче.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Как мы работаем -->
+<section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Как мы работаем</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Прозрачный процесс организации email-маркетинга от стратегии до анализа результатов</p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+            <!-- Центральная линия -->
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 hidden md:block"></div>
+
+                <div class="space-y-12">
+                    <!-- Шаг 1 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-blue-600">Аудит и стратегия</h3>
+                                <p class="text-gray-600">Анализируем вашу целевую аудиторию, текущее состояние базы подписчиков и разрабатываем стратегию email-кампаний.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 relative">
+                            <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">1</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-blue-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+
+                    <!-- Шаг 2 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 order-1 md:order-3">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-blue-600">Создание контента</h3>
+                                <p class="text-gray-600">Разрабатываем привлекательный и эффективный контент для писем, включая тексты, дизайн и оптимальные призывы к действию.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 order-2 relative">
+                            <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">2</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-blue-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12 order-3 md:order-1"></div>
+                    </div>
+
+                    <!-- Шаг 3 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-blue-600">Техническая настройка</h3>
+                                <p class="text-gray-600">Настраиваем систему email-маркетинга, включая интеграцию с вашим сайтом, CRM-системами и настройку защитных протоколов.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 relative">
+                            <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">3</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-blue-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+
+                    <!-- Шаг 4 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 order-1 md:order-3">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-blue-600">Сегментация базы</h3>
+                                <p class="text-gray-600">Разделяем вашу базу подписчиков на сегменты для более персонализированных и релевантных рассылок, повышающих конверсию.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 order-2 relative">
+                            <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">4</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-blue-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12 order-3 md:order-1"></div>
+                    </div>
+
+                    <!-- Шаг 5 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-blue-600">Запуск кампаний</h3>
+                                <p class="text-gray-600">Запускаем регулярные рассылки и автоматические цепочки писем в соответствии с разработанной стратегией и календарным планом.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 relative">
+                            <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">5</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-blue-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+
+                    <!-- Шаг 6 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 order-1 md:order-3">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-blue-600">Анализ и оптимизация</h3>
+                                <p class="text-gray-600">Анализируем эффективность кампаний, тестируем различные подходы и постоянно оптимизируем стратегию для достижения лучших результатов.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 order-2 relative">
+                            <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">6</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-blue-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12 order-3 md:order-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Наши услуги по Email-маркетингу -->
+<section class="py-20 bg-gray-100" id="services">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Наши услуги по
+                Email-маркетингу</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Комплексные
+                решения для эффективного взаимодействия с вашими клиентами через email</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Услуга 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Аудит и стратегия email-маркетинга</h3>
+                        <p class="text-gray-600 mb-4">Комплексный анализ вашей текущей email-стратегии и разработка эффективного плана для достижения бизнес-целей.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Анализ текущих показателей
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Разработка контент-плана
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Определение KPI и метрик
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Создание и дизайн писем</h3>
+                        <p class="text-gray-600 mb-4">Разработка привлекательных и эффективных email-шаблонов, адаптированных под все устройства и почтовые клиенты.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Адаптивный дизайн писем
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Создание уникальных шаблонов
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Копирайтинг для email-рассылок
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 3 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Сегментация и персонализация</h3>
+                        <p class="text-gray-600 mb-4">Разделение базы подписчиков на сегменты для более персонализированных и релевантных рассылок, повышающих конверсию.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Создание сегментов по поведению
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Динамический контент
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Персонализированные предложения
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 4 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Настройка автоматических цепочек</h3>
+                        <p class="text-gray-600 mb-4">Создание автоматических сценариев email-рассылок, реагирующих на действия пользователей в реальном времени.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Приветственные серии писем
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Триггерные письма
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Реактивационные кампании
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 5 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">A/B-тестирование и аналитика</h3>
+                        <p class="text-gray-600 mb-4">Регулярное тестирование различных элементов писем и глубокий анализ эффективности email-кампаний.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Тестирование тем писем
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Оптимизация времени отправки
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Подробные аналитические отчеты
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 6 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Техническая оптимизация доставляемости</h3>
+                        <p class="text-gray-600 mb-4">Настройка технических аспектов отправки писем для обеспечения максимальной доставляемости в папку "Входящие".</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Настройка SPF, DKIM, DMARC
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Прогрев IP и домена
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Очистка и валидация базы
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Преимущества Email-маркетинга -->
+<section class="py-20" id="benefits">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Преимущества
+                Email-маркетинга</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Почему
+                Email-маркетинг является неотъемлемой частью успешной
+                digital-стратегии</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Высокий ROI</h3>
+                </div>
+                <p class="text-gray-600">Email-маркетинг обеспечивает один из самых высоких показателей ROI среди всех маркетинговых каналов — в среднем 3800%.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Высокая конверсия</h3>
+                </div>
+                <p class="text-gray-600">Правильно выстроенные email-кампании имеют в 3-5 раз более высокий показатель конверсии по сравнению с другими каналами.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Персонализация</h3>
+                </div>
+                <p class="text-gray-600">Email позволяет создавать максимально персонализированные сообщения, адаптированные под интересы и потребности конкретного получателя.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Лояльность аудитории</h3>
+                </div>
+                <p class="text-gray-600">Регулярные email-рассылки помогают поддерживать контакт с аудиторией, укрепляя лояльность к бренду и увеличивая частоту повторных покупок.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Автоматизация</h3>
+                </div>
+                <p class="text-gray-600">Современные инструменты email-маркетинга позволяют полностью автоматизировать взаимодействие с клиентами на различных этапах воронки продаж.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Измеримые результаты</h3>
+                </div>
+                <p class="text-gray-600">Email-маркетинг предоставляет детальную статистику по всем ключевым показателям, что позволяет постоянно оптимизировать кампании.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Кейсы Email-маркетинга -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Наши успешные кейсы</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Реальные
+                результаты email-маркетинга для наших клиентов</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Кейс 1 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="/api/placeholder/600/350" alt="Case Study Email 1"
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 text-blue-600 text-sm font-medium py-1 px-3 rounded-full mr-2">
+                            Интернет-магазин
+                        </div>
+                        <div class="bg-green-100 text-green-600 text-sm font-medium py-1 px-3 rounded-full">
+                            +156% продаж
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Увеличение продаж интернет-магазина одежды на 156% с помощью сегментированных рассылок</h3>
+                    <p class="text-gray-600 mb-4">Внедрение персонализированных триггерных писем и сегментация базы клиентов по 12 критериям позволили значительно повысить эффективность email-кампаний.</p>
+                    <a href="#"
+                       class="text-blue-600 font-medium hover:text-blue-800 transition-colors duration-300 inline-flex items-center">
+                        Подробнее о кейсе
+                        <svg class="w-4 h-4 ml-1" fill="none"
+                             stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Кейс 2 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="/api/placeholder/600/350" alt="Case Study Email 2"
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 text-blue-600 text-sm font-medium py-1 px-3 rounded-full mr-2">
+                            B2B-компания
+                        </div>
+                        <div class="bg-green-100 text-green-600 text-sm font-medium py-1 px-3 rounded-full">
+                            +83% лидов
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Увеличение количества квалифицированных лидов B2B-компании на 83% за 3 месяца</h3>
+                    <p class="text-gray-600 mb-4">Разработка и внедрение образовательной email-серии с ценным контентом и автоматизированной цепочкой писем привели к значительному росту лидов.</p>
+                    <a href="#"
+                       class="text-blue-600 font-medium hover:text-blue-800 transition-colors duration-300 inline-flex items-center">
+                        Подробнее о кейсе
+                        <svg class="w-4 h-4 ml-1" fill="none"
+                             stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Кейс 3 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="/api/placeholder/600/350" alt="Case Study Email 3"
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 text-blue-600 text-sm font-medium py-1 px-3 rounded-full mr-2">
+                            Сервисная компания
+                        </div>
+                        <div class="bg-green-100 text-green-600 text-sm font-medium py-1 px-3 rounded-full">
+                            Open Rate 42%
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Повышение открываемости писем с 18% до 42% для сети фитнес-центров</h3>
+                    <p class="text-gray-600 mb-4">Оптимизация темы и времени отправки писем, а также внедрение A/B-тестирования позволили значительно улучшить ключевые показатели email-кампаний.</p>
+                    <a href="#"
+                       class="text-blue-600 font-medium hover:text-blue-800 transition-colors duration-300 inline-flex items-center">
+                        Подробнее о кейсе
+                        <svg class="w-4 h-4 ml-1" fill="none"
+                             stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="#"
+               class="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-300">Смотреть
+                все кейсы</a>
+        </div>
+    </div>
+</section>
+<!-- Тарифы -->
+<section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Тарифы на Email-маркетинг</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Выберите оптимальный тариф для вашего бизнеса</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Тариф Базовый -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:z-10 group">
+                <div class="p-8 text-center border-b border-gray-200 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-white">Базовый</h3>
+                    <div class="text-blue-600 font-bold text-4xl mb-4 group-hover:text-white">от 25 000 ₽</div>
+                    <p class="text-gray-600 group-hover:text-white">в месяц</p>
+                    <div class="mt-2 inline-block bg-white text-blue-600 text-sm font-medium py-1 px-3 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        Старт email-маркетинга
+                    </div>
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">До 3 000 контактов в базе</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Создание до 4 рассылок в месяц</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Базовые шаблоны писем</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Настройка приветственной серии</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Ежемесячная отчетность</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#form" class="block text-center bg-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">Выбрать тариф</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Тариф Стандартный -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:z-10 group">
+                <div class="p-8 text-center border-b border-gray-200 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-white">Стандартный</h3>
+                    <div class="text-blue-600 font-bold text-4xl mb-4 group-hover:text-white">от 50 000 ₽</div>
+                    <p class="text-gray-600 group-hover:text-white">в месяц</p>
+                    <div class="mt-2 inline-block bg-white text-blue-600 text-sm font-medium py-1 px-3 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        Рекомендуемый
+                    </div>
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">До 10 000 контактов в базе</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Создание до 8 рассылок в месяц</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Уникальные шаблоны писем</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Настройка до 3 триггерных цепочек</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Базовое A/B-тестирование</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Еженедельная отчетность</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#form" class="block text-center bg-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">Выбрать тариф</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Тариф Премиум -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:z-10 group">
+                <div class="p-8 text-center border-b border-gray-200 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-white">Премиум</h3>
+                    <div class="text-blue-600 font-bold text-4xl mb-4 group-hover:text-white">от 80 000 ₽</div>
+                    <p class="text-gray-600 group-hover:text-white">в месяц</p>
+                    <div class="mt-2 inline-block bg-white text-blue-600 text-sm font-medium py-1 px-3 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        Максимальный результат
+                    </div>
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Неограниченное количество контактов</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Неограниченное количество рассылок</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Премиальные шаблоны писем</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Полная автоматизация и любые цепочки</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Продвинутая сегментация</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Персональный email-маркетолог</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#form" class="block text-center bg-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">Выбрать тариф</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Партнеры -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Наши партнеры и
+                инструменты</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Мы используем
+                лучшие платформы и технологии для реализации эффективных email-кампаний</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 1"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 2"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 3"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 4"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 5"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 6"
+                     class="max-h-12">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FAQ -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Часто задаваемые вопросы</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Отвечаем на популярные вопросы о email-маркетинге</p>
+        </div>
+        <div class="max-w-3xl mx-auto" id="faq-accordion">
+            <!-- Вопрос 1 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Как быстро email-маркетинг начнет приносить результаты?</span>
+                    <svg class="w-6 h-6 text-blue-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">Email-маркетинг может начать приносить результаты уже после первой рассылки. Однако для достижения стабильных показателей и максимальной эффективности требуется 2-3 месяца регулярных кампаний. За это время мы сможем проанализировать поведение аудитории, протестировать различные подходы и оптимизировать стратегию.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 2 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Какие гарантии вы предоставляете?</span>
+                    <svg class="w-6 h-6 text-blue-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">Мы гарантируем соблюдение всех норм законодательства о персональных данных и спаме, качественную техническую реализацию рассылок и прозрачную аналитику результатов. Мы также гарантируем минимальный процент доставляемости писем в зависимости от состояния вашей базы. Если кампания не достигает оговоренных KPI, мы проводим дополнительную оптимизацию бесплатно.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 3 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Для каких компаний подходит email-маркетинг?</span>
+                    <svg class="w-6 h-6 text-blue-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">Email-маркетинг эффективен практически для любого бизнеса: от интернет-магазинов и сервисных компаний до B2B-сектора и информационных проектов. Особенно хорошие результаты показывает в сферах, где важно регулярное взаимодействие с клиентами, образовательный контент и персонализированные предложения. Главное условие — наличие качественной базы контактов или стратегии ее наращивания.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 4 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Мои письма не будут попадать в спам?</span>
+                    <svg class="w-6 h-6 text-blue-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">Мы используем все современные технические протоколы (DKIM, SPF, DMARC) для защиты ваших писем от попадания в спам. Кроме того, мы следуем лучшим практикам по созданию контента, который не вызывает подозрений у спам-фильтров. Регулярный мониторинг репутации отправителя и «прогрев» домена также являются частью нашей стратегии. В результате, доставляемость писем в папку «Входящие» составляет не менее 95%.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 5 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Какие метрики вы отслеживаете?</span>
+                    <svg class="w-6 h-6 text-blue-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">Мы отслеживаем все ключевые метрики email-маркетинга: процент доставляемости, Open Rate (открытия), Click Rate (клики), процент отписок, конверсии, ROI кампаний. Также анализируем поведенческие факторы: время, проведенное за чтением письма, устройства, с которых открываются письма, популярные ссылки. Все эти данные предоставляются в наглядных отчетах с рекомендациями по улучшению показателей.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript для функциональности FAQ -->
+    <script>
+        function toggleFAQ(element) {
+            // Поиск контейнера ответа
+            const answer = element.nextElementSibling;
+            // Поиск иконки
+            const icon = element.querySelector('svg');
+
+            // Проверка текущего состояния
+            const isExpanded = element.getAttribute('aria-expanded') === 'true';
+
+            // Переключение состояния
+            if (isExpanded) {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+                element.setAttribute('aria-expanded', 'false');
+            } else {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+                element.setAttribute('aria-expanded', 'true');
+            }
+        }
+    </script>
+</section>
+<!-- Контактная форма -->
+<section class="py-20 bg-gray-100" id="form">
+    <div class="container mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 bg-blue-600 p-12 text-white">
+                    <h2 class="text-3xl font-bold mb-6">Закажите
+                        Email-маркетинг</h2>
+                    <p class="text-xl mb-8">Заполните форму, и мы свяжемся с
+                        вами для обсуждения деталей и составления
+                        индивидуального предложения.</p>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4">Почему стоит начать
+                            прямо сейчас:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none"
+                                     stroke="currentColor" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Чем раньше начать, тем быстрее результат</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none"
+                                     stroke="currentColor" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Ваши конкуренты уже наращивают базу</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none"
+                                     stroke="currentColor" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Первый месяц со скидкой 20%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4">Контактная
+                            информация</h3>
+                        <div class="flex items-center mb-4">
+                            <svg class="w-6 h-6 mr-3" fill="none"
+                                 stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+7 (999) 999-99-99</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <svg class="w-6 h-6 mr-3" fill="none"
+                                 stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@daagency.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 p-12">
+                    <form>
+                        <div class="mb-6">
+                            <label for="name"
+                                   class="block text-gray-700 font-medium mb-2">Ваше
+                                имя</label>
+                            <input type="text" id="name"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Введите ваше имя">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email"
+                                   class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Введите ваш email">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone"
+                                   class="block text-gray-700 font-medium mb-2">Телефон</label>
+                            <input type="tel" id="phone"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Введите ваш телефон">
+                        </div>
+                        <div class="mb-6">
+                            <label for="website"
+                                   class="block text-gray-700 font-medium mb-2">Адрес
+                                сайта</label>
+                            <input type="url" id="website"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Например: https://vashsite.ru">
+                        </div>
+                        <div class="mb-6">
+                            <label for="tariff"
+                                   class="block text-gray-700 font-medium mb-2">Интересующий
+                                тариф</label>
+                            <select id="tariff"
+                                    class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="" selected disabled>Выберите
+                                    тариф
+                                </option>
+                                <option value="basic">Базовый</option>
+                                <option value="standard">Стандартный</option>
+                                <option value="premium">Премиум</option>
+                                <option value="consultation">Нужна
+                                    консультация
+                                </option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message"
+                                   class="block text-gray-700 font-medium mb-2">Сообщение</label>
+                            <textarea id="message" rows="4"
+                                      class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue
+                                      -500 focus:border-transparent"
+                                      placeholder="Расскажите о ваших целях и задачах email-маркетинга"></textarea>
+                        </div>
+                        <button type="submit"
+                                class="w-full bg-blue-600 text-white font-medium py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                            Отправить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
