@@ -1,0 +1,44 @@
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Наши успешные кейсы</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Реальные результаты {{ service.title }} наших клиентов</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {% for case in cases %}
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                {% if case.thumbnail %}
+                <img src="{{ case.thumbnail.url }}" alt="{{ case.title }}" class="w-full h-48 object-cover">
+                {% else %}
+                <img src="/api/placeholder/600/350" alt="{{ case.title }}" class="w-full h-48 object-cover">
+                {% endif %}
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        {% for related_service in case.services.all %}
+                        <div class="bg-indigo-100 text-indigo-600 text-sm font-medium py-1 px-3 rounded-full mr-2">
+                            {{ related_service.name }}
+                        </div>
+                        {% endfor %}
+                        {% if case.key_results %}
+                        <div class="bg-green-100 text-green-600 text-sm font-medium py-1 px-3 rounded-full">
+                            {{ case.key_results|truncatechars:15 }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">{{ case.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ case.short_description|truncatechars:120 }}</p>
+                    <a href="{% url 'case_detail' case.slug %}" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                        Подробнее о кейсе
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-12">
+            <a href="{% url 'case_list' %}?service={{ service.slug }}" class="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300">Смотреть все кейсы</a>
+        </div>
+    </div>
+</section>

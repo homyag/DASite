@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% load webpack_loader static %}
+
+{% block content %}
+    <!-- Заголовок страницы -->
+    <section
+            class="pt-32 pb-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    Наш блог</h1>
+                <p class="text-xl mb-8 text-indigo-100">Полезные статьи и
+                    новости digital-маркетинга</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контент блога -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <!-- Основной контент -->
+                <div class="lg:w-2/3 lg:pr-8">
+                    <!-- Форма поиска -->
+                    <form action="{% url 'post_list' %}" method="get"
+                          class="mb-10">
+                        <div class="flex flex-wrap md:flex-nowrap">
+                            <input type="text" name="q" value="{{ query }}"
+                                   class="flex-grow p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                   placeholder="Поиск по статьям...">
+                            <button type="submit"
+                                    class="w-full md:w-auto mt-2 md:mt-0 bg-indigo-600 text-white px-6 py-3 rounded-r-lg hover:bg-indigo-700 transition-colors duration-300">
+                                Найти
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Фильтры (активные) -->
+                    {% if current_category or current_tag or query %}
+                        <div class="mb-10">
+                            <div class="flex flex-wrap items-center space-x-2">
+                                <span class="text-gray-600">Активные фильтры:</span>
+                                {% if current_category %}
+                                    <a href="
+                                            {% url 'post_list' %}{% if query %}?q={{ query }}{% endif %}"
+                                       class="inline-flex items-center bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+                                        Категория: {{ current_category }}
+                                        <svg class="w-4 h-4 ml-1" fill="none"
+                                             stroke="currentColor"
+                                             viewBox="0 0 24 24"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="2"
+                                                  d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </a>
+                                {% endif %}
+
+                                {% if current_tag %}
+                                    <a href="
+                                            {% url 'post_list' %}{% if query %}?q={{ query }}{% endif %}"
+                                       class="inline-flex items-center bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+                                        Тег: {{ current_tag }}
+                                        <svg class="w-4 h-4 ml-1" fill="none"
+                                             stroke="currentColor"
+                                             viewBox="0 0 24 24"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="2"
+                                                  d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </a>
+                                {% endif %}
+
+                                {% if query %}
+                                    <a href="
+                                            {% url 'post_list' %}{% if current_category %}?category={{ current_category }}{% endif %}"
+                                       class="inline-flex items-center bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+                                        Поиск: {{ query }}
+                                        <svg class="w-4 h-4 ml-1" fill="none"
+                                             stroke="currentColor"
+                                             viewBox="0 0 24 24"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="2"
+                                                  d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </a>
+                                {% endif %}
+
+                                {% if current_category or current_tag or query %}
+                                    <a href="{% url 'post_list' %}"
+                                       class="text-indigo-600 hover:text-indigo-800 text-sm">Сбросить
+                                        все фильтры</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <!-- Статьи -->
+                    {% if posts %}
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                            {% for post in posts %}
+                                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                                    <a href="{{ post.get_absolute_url }}">
+                                        <img src="{{ post.featured_image.url }}"
+                                             alt="{{ post.title }}"
+                                             class="w-full h-48 object-cover">
+                                    </a>
+                                    <div class="p-6">
+                                        <div class="flex items-center mb-3">
+                                            <a href="{% url 'post_list' %}?category={{ post.category.slug }}"
+                                               class="bg-indigo-100 text-indigo-600 text-sm font-medium py-1 px-3 rounded-full">
+                                                {{ post.category.name }}
+                                            </a>
+                                        </div>
+                                        <h3 class="text-xl font-bold mb-3">
+                                            <a href="{{ post.get_absolute_url }}"
+                                               class="hover:text-indigo-600 transition-colors duration-300">
+                                                {{ post.title }}
+                                            </a>
+                                        </h3>
+                                        <p class="text-gray-600 mb-4">{{ post.preview_text|truncatewords:20 }}</p>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center">
+                                                <span class="text-gray-500 text-sm">{{ post.created_at|date:"d.m.Y" }}</span>
+                                            </div>
+                                            <a href="{{ post.get_absolute_url }}"
+                                               class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                                                Читать
+                                                <svg class="w-4 h-4 ml-1"
+                                                     fill="none"
+                                                     stroke="currentColor"
+                                                     viewBox="0 0 24 24"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round"
+                                                          stroke-linejoin="round"
+                                                          stroke-width="2"
+                                                          d="M9 5l7 7-7 7"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Пагинация -->
+                        {% if is_paginated %}
+                            <div class="flex justify-center mt-12">
+                                <div class="inline-flex rounded-md shadow-sm">
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page=
+                                                {{ page_obj.previous_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
+                                           class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                            Предыдущая
+                                        </a>
+                                    {% endif %}
+
+                                    <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+                            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+                        </span>
+
+                                    {% if page_obj.has_next %}
+                                        <a href="?page=
+                                                {{ page_obj.next_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
+                                           class="relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                            Следующая
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+
+                    {% else %}
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-10">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-5 w-5 text-yellow-400"
+                                         fill="currentColor"
+                                         viewBox="0 0 20 20"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                              clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        По вашему запросу ничего не найдено.
+                                        Попробуйте изменить параметры поиска.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Сайдбар -->
+                <div class="lg:w-1/3 lg:pl-8 mt-10 lg:mt-0">
+                    <!-- Категории -->
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-10">
+                        <h3 class="text-xl font-bold mb-6 pb-3 border-b border-gray-200">
+                            Категории</h3>
+                        <ul class="space-y-3">
+                            {% for category in categories %}
+                                <li>
+                                    <a href="{% url 'post_list' %}?category={{ category.slug }}"
+                                       class="flex items-center justify-between text-gray-700 hover:text-indigo-600 transition-colors duration-300">
+                                        <span>{{ category.name }}</span>
+                                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-1 rounded-full">{{ category.posts.count }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <!-- Популярные теги -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-6 pb-3 border-b border-gray-200">
+                            Популярные теги</h3>
+                        <div class="flex flex-wrap gap-2">
+                            {% for tag in popular_tags %}
+                                <a href="{% url 'post_list' %}?tag={{ tag.slug }}"
+                                   class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-indigo-100 hover:text-indigo-700 transition-colors duration-300">
+                                    {{ tag.name }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

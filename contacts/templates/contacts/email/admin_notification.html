@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #4F46E5;
+        }
+        .details {
+            margin-top: 20px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .label {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Новая заявка с сайта DAAgency</h1>
+        <p>На сайте была оставлена новая заявка от клиента.</p>
+
+        <div class="details">
+            <p><span class="label">Имя:</span> {{ contact.name }}</p>
+            <p><span class="label">Email:</span> {{ contact.email }}</p>
+            <p><span class="label">Телефон:</span> {{ contact.phone }}</p>
+            <p><span class="label">Услуга:</span> {{ contact.service }}</p>
+            <p><span class="label">Сообщение:</span> {{ contact.message }}</p>
+            <p><span class="label">Дата:</span> {{ contact.created_at|date:"d.m.Y H:i" }}</p>
+        </div>
+
+        <p>Чтобы просмотреть заявку в панели администратора, <a href="{{ site_url }}/admin/contacts/contactrequest/{{ contact.id }}/">перейдите по этой ссылке</a>.</p>
+    </div>
+</body>
+</html>

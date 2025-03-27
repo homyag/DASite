@@ -1,0 +1,39 @@
+<section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Тарифы на {{ service.title }}</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Выберите оптимальный тариф для вашего бизнеса</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-{{ tariffs|length }} gap-8 max-w-5xl mx-auto">
+            {% for tariff in tariffs %}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:z-10 group {% if tariff.is_featured %}border-2 border-indigo-500{% endif %}">
+                <div class="p-8 text-center border-b border-gray-200 transition-all duration-300 group-hover:bg-indigo-600 group-hover:text-white">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-white">{{ tariff.name }}</h3>
+                    <div class="text-indigo-600 font-bold text-4xl mb-4 group-hover:text-white">{{ tariff.price }}</div>
+                    <p class="text-gray-600 group-hover:text-white">в месяц</p>
+                    {% if tariff.is_featured %}
+                    <div class="mt-2 inline-block bg-white text-indigo-600 text-sm font-medium py-1 px-3 rounded-full opacity-100 group-hover:opacity-100">
+                        Рекомендуемый
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-4">
+                        {% for feature in tariff.features.all %}
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 {% if feature.is_included %}text-indigo-600{% else %}text-gray-400{% endif %} mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="{% if not feature.is_included %}text-gray-400{% else %}text-gray-600{% endif %}">{{ feature.text }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#contact-form" class="block text-center bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Выбрать тариф</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="py-20" id="benefits">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">{{ title|default:"Преимущества" }}</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">{{ subtitle|default:"Почему клиенты выбирают нас" }}</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for benefit in benefits %}
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        {{ benefit.icon|safe }}
+                    </div>
+                    <h3 class="text-xl font-bold">{{ benefit.title }}</h3>
+                </div>
+                <p class="text-gray-600">{{ benefit.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
