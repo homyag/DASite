@@ -1,2 +1,11 @@
 Django==5.1.5
 python-webpack-boilerplate==1.0.4
+pillow==10.3.0  # Для работы с изображениями
+django-ckeditor==6.7.2  # Редактор контента для админки
+django-recaptcha==4.0.0  # Для защиты форм от спама
+django-crispy-forms==2.1  # Для стилизации форм
+crispy-tailwind==1.0.0  # Для интеграции с Tailwind CSS
+bleach==6.1.0  # Для очистки HTML в формах
+django-cleanup==8.0.0  # Автоматическая очистка файлов при удалении записей
+whitenoise==6.7.0  # Для обслуживания статических файлов
+python-dotenv==1.0.1  # Для работы с переменными окружения
