@@ -1,6 +1,10 @@
 from django.views.generic import TemplateView
 
 
+class ServicesListView(TemplateView):
+    template_name = 'services/list.html'
+
+
 class ServiceView(TemplateView):
     def get_template_names(self):
         service_name = self.kwargs.get('service_name')
@@ -26,4 +30,3 @@ class ServiceView(TemplateView):
         context['service'] = service_info
 
         return context
-

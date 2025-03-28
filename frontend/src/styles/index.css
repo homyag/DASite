@@ -1,10 +1,4 @@
-@import "tailwindcss" source(none);
-
-/*register frontend directory*/
-@source "../";
-
-/*register django templates*/
-@source "../../../DASite/**/*.html";
+@import "tailwindcss";
 
 .jumbotron {
   /*should be relative path of the entry css file*/
