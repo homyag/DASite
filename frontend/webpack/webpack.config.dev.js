@@ -16,10 +16,6 @@ module.exports = merge(common, {
     publicPath: "http://localhost:9091/",
   },
   devServer: {
-    watchFiles: [
-    Path.join(__dirname, '../../DASite/**/*.py'),
-    Path.join(__dirname, '../../DASite/**/*.html'),
-  ],
     hot: true,
     host: "0.0.0.0",
     port: 9091,
