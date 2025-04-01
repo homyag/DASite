@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
-from django.core.paginator import Paginator
 from django.db.models import Q
 from django.contrib import messages
-from .models import Post, Category, Tag
+from .models import Post, Comment
+from core.models import Category, Tag
 from .forms import CommentForm
 
 
@@ -89,3 +89,15 @@ class PostDetailView(DetailView):
             return redirect('post_detail', slug=post.slug)
 
         return self.get(request, *args, **kwargs)
+
+
+# Дополнительное представление для отображения избранных постов на главной
+class FeaturedPostListView(ListView):
+    model = Post
+    template_name = 'blog/featured_posts.html'
+    context_object_name = 'featured_posts'
+
+    def get_queryset(self):
+        return Post.objects.filter(is_published=True,
+                                   is_featured=True).order_by('-created_at')[
+               :3]

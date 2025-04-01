@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
-from core.models import Case, Category
+from .models import Case
+from core.models import Category
 
 
 class CaseListView(ListView):
@@ -59,3 +60,14 @@ class CaseDetailView(DetailView):
         ).exclude(id=case.id).distinct()[:3]
 
         return context
+
+
+# Дополнительное представление для отображения избранных кейсов на главной
+class FeaturedCaseListView(ListView):
+    model = Case
+    template_name = 'cases/featured_cases.html'
+    context_object_name = 'featured_cases'
+
+    def get_queryset(self):
+        return Case.objects.filter(is_published=True, is_featured=True).order_by('-created_at')[:6]
+

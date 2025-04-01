@@ -1,7 +1,7 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 from blog.models import Post
-from core.models import Case
+from cases.models import Case
 
 
 class StaticViewSitemap(Sitemap):

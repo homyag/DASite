@@ -1,3 +1,4 @@
+# blog/models.py
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
@@ -30,6 +31,8 @@ class Post(models.Model):
                                   verbose_name="SEO заголовок")
     meta_description = models.TextField(blank=True, null=True,
                                         verbose_name="SEO описание")
+    is_featured = models.BooleanField(default=False,
+                                      verbose_name="Отображать на главной")
 
     class Meta:
         verbose_name = "Статья"

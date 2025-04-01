@@ -8,7 +8,7 @@ from django.views.decorators.http import require_GET
 from django.contrib.sitemaps.views import sitemap
 
 
-from DASite.views import ServiceView, ServicesListView
+from DASite.views import ServiceView, ServicesListView, HomePageView
 from contacts.views import contact_view, contact_success_view
 from blog.views import PostListView, PostDetailView
 from cases.views import CaseListView, CaseDetailView
@@ -36,8 +36,9 @@ def robots_txt(request):
 
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="pages/home.html"),
-         name='home'),
+    # path('', TemplateView.as_view(template_name="pages/home.html"),
+    #      name='home'),
+    path('', HomePageView.as_view(), name='home'),
 
     path('services/', ServicesListView.as_view(), name='services_list'),
 

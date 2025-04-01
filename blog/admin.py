@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django import forms
-from .models import Post, Comment
+from blog.models import Post, Comment
 from core.models import Category, Tag
 
 
@@ -17,22 +17,24 @@ class PostAdminForm(forms.ModelForm):
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     form = PostAdminForm
-    list_display = ('title', 'category', 'is_published', 'created_at')
-    list_filter = ('is_published', 'category', 'tags')
+    list_display = ('title', 'category', 'is_published', 'is_featured', 'created_at')
+    list_filter = ('is_published', 'is_featured', 'category', 'tags')
     search_fields = ('title', 'preview_text', 'content')
     prepopulated_fields = {'slug': ('title',)}
     autocomplete_fields = ['category', 'tags', 'author']
+    list_editable = ('is_published', 'is_featured')
     fieldsets = (
         (None, {
             'fields': (
-            'title', 'slug', 'preview_text', 'content', 'featured_image',
-            'author')
+                'title', 'slug', 'preview_text', 'content', 'featured_image',
+                'author'
+            )
         }),
         ('Категоризация', {
             'fields': ('category', 'tags')
         }),
         ('Настройки публикации', {
-            'fields': ('is_published', 'created_at')
+            'fields': ('is_published', 'is_featured', 'created_at')
         }),
         ('SEO', {
             'fields': ('meta_title', 'meta_description'),

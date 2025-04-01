@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django import forms
 from django.utils.html import format_html
-from core.models import Case, CaseImage
+from .models import Case, CaseImage
+from core.models import Category
 
 
 class CaseImageInline(admin.TabularInline):
@@ -32,22 +33,24 @@ class CaseAdminForm(forms.ModelForm):
 class CaseAdmin(admin.ModelAdmin):
     form = CaseAdminForm
     inlines = [CaseImageInline]
-    list_display = ('title', 'client', 'is_published', 'created_at')
-    list_filter = ('is_published', 'categories')
+    list_display = ('title', 'client', 'is_published', 'is_featured', 'created_at')
+    list_filter = ('is_published', 'is_featured', 'categories')
+    list_editable = ('is_published', 'is_featured')
     search_fields = ('title', 'short_description', 'content', 'client')
     prepopulated_fields = {'slug': ('title',)}
     filter_horizontal = ('categories',)
     fieldsets = (
         (None, {
             'fields': (
-            'title', 'slug', 'short_description', 'client', 'content',
-            'result', 'featured_image')
+                'title', 'slug', 'short_description', 'client', 'content',
+                'result', 'featured_image'
+            )
         }),
         ('Категоризация', {
             'fields': ('categories',)
         }),
         ('Настройки публикации', {
-            'fields': ('is_published', 'created_at')
+            'fields': ('is_published', 'is_featured', 'created_at')
         }),
         ('SEO', {
             'fields': ('meta_title', 'meta_description'),
