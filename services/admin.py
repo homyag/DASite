@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Service, ServiceBenefit, ServiceProcess, FAQ, Case, \
-    ServiceFeature
+from .models import Service, ServiceBenefit, ServiceProcess, FAQ, ServiceFeature
 
 
 class ServiceFeatureInline(admin.TabularInline):
@@ -52,12 +51,3 @@ class FAQAdmin(admin.ModelAdmin):
     list_display = ('question', 'service', 'is_common', 'order')
     list_filter = ('service', 'is_common')
     search_fields = ('question', 'answer')
-
-
-@admin.register(Case)
-class CaseAdmin(admin.ModelAdmin):
-    list_display = ('title', 'client', 'is_featured')
-    list_filter = ('services', 'is_featured')
-    search_fields = ('title', 'description', 'client')
-    prepopulated_fields = {'slug': ('title',)}
-    filter_horizontal = ('services',)

@@ -5,6 +5,7 @@ from django.urls import reverse
 from ckeditor_uploader.fields import RichTextUploadingField
 
 from core.models import Category
+from services.models import Service
 
 
 class Case(models.Model):
@@ -22,6 +23,9 @@ class Case(models.Model):
                                        verbose_name="Опубликовано")
     categories = models.ManyToManyField(Category, related_name='cases',
                                         verbose_name="Категории")
+    services = models.ManyToManyField(Service, related_name='case_services',
+                                      verbose_name="Связанные услуги",
+                                      blank=True)
     meta_title = models.CharField(max_length=200, blank=True, null=True,
                                   verbose_name="SEO заголовок")
     meta_description = models.TextField(blank=True, null=True,

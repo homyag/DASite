@@ -1,4 +1,4 @@
-// Класс для управления бесконечной каруселью отзывов (улучшенный)
+// Класс для управления бесконечной каруселью отзывов (исправленный)
 class TestimonialsCarousel {
   static selector() {
     return "[data-testimonials-carousel]";
@@ -9,9 +9,11 @@ class TestimonialsCarousel {
     this.carousel = this.section.querySelector('.testimonials-slider');
 
     // Получаем все div непосредственно внутри .testimonials-slider
-    this.slides = this.carousel ? this.carousel.querySelectorAll(':scope > div') : [];
+    this.slides = this.carousel ? Array.from(this.carousel.querySelectorAll(':scope > div')) : [];
 
-    console.log(`Найдено ${this.slides.length} слайдов в карусели отзывов`);
+    // Сохраняем количество оригинальных слайдов до клонирования
+    this.originalSlides = this.slides.length;
+    console.log(`Найдено ${this.originalSlides} слайдов в карусели отзывов`);
 
     this.prevButton = this.section.querySelector('.testimonial-prev');
     this.nextButton = this.section.querySelector('.testimonial-next');
@@ -19,20 +21,10 @@ class TestimonialsCarousel {
 
     // Устанавливаем переменную для отслеживания количества видимых слайдов
     this.slidesPerView = 1;
-    this.totalSlides = this.slides.length;
     this.currentSlide = 0;
     this.slideWidth = 0;
     this.autoplayInterval = null;
     this.isAnimating = false;
-
-    console.log("Инициализация карусели отзывов:", {
-      container: this.section,
-      carousel: this.carousel,
-      slides: this.slides.length,
-      indicators: this.indicatorsContainer ? this.indicatorsContainer.children.length : 0,
-      prevBtn: this.prevButton,
-      nextBtn: this.nextButton
-    });
 
     if (this.carousel && this.slides.length > 0) {
       this.init();
@@ -44,6 +36,10 @@ class TestimonialsCarousel {
   init() {
     // Добавляем класс 'initialized' к контейнеру для отладки
     this.section.classList.add('testimonials-carousel-initialized');
+
+    // Вначале определяем количество слайдов и их ширину
+    this.updateSlidesPerView();
+    this.updateSlideWidth();
 
     // Подготавливаем бесконечную карусель
     this.prepareInfiniteCarousel();
@@ -69,13 +65,12 @@ class TestimonialsCarousel {
     }
 
     // Обработка изменения размера окна
-    window.addEventListener('resize', () => this.handleResize());
+    window.addEventListener('resize', () => {
+      this.handleResize();
+    });
 
-    // Инициализация
-    this.updateSlideWidth();
-
-    // Переходим сразу к первому слайду
-    this.goToSlide(0, false);
+    // Переходим сразу к первому слайду (с учетом клонов)
+    this.goToSlide(1, false);
 
     // Запускаем автопрокрутку
     this.startAutoplay();
@@ -111,21 +106,27 @@ class TestimonialsCarousel {
       const existingClones = this.carousel.querySelectorAll('.clone');
       existingClones.forEach(clone => clone.remove());
 
-      // Клонируем первый слайд и добавляем его в конец
-      const firstSlideClone = this.slides[0].cloneNode(true);
-      firstSlideClone.classList.add('clone');
-      this.carousel.appendChild(firstSlideClone);
+      // Сохраняем оригинальные слайды (без клонов)
+      const originalSlides = Array.from(this.slides);
 
-      // Клонируем последний слайд и добавляем его в начало
-      const lastSlideClone = this.slides[this.totalSlides - 1].cloneNode(true);
-      lastSlideClone.classList.add('clone');
-      this.carousel.insertBefore(lastSlideClone, this.carousel.firstChild);
+      // Клонируем начальные слайды и добавляем в конец
+      // Клонируем количество слайдов, равное slidesPerView
+      for (let i = 0; i < this.slidesPerView; i++) {
+        const clone = originalSlides[i].cloneNode(true);
+        clone.classList.add('clone');
+        this.carousel.appendChild(clone);
+      }
+
+      // Клонируем конечные слайды и добавляем в начало
+      // Берем последние slidesPerView слайдов
+      for (let i = originalSlides.length - 1; i >= Math.max(0, originalSlides.length - this.slidesPerView); i--) {
+        const clone = originalSlides[i].cloneNode(true);
+        clone.classList.add('clone');
+        this.carousel.insertBefore(clone, this.carousel.firstChild);
+      }
 
       // Обновляем список слайдов с учетом клонов
-      this.slides = this.carousel.querySelectorAll(':scope > div');
-
-      // Рассчитываем ширину слайда
-      this.updateSlideWidth();
+      this.slides = Array.from(this.carousel.querySelectorAll(':scope > div'));
 
       // Устанавливаем ширину для каждого слайда
       this.slides.forEach(slide => {
@@ -133,16 +134,18 @@ class TestimonialsCarousel {
         slide.style.maxWidth = `${this.slideWidth}px`;
       });
 
-      // Сдвигаем карусель влево для показа первого реального слайда
+      // Сдвигаем карусель для показа первого реального слайда
+      // Рассчитываем отступ с учетом количества добавленных клонов
+      const offset = -this.slideWidth * this.slidesPerView;
       this.carousel.style.transition = 'none';
-      this.carousel.style.transform = `translateX(-${this.slideWidth}px)`;
+      this.carousel.style.transform = `translateX(${offset}px)`;
 
       // Форсируем перерисовку
       this.carousel.offsetHeight;
       this.carousel.style.transition = 'transform 500ms ease';
 
-      // Начальная позиция с учетом клона в начале
-      this.currentSlide = 1; // Сейчас активен первый реальный слайд (после клона)
+      // Начальная позиция
+      this.currentSlide = this.slidesPerView; // Индекс первого оригинального слайда
 
       console.log("Подготовлена бесконечная карусель отзывов, всего слайдов с клонами:", this.slides.length);
     } catch (error) {
@@ -151,88 +154,66 @@ class TestimonialsCarousel {
   }
 
   updateSlideWidth() {
-  if (this.carousel && this.section) {
-    // Обновляем количество видимых слайдов
-    this.updateSlidesPerView();
+    if (this.carousel && this.section) {
+      // Получаем ширину контейнера
+      const containerWidth = this.section.clientWidth;
 
-    // Получаем ширину контейнера
-    const containerWidth = this.section.clientWidth;
+      // Учитываем отступы контейнера
+      const style = window.getComputedStyle(this.section);
+      const paddingLeft = parseFloat(style.paddingLeft) || 0;
+      const paddingRight = parseFloat(style.paddingRight) || 0;
 
-    // Учитываем отступы контейнера
-    const style = window.getComputedStyle(this.section);
-    const paddingLeft = parseFloat(style.paddingLeft) || 0;
-    const paddingRight = parseFloat(style.paddingRight) || 0;
+      // Доступная ширина контейнера
+      const availableWidth = containerWidth - paddingLeft - paddingRight;
 
-    // На мобильных устройствах удаляем отступы между слайдами
-    const windowWidth = window.innerWidth;
-    let slideGap = 0;
+      // Рассчитываем размер промежутка между слайдами
+      const windowWidth = window.innerWidth;
+      let slideGap = 16; // Стандартный gap-4 в Tailwind (16px)
 
-    if (windowWidth < 768) { // Мобильные устройства
-      slideGap = 0; // Убираем зазор между слайдами на мобильных
+      if (windowWidth < 768) { // Мобильные устройства
+        slideGap = 0; // Убираем зазор между слайдами на мобильных
+        this.slideWidth = availableWidth; // Полная ширина для мобильных
+      } else {
+        // Вычисляем ширину одного слайда с учетом промежутков
+        const gapTotal = slideGap * (this.slidesPerView - 1);
+        this.slideWidth = (availableWidth - gapTotal) / this.slidesPerView;
+      }
 
-      // Для мобильных устройств делаем слайд точно по размеру контейнера
-      this.slideWidth = containerWidth - paddingLeft - paddingRight;
-    } else {
-      // Получаем размер промежутка (gap) между слайдами
-      const carouselStyle = window.getComputedStyle(this.carousel);
-      slideGap = parseInt(carouselStyle.gap) || 16; // значение gap-4 = 16px
-
-      // Учитываем промежутки между слайдами при расчете ширины
-      const totalGapWidth = slideGap * (this.slidesPerView - 1);
-
-      // Вычисляем ширину одного слайда с учетом количества видимых слайдов и промежутков
-      this.slideWidth = (containerWidth - paddingLeft - paddingRight - totalGapWidth) / this.slidesPerView;
+      console.log("Обновлена ширина слайда:", this.slideWidth, "Gap:", slideGap);
     }
-
-    console.log("Обновлена ширина слайда:", this.slideWidth, "Gap:", slideGap);
   }
-}
 
   // Переход к определенному слайду
   goToSlide(index, animate = true) {
-  if (this.isAnimating) return;
+    if (this.isAnimating) return;
 
-  this.currentSlide = index;
+    this.currentSlide = index;
 
-  // Проверяем границы
-  if (this.currentSlide < 0) {
-    this.currentSlide = this.totalSlides;
-  } else if (this.currentSlide > this.totalSlides + 1) {
-    this.currentSlide = 1;
-  }
+    // Рассчитываем смещение
+    const offset = -this.currentSlide * this.slideWidth;
 
-  // Обновляем активный индикатор
-  this.updateIndicators();
+    if (this.carousel) {
+      if (animate) {
+        this.carousel.style.transition = 'transform 500ms ease';
+        this.isAnimating = true;
+      } else {
+        this.carousel.style.transition = 'none';
+      }
 
-  // Смещение с учетом клонированных слайдов
-  let offset = -this.currentSlide * this.slideWidth;
-
-  // На мобильных устройствах обеспечиваем точное позиционирование
-  if (window.innerWidth < 768) {
-    // Для мобильных - целое число пикселей
-    offset = Math.round(offset);
-  }
-
-  if (this.carousel) {
-    if (animate) {
-      this.carousel.style.transition = 'transform 500ms ease';
-      this.isAnimating = true;
-    } else {
-      this.carousel.style.transition = 'none';
+      this.carousel.style.transform = `translateX(${offset}px)`;
     }
 
-    this.carousel.style.transform = `translateX(${offset}px)`;
-  }
+    // Обновляем индикаторы
+    this.updateIndicators();
 
-  console.log("Переход к слайду:", this.currentSlide, "с отступом:", offset);
-}
+    console.log("Переход к слайду:", this.currentSlide, "с отступом:", offset);
+  }
 
   // Переход к следующему слайду
   nextSlide() {
     if (this.isAnimating) return;
     this.goToSlide(this.currentSlide + 1);
     this.resetAutoPlay();
-    console.log("Переход к следующему слайду");
   }
 
   // Переход к предыдущему слайду
@@ -240,35 +221,42 @@ class TestimonialsCarousel {
     if (this.isAnimating) return;
     this.goToSlide(this.currentSlide - 1);
     this.resetAutoPlay();
-    console.log("Переход к предыдущему слайду");
   }
 
   // Обработка окончания перехода
   handleTransitionEnd() {
     this.isAnimating = false;
 
-    // Если дошли до конца (показываем клон первого слайда)
-    if (this.currentSlide > this.totalSlides) {
-      this.currentSlide = 1;
-      this.carousel.style.transition = 'none';
-      const offset = -this.currentSlide * this.slideWidth;
-      this.carousel.style.transform = `translateX(${offset}px)`;
-      setTimeout(() => {
-        this.carousel.style.transition = 'transform 500ms ease';
-      }, 50);
-      console.log("Переход в начало карусели");
-    }
+    // Последний клонированный слайд
+    const lastVisibleSlide = this.slides.length - this.slidesPerView;
 
-    // Если дошли до начала (показываем клон последнего слайда)
-    if (this.currentSlide === 0) {
-      this.currentSlide = this.totalSlides;
+    // Если дошли до крайних слайдов, перепрыгиваем без анимации
+    if (this.currentSlide >= lastVisibleSlide) {
+      // Перескок к началу (с клонированных слайдов на оригинальные)
+      this.currentSlide = this.slidesPerView;
       this.carousel.style.transition = 'none';
       const offset = -this.currentSlide * this.slideWidth;
       this.carousel.style.transform = `translateX(${offset}px)`;
+
+      // Восстанавливаем анимацию через небольшую задержку
       setTimeout(() => {
         this.carousel.style.transition = 'transform 500ms ease';
       }, 50);
-      console.log("Переход в конец карусели");
+
+      console.log("Мгновенный переход к началу");
+    } else if (this.currentSlide < this.slidesPerView) {
+      // Перескок к концу (с клонированных слайдов на оригинальные)
+      this.currentSlide = lastVisibleSlide - this.slidesPerView;
+      this.carousel.style.transition = 'none';
+      const offset = -this.currentSlide * this.slideWidth;
+      this.carousel.style.transform = `translateX(${offset}px)`;
+
+      // Восстанавливаем анимацию через небольшую задержку
+      setTimeout(() => {
+        this.carousel.style.transition = 'transform 500ms ease';
+      }, 50);
+
+      console.log("Мгновенный переход к концу");
     }
 
     // Обновляем индикаторы
@@ -296,48 +284,44 @@ class TestimonialsCarousel {
 
   // Получаем индекс реального слайда (без учета клонов)
   getRealIndex() {
-    if (this.currentSlide === 0) {
-      return this.totalSlides - 1;
-    } else if (this.currentSlide > this.totalSlides) {
-      return 0;
-    } else {
-      return this.currentSlide - 1;
+    // Учитываем клонированные слайды в начале
+    let realIndex = (this.currentSlide - this.slidesPerView) % this.originalSlides;
+
+    // Корректируем отрицательный индекс
+    if (realIndex < 0) {
+      realIndex = this.originalSlides + realIndex;
     }
+
+    return realIndex;
   }
 
   // Обработка изменения размера окна
   handleResize() {
-    // Обновляем ширину слайдов и количество видимых слайдов
+    // Сохраняем текущую реальную позицию
+    const realIndex = this.getRealIndex();
+
+    // Обновляем параметры
+    this.updateSlidesPerView();
     this.updateSlideWidth();
 
-    // Применяем ширину к слайдам
-    this.slides.forEach(slide => {
-      slide.style.minWidth = `${this.slideWidth}px`;
-      slide.style.maxWidth = `${this.slideWidth}px`;
-    });
+    // Перестраиваем карусель с новыми параметрами
+    this.prepareInfiniteCarousel();
 
-    // Обновляем позицию карусели
-    const offset = -this.currentSlide * this.slideWidth;
-    this.carousel.style.transition = 'none';
-    this.carousel.style.transform = `translateX(${offset}px)`;
-
-    // Форсируем перерисовку
-    this.carousel.offsetHeight;
-    this.carousel.style.transition = 'transform 500ms ease';
+    // Возвращаемся к тому же слайду, с которого начали
+    const newPosition = realIndex + this.slidesPerView;
+    this.goToSlide(newPosition, false);
   }
 
   // Автоматическое прокручивание
   startAutoplay() {
     this.stopAutoplay();
     this.autoplayInterval = setInterval(() => this.nextSlide(), 5000);
-    console.log("Запущено автопрокручивание карусели отзывов");
   }
 
   stopAutoplay() {
     if (this.autoplayInterval) {
       clearInterval(this.autoplayInterval);
       this.autoplayInterval = null;
-      console.log("Остановлено автопрокручивание карусели отзывов");
     }
   }
 

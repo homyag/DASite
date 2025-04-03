@@ -108,31 +108,3 @@ class FAQ(models.Model):
         verbose_name_plural = 'FAQs'
         ordering = ['order']
 
-#TODO решить проблему с дублированием моделей в service/models и cases/models
-class Case(models.Model):
-    """Модель для хранения кейсов (портфолио)"""
-    title = models.CharField('Заголовок', max_length=200)
-    slug = models.SlugField('URL-идентификатор', max_length=100, unique=True)
-    services = models.ManyToManyField(Service, related_name='cases',
-                                      verbose_name='Связанные услуги')
-    description = models.TextField('Краткое описание', max_length=500)
-    full_description = RichTextField('Полное описание')
-    image = models.ImageField('Изображение кейса', upload_to='cases/')
-    result = models.CharField('Результат', max_length=200, blank=True)
-    client = models.CharField('Клиент', max_length=200, blank=True)
-    is_featured = models.BooleanField('Размещать на главной', default=False)
-    created_at = models.DateTimeField('Дата создания', auto_now_add=True)
-    updated_at = models.DateTimeField('Дата обновления', auto_now=True)
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = 'Кейс'
-        verbose_name_plural = 'Кейсы'
-        ordering = ['-created_at']
