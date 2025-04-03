@@ -9,7 +9,8 @@ from django.contrib.sitemaps.views import sitemap
 
 
 from DASite.views import ServiceView, ServicesListView, HomePageView
-from contacts.views import contact_view, contact_success_view
+from contacts.views import contact_view, contact_success_view, \
+    contact_submit_view
 from blog.views import PostListView, PostDetailView
 from cases.views import CaseListView, CaseDetailView
 from DASite.sitemaps import (StaticViewSitemap, ServiceSitemap, BlogSitemap,
@@ -40,6 +41,9 @@ urlpatterns = [
     #      name='home'),
     path('', HomePageView.as_view(), name='home'),
 
+    path('contact/submit/', contact_submit_view, name='contact_submit'),  # Только для обработки POST
+    path('contact/success/', contact_success_view, name='contact_success'),
+
     path('services/', ServicesListView.as_view(), name='services_list'),
 
     # Новый паттерн
@@ -60,7 +64,9 @@ urlpatterns = [
          name='service_ppc'),
 
     path('contacts/', contact_view, name='contact'),
-    path('contacts/success/', contact_success_view, name='contact_success'),
+    # path('contacts/success/', contact_success_view, name='contact_success'),
+    path('contact/submit/', contact_submit_view, name='contact_submit'),  # Только для обработки POST
+    path('contact/success/', contact_success_view, name='contact_success'),
 
     path('admin/', admin.site.urls),
 

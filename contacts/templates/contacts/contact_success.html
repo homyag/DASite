@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Секция "Спасибо за заявку" -->
+<section class="py-20 md:py-32 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="mb-6 inline-block p-4 bg-white rounded-full">
+                <svg class="w-16 h-16 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Спасибо за вашу заявку!</h1>
+            <p class="text-xl mb-8 text-indigo-100">
+                Мы получили ваше сообщение и свяжемся с вами в ближайшее время. Наш менеджер проанализирует ваш запрос и предложит оптимальное решение для вашего бизнеса.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="{% url 'home' %}" class="px-8 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors duration-300 text-center transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                    Вернуться на главную
+                </a>
+                <a href="{% url 'post_list' %}" class="px-8 py-3 border border-white text-white font-medium rounded-lg hover:bg-white hover:text-indigo-600 transition-all duration-300 text-center">
+                    Перейти в блог
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Дополнительные услуги -->
+<section class="py-16 md:py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Возможно, вас также заинтересует</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Ознакомьтесь с другими нашими услугами, которые могут быть полезны для вашего бизнеса
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Услуга 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">SEO-продвижение</h3>
+                <p class="text-gray-600 mb-4">Комплексный подход к продвижению вашего сайта в поисковых системах для привлечения целевого органического трафика.</p>
+                <a href="{% url 'service_seo' %}" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                    Подробнее
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Услуга 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Контент-маркетинг</h3>
+                <p class="text-gray-600 mb-4">Создание и распространение полезного контента для привлечения и удержания аудитории, повышения узнаваемости бренда.</p>
+                <a href="{% url 'service_content' %}" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                    Подробнее
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Услуга 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">PPC-реклама</h3>
+                <p class="text-gray-600 mb-4">Эффективная контекстная реклама в поисковых системах и социальных сетях для быстрого привлечения целевой аудитории.</p>
+                <a href="{% url 'service_ppc' %}" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                    Подробнее
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
