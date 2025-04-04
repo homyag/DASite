@@ -7,6 +7,7 @@ import TestimonialsCarousel from "../components/testimonials-carousel";
 import CasesCarousel from "../components/cases-carousel";
 import BlogCarousel from "../components/blog-carousel";
 import PartnersCarousel from "../components/partners-carousel";
+import { initContactForm } from "../components/ContactForm";
 
 window.document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM загружен, начинаем инициализацию компонентов");
@@ -66,6 +67,18 @@ window.document.addEventListener("DOMContentLoaded", function () {
   } catch (error) {
     console.error("Ошибка при инициализации карусели партнеров:", error);
   }
+
+  try {
+    // Инициализация формы контактов
+    const contactForms = document.querySelectorAll('#contact-form-element');
+    console.log(`Найдено контактных форм: ${contactForms.length}`);
+    if (contactForms.length > 0) {
+    // Импортируем и инициализируем класс ContactForm
+    initContactForm();
+  }
+} catch (error) {
+  console.error("Ошибка при инициализации контактной формы:", error);
+}
   
   console.log("Инициализация компонентов завершена");
 });
