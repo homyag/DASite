@@ -67,7 +67,7 @@ def contact_submit_view(request):
                 )
 
                 # Отправка подтверждения клиенту
-                subject = 'Спасибо за ваше обращение в DAAgency'
+                subject = 'Спасибо за ваше обращение в Boldrise Agency'
                 html_message = render_to_string(
                     'contacts/email/client_notification.html', {
                         'contact': contact
