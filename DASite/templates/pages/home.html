@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 {#{% load webpack_loader static %}#}
 {% load static %}
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Boldrise Agency",
+  "url": "{{ request.scheme }}://{{ request.get_host }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ request.scheme }}://{{ request.get_host }}{% url 'post_list' %}?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "description": "Услуги Digital Маркетинга от профессионалов"
+}
+</script>
+{% endblock %}
 {% block content %}
     <!-- Герой-секция (улучшенная) -->
     <section

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.contrib import messages
 from .models import Post, Comment
 from core.models import Category, Tag
@@ -11,7 +11,7 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/post_list.html'
     context_object_name = 'posts'
-    paginate_by = 9
+    paginate_by = 4
 
     def get_queryset(self):
         queryset = Post.objects.filter(is_published=True)
@@ -40,12 +40,31 @@ class PostListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
-        context['popular_tags'] = Tag.objects.all()[:10]
+        context['popular_tags'] = Tag.objects.annotate(
+            post_count=Count('blog_posts')
+        ).order_by('-post_count')[:10]
 
         # Получаем параметры фильтрации
         context['current_category'] = self.request.GET.get('category', '')
         context['current_tag'] = self.request.GET.get('tag', '')
         context['query'] = self.request.GET.get('q', '')
+
+        # Добавляем название текущей категории (для отображения в breadcrumbs)
+        if context['current_category']:
+            try:
+                category = Category.objects.get(
+                    slug=context['current_category'])
+                context['current_category_name'] = category.name
+            except Category.DoesNotExist:
+                context['current_category_name'] = context['current_category']
+
+        # Добавляем название текущего тега (для отображения в breadcrumbs)
+        if context['current_tag']:
+            try:
+                tag = Tag.objects.get(slug=context['current_tag'])
+                context['current_tag_name'] = tag.name
+            except Tag.DoesNotExist:
+                context['current_tag_name'] = context['current_tag']
 
         return context
 

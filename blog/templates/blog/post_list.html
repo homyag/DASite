@@ -14,66 +14,61 @@
             {
               "@type": "ListItem",
               "position": {{ forloop.counter }},
-        "item": {
-          "@type": "BlogPosting",
-          "headline": "{{ post.title }}",
-          "image": "{{ request.scheme }}://
-            {{ request.get_host }}{{ post.featured_image.url }}",
-          "datePublished": "{{ post.created_at|date:'c' }}",
-          "dateModified": "{{ post.updated_at|date:'c' }}",
-          "author": {
-            "@type": "Person",
-            "name": "{{ post.author.get_full_name }}"
+              "item": {
+                "@type": "BlogPosting",
+                "headline": "{{ post.title }}",
+                "image": "{{ request.scheme }}://{{ request.get_host }}{{ post.featured_image.url }}",
+                "datePublished": "{{ post.created_at|date:'c' }}",
+                "dateModified": "{{ post.updated_at|date:'c' }}",
+                "author": {
+                  "@type": "Person",
+                  "name": "{{ post.author.get_full_name }}"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "DAAgency",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "{{ request.scheme }}://{{ request.get_host }}{% static 'vendors/images/logo.png' %}"
+                  }
+                },
+                "description": "{{ post.preview_text|truncatechars:150 }}",
+                "url": "{{ request.scheme }}://{{ request.get_host }}{{ post.get_absolute_url }}"
+              }
+            }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+            ]
           },
-          "publisher": {
-            "@type": "Organization",
-            "name": "DAAgency",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "{{ request.scheme }}://
-            {{ request.get_host }}{% static 'vendors/images/logo.png' %}"
-            }
-          },
-          "description": "{{ post.preview_text|truncatechars:150 }}",
-          "url": "{{ request.scheme }}://
-            {{ request.get_host }}{{ post.get_absolute_url }}"
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'home' %}"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'post_list' %}"
+              }{% if current_category %},
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{ current_category_name|default:current_category }}",
+                "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'post_list' %}?category={{ current_category }}"
+              }{% endif %}{% if current_tag %},
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{ current_tag_name|default:current_tag }}",
+                "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'post_list' %}?tag={{ current_tag }}"
+              }{% endif %}
+            ]
+          }
         }
-      }{% if not forloop.last %}{% endif %}
-      {% endfor %}
-        ]
-      },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Главная",
-            "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'home' %}"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Блог",
-        "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'post_list' %}"
-      }{% if current_category %},
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "{{ current_category }}",
-        "item": "{{ request.scheme }}://
-        {{ request.get_host }}{% url 'post_list' %}?category=
-        {{ current_category }}"}{% endif %}{% if current_tag %},
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "{{ current_tag }}",
-        "item": "{{ request.scheme }}://
-        {{ request.get_host }}{% url 'post_list' %}?tag={{ current_tag }}
-        "}{% endif %}
-        ]
-      }
-    }
     </script>
 {% endblock %}
 
@@ -104,7 +99,7 @@
     </section>
     <section class="pt-8 pb-4 md:pt-12 md:pb-8">
         <!-- Хлебные крошки -->
-        <div class="container mx-auto px-4 pt-12 pb-4">
+        <div class="container mx-auto px-4 pt-6 pb-4">
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
@@ -142,7 +137,7 @@
                                           d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                           clip-rule="evenodd"></path>
                                 </svg>
-                                <span class="ml-1 text-sm font-medium text-indigo-600">{{ current_category }}</span>
+                                <span class="ml-1 text-sm font-medium text-indigo-600">{{ current_category_name|default:current_category }}</span>
                             </div>
                         </li>
                     {% endif %}
@@ -156,7 +151,7 @@
                                           d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                           clip-rule="evenodd"></path>
                                 </svg>
-                                <span class="ml-1 text-sm font-medium text-indigo-600">{{ current_tag }}</span>
+                                <span class="ml-1 text-sm font-medium text-indigo-600">{{ current_tag_name|default:current_tag }}</span>
                             </div>
                         </li>
                     {% endif %}
@@ -164,17 +159,15 @@
             </nav>
         </div>
     </section>
-
-
     <!-- Контент блога -->
-    <section class="pt-8 pb-4 md:pt-12 md:pb-8">
+    <section class="pt-4 pb-12 md:pt-6 md:pb-16">
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row">
                 <!-- Основной контент -->
-                <div class="lg:w-2/3 lg:pr-8">
+                <div class="lg:w-3/4 lg:pr-8">
                     <!-- Форма поиска -->
                     <form action="{% url 'post_list' %}" method="get"
-                          class="mb-10">
+                          class="mb-8">
                         <div class="flex flex-wrap md:flex-nowrap shadow-md rounded-lg overflow-hidden">
                             <input type="text" name="q" value="{{ query }}"
                                    class="flex-grow p-4 border-0 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -193,15 +186,16 @@
                             </button>
                         </div>
                     </form>
+
                     {% if current_category or current_tag or query %}
-                        <div class="mb-10 bg-gray-50 rounded-lg p-4 shadow-sm">
+                        <div class="mb-8 bg-gray-50 rounded-lg p-4 shadow-sm">
                             <div class="flex flex-wrap items-center gap-2">
                                 <span class="text-gray-600 font-medium">Активные фильтры:</span>
                                 {% if current_category %}
                                     <a href="
                                             {% url 'post_list' %}{% if query %}?q={{ query }}{% endif %}"
                                        class="inline-flex items-center bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm hover:bg-indigo-200 transition-colors duration-300">
-                                        Категория: {{ current_category }}
+                                        Категория: {{ current_category_name|default:current_category }}
                                         <svg class="w-4 h-4 ml-1" fill="none"
                                              stroke="currentColor"
                                              viewBox="0 0 24 24"
@@ -218,7 +212,7 @@
                                     <a href="
                                             {% url 'post_list' %}{% if query %}?q={{ query }}{% endif %}"
                                        class="inline-flex items-center bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm hover:bg-indigo-200 transition-colors duration-300">
-                                        Тег: {{ current_tag }}
+                                        Тег: {{ current_tag_name|default:current_tag }}
                                         <svg class="w-4 h-4 ml-1" fill="none"
                                              stroke="currentColor"
                                              viewBox="0 0 24 24"
@@ -251,18 +245,19 @@
                                 {% if current_category or current_tag or query %}
                                     <a href="{% url 'post_list' %}"
                                        class="text-indigo-600 hover:text-indigo-800 text-sm font-medium ml-auto">
-                               <span class="flex items-center">
-                                   <svg class="w-4 h-4 mr-1" fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                       <path stroke-linecap="round"
-                                             stroke-linejoin="round"
-                                             stroke-width="2"
-                                             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                                   </svg>
-                                   Сбросить фильтры
-                               </span>
+                                        <span class="flex items-center">
+                                            <svg class="w-4 h-4 mr-1"
+                                                 fill="none"
+                                                 stroke="currentColor"
+                                                 viewBox="0 0 24 24"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round"
+                                                      stroke-linejoin="round"
+                                                      stroke-width="2"
+                                                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                            </svg>
+                                            Сбросить фильтры
+                                        </span>
                                     </a>
                                 {% endif %}
                             </div>
@@ -271,23 +266,23 @@
 
                     <!-- Статьи в современном стиле карточек -->
                     {% if posts %}
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 mb-10">
                             {% for post in posts %}
                                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full group">
                                     <a href="{{ post.get_absolute_url }}"
                                        class="block relative overflow-hidden">
                                         <img src="{{ post.featured_image.url }}"
                                              alt="{{ post.title }}"
-                                             class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
                                         <div class="absolute top-4 left-4">
-                                    <span class="bg-indigo-600 text-white text-xs font-semibold py-1 px-3 rounded-full">
-                                        {{ post.category.name }}
-                                    </span>
+                                            <span class="bg-indigo-600 text-white text-xs font-semibold py-1 px-3 rounded-full">
+                                                {{ post.category.name }}
+                                            </span>
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                     </a>
-                                    <div class="p-6 flex-grow flex flex-col">
-                                        <div class="flex items-center text-gray-500 text-sm mb-3">
+                                    <div class="p-5 flex-grow flex flex-col">
+                                        <div class="flex items-center text-gray-500 text-xs mb-2">
                                             <span>{{ post.created_at|date:"d.m.Y" }}</span>
                                             <span class="mx-2">•</span>
                                             <span>
@@ -300,24 +295,24 @@
                                                 {% endwith %}
                                             </span>
                                         </div>
-                                        <h3 class="text-xl font-bold mb-3 line-clamp-2">
+                                        <h3 class="text-lg font-bold mb-2 line-clamp-2">
                                             <a href="{{ post.get_absolute_url }}"
                                                class="hover:text-indigo-600 transition-colors duration-300">
                                                 {{ post.title }}
                                             </a>
                                         </h3>
-                                        <p class="text-gray-600 mb-4 line-clamp-3">{{ post.preview_text }}</p>
+                                        <p class="text-gray-600 mb-4 text-sm line-clamp-2">{{ post.preview_text }}</p>
                                         <div class="mt-auto flex items-center justify-between">
                                             <div class="flex items-center">
-                                                <div class="w-10 h-10 rounded-full border-2 border-white shadow-sm bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
+                                                <div class="w-8 h-8 rounded-full border-2 border-white shadow-sm bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-xs">
                                                     {{ post.author.first_name|first|upper }}{{ post.author.last_name|first|upper }}
                                                 </div>
-                                                <span class="text-gray-700 font-medium text-sm ml-2">{{ post.author.get_full_name }}</span>
+                                                <span class="text-gray-700 font-medium text-xs ml-2">{{ post.author.get_full_name }}</span>
                                             </div>
                                             <a href="{{ post.get_absolute_url }}"
-                                               class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center">
+                                               class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center text-sm">
                                                 Читать
-                                                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300"
+                                                <svg class="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-300"
                                                      fill="none"
                                                      stroke="currentColor"
                                                      viewBox="0 0 24 24"
@@ -336,56 +331,79 @@
 
                         <!-- Пагинация в стиле Tailwind -->
                         {% if is_paginated %}
-                            <div class="flex justify-center mt-12">
-                                <div class="inline-flex rounded-md shadow">
-                                    {% if page_obj.has_previous %}
-                                        <a href="?page=
+    <div class="flex justify-center mt-12">
+        <nav class="inline-flex shadow-lg rounded-lg overflow-hidden">
+            <!-- Кнопка "Первая страница" (показывать, если текущая страница > 2) -->
+            {% if page_obj.number > 2 %}
+                <a href="?page=1{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
+                   class="relative inline-flex items-center px-3 py-3 bg-white text-sm font-medium text-indigo-500 hover:bg-indigo-50 border-r border-gray-200 transition-all duration-300"
+                   title="Первая страница">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            {% endif %}
 
+            <!-- Кнопка "Предыдущая страница" -->
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
+                   class="relative inline-flex items-center px-4 py-3 bg-white text-sm font-medium text-indigo-600 hover:bg-indigo-50 border-r border-gray-200 transition-all duration-300">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    <span class="hidden sm:inline">Предыдущая</span>
+                </a>
+            {% endif %}
 
+            <!-- Номера страниц -->
+            <div class="hidden md:flex">
+                {% if page_obj.number > 3 %}
+                    <span class="relative inline-flex items-center px-4 py-3 bg-white text-sm font-medium text-gray-700 border-r border-gray-200">...</span>
+                {% endif %}
 
-                                                {{ page_obj.previous_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
-                                           class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-indigo-600 hover:bg-indigo-50 transition-colors duration-300">
-                                            <svg class="w-5 h-5 mr-2"
-                                                 fill="none"
-                                                 stroke="currentColor"
-                                                 viewBox="0 0 24 24"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round"
-                                                      stroke-linejoin="round"
-                                                      stroke-width="2"
-                                                      d="M15 19l-7-7 7-7"></path>
-                                            </svg>
-                                            Предыдущая
-                                        </a>
-                                    {% endif %}
+                {% for i in paginator.page_range %}
+                    {% if i > page_obj.number|add:"-3" and i < page_obj.number|add:"3" %}
+                        <a href="?page={{ i }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
+                           class="relative inline-flex items-center px-4 py-3 {% if page_obj.number == i %}bg-indigo-100 text-indigo-700 font-bold{% else %}bg-white text-gray-700 hover:bg-indigo-50{% endif %} text-sm border-r border-gray-200 transition-all duration-300">
+                            {{ i }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
 
-                                    <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
-                                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
-                            </span>
+                {% if page_obj.number < paginator.num_pages|add:"-2" %}
+                    <span class="relative inline-flex items-center px-4 py-3 bg-white text-sm font-medium text-gray-700 border-r border-gray-200">...</span>
+                {% endif %}
+            </div>
 
-                                    {% if page_obj.has_next %}
-                                        <a href="?page=
+            <!-- Информация о текущей странице (мобильная версия) -->
+            <span class="relative inline-flex items-center px-4 py-3 bg-indigo-100 text-sm font-medium text-indigo-700 md:hidden border-r border-gray-200">
+                {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+            </span>
 
+            <!-- Кнопка "Следующая страница" -->
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
+                   class="relative inline-flex items-center px-4 py-3 bg-white text-sm font-medium text-indigo-600 hover:bg-indigo-50 {% if page_obj.number < paginator.num_pages|add:'-1' %}border-r border-gray-200{% endif %} transition-all duration-300">
+                    <span class="hidden sm:inline">Следующая</span>
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            {% endif %}
 
-
-                                                {{ page_obj.next_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
-                                           class="relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-indigo-600 hover:bg-indigo-50 transition-colors duration-300">
-                                            Следующая
-                                            <svg class="w-5 h-5 ml-2"
-                                                 fill="none"
-                                                 stroke="currentColor"
-                                                 viewBox="0 0 24 24"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round"
-                                                      stroke-linejoin="round"
-                                                      stroke-width="2"
-                                                      d="M9 5l7 7-7 7"></path>
-                                            </svg>
-                                        </a>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endif %}
+            <!-- Кнопка "Последняя страница" (показывать, если до последней страницы > 1) -->
+            {% if page_obj.number < paginator.num_pages|add:'-1' %}
+                <a href="?page={{ paginator.num_pages }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
+                   class="relative inline-flex items-center px-3 py-3 bg-white text-sm font-medium text-indigo-500 hover:bg-indigo-50 transition-all duration-300"
+                   title="Последняя страница">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            {% endif %}
+        </nav>
+    </div>
+{% endif %}
 
                     {% else %}
                         <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg shadow-md mb-10">
@@ -431,10 +449,10 @@
                 </div>
 
                 <!-- Сайдбар с улучшенным дизайном -->
-                <div class="lg:w-1/3 lg:pl-8 mt-10 lg:mt-0">
+                <div class="lg:w-1/4 lg:pl-8 mt-10 lg:mt-0">
                     <!-- Категории -->
                     <div class="bg-white p-6 rounded-xl shadow-md mb-8 hover:shadow-lg transition-all duration-300">
-                        <h3 class="text-xl font-bold mb-6 pb-3 border-b border-gray-200 flex items-center">
+                        <h3 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200 flex items-center">
                             <svg class="w-5 h-5 mr-2 text-indigo-600"
                                  fill="none" stroke="currentColor"
                                  viewBox="0 0 24 24"
@@ -445,11 +463,11 @@
                             </svg>
                             Категории
                         </h3>
-                        <ul class="space-y-3">
+                        <ul class="space-y-2">
                             {% for category in categories %}
                                 <li class="group">
                                     <a href="{% url 'post_list' %}?category={{ category.slug }}"
-                                       class="flex items-center justify-between py-2 px-3 rounded-lg {% if current_category == category.slug %}bg-indigo-50 text-indigo-600{% else %}text-gray-700 hover:bg-gray-50{% endif %} transition-colors duration-300 group-hover:text-indigo-600">
+                                       class="flex items-center justify-between py-2 px-3 rounded-lg {% if current_category == category.slug %}bg-indigo-50 text-indigo-600{% else %}text-gray-700 hover:bg-gray-50{% endif %} transition-colors duration-300 group-hover:text-indigo-600 text-sm">
                                         <span>{{ category.name }}</span>
                                         <span class="{% if current_category == category.slug %}bg-indigo-100 text-indigo-600{% else %}bg-gray-100 text-gray-600 group-hover:bg-indigo-100 group-hover:text-indigo-600{% endif %} text-xs font-semibold px-2 py-1 rounded-full transition-colors duration-300">{{ category.blog_posts.count }}</span>
                                     </a>
@@ -460,7 +478,7 @@
 
                     <!-- Популярные теги с улучшенным дизайном -->
                     <div class="bg-white p-6 rounded-xl shadow-md mb-8 hover:shadow-lg transition-all duration-300">
-                        <h3 class="text-xl font-bold mb-6 pb-3 border-b border-gray-200 flex items-center">
+                        <h3 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200 flex items-center">
                             <svg class="w-5 h-5 mr-2 text-indigo-600"
                                  fill="none" stroke="currentColor"
                                  viewBox="0 0 24 24"
@@ -474,7 +492,7 @@
                         <div class="flex flex-wrap gap-2">
                             {% for tag in popular_tags %}
                                 <a href="{% url 'post_list' %}?tag={{ tag.slug }}"
-                                   class="{% if current_tag == tag.slug %}bg-indigo-100 text-indigo-600{% else %}bg-gray-100 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600{% endif %} px-3 py-1 rounded-full text-sm transition-colors duration-300">
+                                   class="{% if current_tag == tag.slug %}bg-indigo-100 text-indigo-600{% else %}bg-gray-100 text-gray-700 hover:bg-indigo-100 hover:text-indigo-600{% endif %} px-3 py-1 rounded-full text-xs transition-colors duration-300">
                                     #{{ tag.name }}
                                 </a>
                             {% endfor %}
@@ -482,19 +500,19 @@
                     </div>
 
                     <!-- Подписка на рассылку -->
-                    <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-6 rounded-xl shadow-md text-white">
-                        <h3 class="text-xl font-bold mb-4">Подписка на
+                    <div class="bg-gradient-to-br from-indigo-600 to-purple-600 p-6 rounded-xl shadow-md text-white sticky top-20">
+                        <h3 class="text-lg font-bold mb-4">Подписка на
                             рассылку</h3>
-                        <p class="mb-4 text-indigo-100">Получайте свежие
-                            статьи, новости индустрии и полезные материалы на
-                            свою почту</p>
+                        <p class="mb-4 text-indigo-100 text-sm">Получайте
+                            свежие статьи, новости индустрии и полезные
+                            материалы на свою почту</p>
                         <form class="space-y-3">
                             <div>
                                 <input type="email" placeholder="Ваш email"
-                                       class="w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-gray-700 bg-white bg-opacity-90 placeholder-gray-400">
+                                       class="w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-gray-700 bg-white bg-opacity-90 placeholder-gray-400 text-sm">
                             </div>
                             <button type="submit"
-                                    class="w-full bg-white text-indigo-600 font-medium py-2 px-4 rounded-lg hover:bg-indigo-50 transition-colors duration-300">
+                                    class="w-full bg-white text-indigo-600 font-medium py-2 px-4 rounded-lg hover:bg-indigo-50 transition-colors duration-300 text-sm">
                                 Подписаться
                             </button>
                         </form>
@@ -504,7 +522,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- Секция CTA -->
     <section
@@ -512,8 +529,7 @@
         <!-- Декоративные элементы -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
             <div class="absolute top-20 left-10 w-40 h-40 bg-white rounded-full"></div>
-            <div class="absolute -bottom-20 right-20 w-80 h-80 bg-white
-        rounded-full"></div>
+            <div class="absolute -bottom-20 right-20 w-80 h-80 bg-white rounded-full"></div>
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
@@ -533,6 +549,7 @@
                     </a>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 {% endblock %}
