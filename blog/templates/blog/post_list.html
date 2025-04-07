@@ -63,15 +63,14 @@
         "name": "{{ current_category }}",
         "item": "{{ request.scheme }}://
         {{ request.get_host }}{% url 'post_list' %}?category=
-        {{ current_category }}"
-      }{% endif %}{% if current_tag %},
+        {{ current_category }}"}{% endif %}{% if current_tag %},
       {
         "@type": "ListItem",
         "position": 3,
         "name": "{{ current_tag }}",
         "item": "{{ request.scheme }}://
-        {{ request.get_host }}{% url 'post_list' %}?tag={{ current_tag }}"
-      }{% endif %}
+        {{ request.get_host }}{% url 'post_list' %}?tag={{ current_tag }}
+        "}{% endif %}
         ]
       }
     }
@@ -103,9 +102,9 @@
             </div>
         </div>
     </section>
-    <section class="py-16 md:py-20">
+    <section class="pt-8 pb-4 md:pt-12 md:pb-8">
         <!-- Хлебные крошки -->
-        <div class="container mx-auto px-4 pt-24 pb-4">
+        <div class="container mx-auto px-4 pt-12 pb-4">
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
@@ -168,7 +167,7 @@
 
 
     <!-- Контент блога -->
-    <section class="py-16 md:py-20">
+    <section class="pt-8 pb-4 md:pt-12 md:pb-8">
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row">
                 <!-- Основной контент -->
@@ -200,8 +199,6 @@
                                 <span class="text-gray-600 font-medium">Активные фильтры:</span>
                                 {% if current_category %}
                                     <a href="
-
-
                                             {% url 'post_list' %}{% if query %}?q={{ query }}{% endif %}"
                                        class="inline-flex items-center bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm hover:bg-indigo-200 transition-colors duration-300">
                                         Категория: {{ current_category }}
@@ -219,8 +216,6 @@
 
                                 {% if current_tag %}
                                     <a href="
-
-
                                             {% url 'post_list' %}{% if query %}?q={{ query }}{% endif %}"
                                        class="inline-flex items-center bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm hover:bg-indigo-200 transition-colors duration-300">
                                         Тег: {{ current_tag }}
@@ -238,8 +233,6 @@
 
                                 {% if query %}
                                     <a href="
-
-
                                             {% url 'post_list' %}{% if current_category %}?category={{ current_category }}{% endif %}"
                                        class="inline-flex items-center bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm hover:bg-indigo-200 transition-colors duration-300">
                                         Поиск: {{ query }}
@@ -297,7 +290,15 @@
                                         <div class="flex items-center text-gray-500 text-sm mb-3">
                                             <span>{{ post.created_at|date:"d.m.Y" }}</span>
                                             <span class="mx-2">•</span>
-                                            <span>{{ post.content|striptags|truncatewords:100|wordcount|add:100 }} мин. чтения</span>
+                                            <span>
+                                                {% with word_count=post.content|striptags|wordcount %}
+                                                    {% widthratio word_count 200 1 as reading_time_raw %}
+                                                    {% with reading_time=reading_time_raw|default:"1" %}
+                                                        {{ reading_time }} мин.
+                                                        чтения
+                                                    {% endwith %}
+                                                {% endwith %}
+                                            </span>
                                         </div>
                                         <h3 class="text-xl font-bold mb-3 line-clamp-2">
                                             <a href="{{ post.get_absolute_url }}"
@@ -341,6 +342,7 @@
                                         <a href="?page=
 
 
+
                                                 {{ page_obj.previous_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
                                            class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-indigo-600 hover:bg-indigo-50 transition-colors duration-300">
                                             <svg class="w-5 h-5 mr-2"
@@ -363,6 +365,7 @@
 
                                     {% if page_obj.has_next %}
                                         <a href="?page=
+
 
 
                                                 {{ page_obj.next_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}{% if query %}&q={{ query }}{% endif %}"
