@@ -109,6 +109,42 @@ class PostDetailView(DetailView):
 
         return self.get(request, *args, **kwargs)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = self.get_object()
+
+        # Получаем связанные посты - не более 3 последних постов автора, исключая текущий
+        context['author_posts'] = post.author.blog_posts.filter(
+            is_published=True
+        ).exclude(id=post.id).order_by('-created_at')[:3]
+
+        # Получаем связанные посты по категории - не более 3, исключая текущий
+        context['related_posts'] = Post.objects.filter(
+            category=post.category,
+            is_published=True
+        ).exclude(id=post.id).order_by('-created_at')[:3]
+
+        # Получаем связанные посты по тегам - не более 3, исключая текущий и уже включенные посты
+        if post.tags.exists():
+            excluded_ids = [post.id] + [rp.id for rp in
+                                        context['related_posts']]
+            tag_related_posts = Post.objects.filter(
+                tags__in=post.tags.all(),
+                is_published=True
+            ).exclude(
+                id__in=excluded_ids
+            ).distinct().order_by('-created_at')[:3]
+
+            context['tag_related_posts'] = tag_related_posts
+
+        # Форма комментария
+        context['comment_form'] = CommentForm()
+
+        # Комментарии
+        context['comments'] = post.comments.filter(is_approved=True)
+
+        return context
+
 
 # Дополнительное представление для отображения избранных постов на главной
 class FeaturedPostListView(ListView):

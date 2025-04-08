@@ -1,6 +1,9 @@
 # core/models.py
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 
 class Category(models.Model):
@@ -59,3 +62,64 @@ class ContactRequest(models.Model):
 
     def __str__(self):
         return f"Заявка от {self.name} ({self.created_at.strftime('%d.%m.%Y')})"
+
+
+class Profile(models.Model):
+    """Расширенный профиль пользователя с дополнительной информацией"""
+    user = models.OneToOneField(User, on_delete=models.CASCADE,
+                                related_name='profile')
+    photo = models.ImageField(upload_to='profiles/', blank=True, null=True,
+                              verbose_name="Фото")
+    bio = models.TextField(blank=True, null=True, verbose_name="Биография")
+    position = models.CharField(max_length=100, blank=True, null=True,
+                                verbose_name="Должность")
+    company = models.CharField(max_length=100, blank=True, null=True,
+                               verbose_name="Компания")
+
+    # Социальные сети и контакты
+    linkedin_url = models.URLField(max_length=200, blank=True, null=True,
+                                   verbose_name="LinkedIn")
+    twitter_url = models.URLField(max_length=200, blank=True, null=True,
+                                  verbose_name="Twitter")
+    github_url = models.URLField(max_length=200, blank=True, null=True,
+                                 verbose_name="GitHub")
+    website_url = models.URLField(max_length=200, blank=True, null=True,
+                                  verbose_name="Веб-сайт")
+
+    # Дополнительные поля для экспертизы
+    expertise = models.ManyToManyField('Expertise', blank=True,
+                                       verbose_name="Области экспертизы")
+    years_experience = models.PositiveIntegerField(default=0,
+                                                   verbose_name="Лет опыта")
+
+    class Meta:
+        verbose_name = "Профиль"
+        verbose_name_plural = "Профили"
+
+    def __str__(self):
+        return f"Профиль {self.user.get_full_name() or self.user.username}"
+
+
+class Expertise(models.Model):
+    """Модель для хранения областей экспертизы авторов"""
+    name = models.CharField(max_length=100, verbose_name="Название")
+    slug = models.SlugField(unique=True, verbose_name="URL-идентификатор")
+
+    class Meta:
+        verbose_name = "Область экспертизы"
+        verbose_name_plural = "Области экспертизы"
+
+    def __str__(self):
+        return self.name
+
+
+# Автоматическое создание профиля при создании пользователя
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()

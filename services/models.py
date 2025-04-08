@@ -1,7 +1,7 @@
 # services/models.py
 from django.db import models
 from django.utils.text import slugify
-from ckeditor.fields import RichTextField
+from tinymce.models import HTMLField
 
 
 class Service(models.Model):
@@ -10,7 +10,7 @@ class Service(models.Model):
     slug = models.SlugField('URL-идентификатор', max_length=100, unique=True)
     title = models.CharField('Заголовок страницы', max_length=200)
     description = models.TextField('Краткое описание', max_length=500)
-    full_description = RichTextField('Полное описание')
+    full_description = HTMLField('Полное описание')
     # Добавляем поле для хранения SVG-иконки
     icon_svg = models.TextField('SVG-иконка', blank=True, help_text="Вставьте SVG-код иконки")
     icon = models.CharField('Иконка (класс или SVG)', max_length=500, blank=True)
@@ -95,7 +95,7 @@ class FAQ(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE,
                                 related_name='faqs', null=True, blank=True)
     question = models.CharField('Вопрос', max_length=500)
-    answer = RichTextField('Ответ')
+    answer = HTMLField('Ответ')
     is_common = models.BooleanField('Общий вопрос', default=False,
                                     help_text='Отметьте, если вопрос относится ко всем услугам')
     order = models.PositiveIntegerField('Порядок отображения', default=0)

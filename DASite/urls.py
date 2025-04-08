@@ -70,8 +70,8 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
 
-    # CKEditor URL
-    path('ckeditor/', include('ckeditor_uploader.urls')),
+    # Tynymce
+    path('tinymce/', include('tinymce.urls')),
 
     # Blog URLs
     path('blog/', PostListView.as_view(), name='post_list'),

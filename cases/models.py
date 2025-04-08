@@ -2,7 +2,8 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
-from ckeditor_uploader.fields import RichTextUploadingField
+
+from tinymce.models import HTMLField
 
 from core.models import Category
 from services.models import Service
@@ -13,7 +14,7 @@ class Case(models.Model):
     slug = models.SlugField(unique=True, verbose_name="URL")
     short_description = models.TextField(verbose_name="Краткое описание")
     client = models.CharField(max_length=100, verbose_name="Клиент")
-    content = RichTextUploadingField(verbose_name="Содержание")
+    content = HTMLField(verbose_name="Содержание")
     result = models.TextField(verbose_name="Результат")
     featured_image = models.ImageField(upload_to='cases/',
                                        verbose_name="Главное изображение")

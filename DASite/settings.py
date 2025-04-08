@@ -28,8 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'webpack_boilerplate',
-    'ckeditor',
-    'ckeditor_uploader',
+    'tinymce',
     'django_recaptcha',
     'crispy_forms',
     'crispy_tailwind',
@@ -145,15 +144,45 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
 
-# CKEditor
-CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Full',
-        'height': 300,
-        'width': '100%',
-    },
+# TINYMCE
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 360,
+    'width': '100%',
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'selector': 'textarea',
+    'theme': 'silver',
+    'plugins': '''
+        textcolor save link image media preview codesample contextmenu
+        table code lists fullscreen insertdatetime nonbreaking
+        directionality searchreplace wordcount visualblocks
+        visualchars code fullscreen autolink lists charmap print hr
+        anchor pagebreak
+    ''',
+    'toolbar1': '''
+        fullscreen preview bold italic underline | fontselect,
+        fontsizeselect | forecolor backcolor | alignleft alignright |
+        aligncenter alignjustify | indent outdent | bullist numlist table |
+        | link image media | codesample |
+    ''',
+    'toolbar2': '''
+        visualblocks visualchars |
+        charmap hr pagebreak nonbreaking anchor | code |
+    ''',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'statusbar': True,
+    'branding': False,
+    'content_css': [
+        '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+        '//www.tinymce.com/css/codepen.min.css'
+    ],
+    'valid_elements': '*[*]',  # Можно ограничить разрешенные HTML-теги для повышения безопасности
 }
+TINYMCE_COMPRESSOR = True  # Сжатие JS-кода
+TINYMCE_SPELLCHECKER = True  # Проверка орфографии
+# Если нужна функциональность загрузки файлов (аналог ckeditor_uploader)
+TINYMCE_FILEBROWSER = True  # Интеграция с django-filebrowser если нужна
 
 # reCAPTCHA
 RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY', '')

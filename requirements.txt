@@ -1,7 +1,7 @@
 Django==5.1.5
 python-webpack-boilerplate==1.0.4
 pillow==10.3.0  # Для работы с изображениями
-django-ckeditor==6.7.2  # Редактор контента для админки
+django-tinymce==4.1.0  # Редактор контента для админки
 django-recaptcha==4.0.0  # Для защиты форм от спама
 django-crispy-forms==2.1  # Для стилизации форм
 crispy-tailwind==1.0.0  # Для интеграции с Tailwind CSS
