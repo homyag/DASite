@@ -351,6 +351,97 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-04-12T16:04:49.307Z",
+    "user": 4,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "seo",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"Meta Description\"]}}, {\"changed\": {\"name\": \"\\u041f\\u0440\\u0435\\u0438\\u043c\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043e \\u0443\\u0441\\u043b\\u0443\\u0433\\u0438\", \"object\": \"\\u041f\\u0440\\u043e\\u0432\\u0435\\u0440\\u0435\\u043d\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0440\\u0430\\u0442\\u0435\\u0433\\u0438\\u0438 (seo)\", \"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}, {\"changed\": {\"name\": \"\\u041f\\u0440\\u0435\\u0438\\u043c\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043e \\u0443\\u0441\\u043b\\u0443\\u0433\\u0438\", \"object\": \"\\u0418\\u043d\\u0434\\u0438\\u0432\\u0438\\u0434\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u043f\\u043e\\u0434\\u0445\\u043e\\u0434 (seo)\", \"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}, {\"changed\": {\"name\": \"\\u041f\\u0440\\u0435\\u0438\\u043c\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043e \\u0443\\u0441\\u043b\\u0443\\u0433\\u0438\", \"object\": \"\\u0411\\u044b\\u0441\\u0442\\u0440\\u044b\\u0435 \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u044b (seo)\", \"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}, {\"changed\": {\"name\": \"\\u041f\\u0440\\u0435\\u0438\\u043c\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043e \\u0443\\u0441\\u043b\\u0443\\u0433\\u0438\", \"object\": \"\\u041f\\u0440\\u043e\\u0437\\u0440\\u0430\\u0447\\u043d\\u0430\\u044f \\u043e\\u0442\\u0447\\u0435\\u0442\\u043d\\u043e\\u0441\\u0442\\u044c (seo)\", \"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}, {\"added\": {\"name\": \"FAQ\", \"object\": \"\\u0421\\u043a\\u043e\\u043b\\u044c\\u043a\\u043e \\u0432\\u0440\\u0435\\u043c\\u0435\\u043d\\u0438 \\u0437\\u0430\\u043d\\u0438\\u043c\\u0430\\u0435\\u0442 \\u043f\\u043e\\u043b\\u0443\\u0447\\u0435\\u043d\\u0438\\u0435 \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u043e\\u0432 SEO?\"}}, {\"added\": {\"name\": \"FAQ\", \"object\": \"\\u041c\\u043e\\u0436\\u043d\\u043e \\u043b\\u0438 \\u0433\\u0430\\u0440\\u0430\\u043d\\u0442\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u044b SEO \\u043f\\u0440\\u043e\\u0434\\u0432\\u0438\\u0436\\u0435\\u043d\\u0438\\u044f?\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-04-12T16:09:04.637Z",
+    "user": 4,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "seo",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"FAQ\", \"object\": \"\\u0414\\u043b\\u044f \\u043a\\u0430\\u043a\\u0438\\u0445 \\u0441\\u0430\\u0439\\u0442\\u043e\\u0432 \\u043f\\u043e\\u0434\\u0445\\u043e\\u0434\\u0438\\u0442 SEO \\u043f\\u0440\\u043e\\u0434\\u0432\\u0438\\u0436\\u0435\\u043d\\u0438\\u0435?\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-04-12T16:09:54.425Z",
+    "user": 4,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "seo",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"FAQ\", \"object\": \"\\u0427\\u0435\\u043c SEO \\u043e\\u0442\\u043b\\u0438\\u0447\\u0430\\u0435\\u0442\\u0441\\u044f \\u043e\\u0442 \\u043a\\u043e\\u043d\\u0442\\u0435\\u043a\\u0441\\u0442\\u043d\\u043e\\u0439 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b?\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-04-12T16:10:36.941Z",
+    "user": 4,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "seo",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"FAQ\", \"object\": \"\\u041a\\u0430\\u043a\\u0438\\u0435 \\u043e\\u0442\\u0447\\u0435\\u0442\\u044b \\u043e SEO \\u043f\\u0440\\u043e\\u0434\\u0432\\u0438\\u0436\\u0435\\u043d\\u0438\\u0438 \\u0432\\u044b \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u044f\\u0435\\u0442\\u0435?\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-04-12T16:24:21.873Z",
+    "user": 4,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "seo",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}, {\"added\": {\"name\": \"\\u041e\\u0441\\u043e\\u0431\\u0435\\u043d\\u043d\\u043e\\u0441\\u0442\\u044c \\u0443\\u0441\\u043b\\u0443\\u0433\\u0438\", \"object\": \"\\u043a\\u0430\\u043a\\u0430\\u044f \\u0442\\u043e \\u0445\\u0443\\u0439\\u043d\\u044f (seo)\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-04-12T16:25:01.331Z",
+    "user": 4,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "seo",
+    "action_flag": 2,
+    "change_message": "[{\"deleted\": {\"name\": \"\\u041e\\u0441\\u043e\\u0431\\u0435\\u043d\\u043d\\u043e\\u0441\\u0442\\u044c \\u0443\\u0441\\u043b\\u0443\\u0433\\u0438\", \"object\": \"\\u043a\\u0430\\u043a\\u0430\\u044f \\u0442\\u043e \\u0445\\u0443\\u0439\\u043d\\u044f (seo)\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-04-12T16:29:28.990Z",
+    "user": 4,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "seo",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"\\u042d\\u0442\\u0430\\u043f \\u043f\\u0440\\u043e\\u0446\\u0435\\u0441\\u0441\\u0430\", \"object\": \"\\u0410\\u0443\\u0434\\u0438\\u0442 \\u0438 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437 (seo)\"}}, {\"added\": {\"name\": \"\\u042d\\u0442\\u0430\\u043f \\u043f\\u0440\\u043e\\u0446\\u0435\\u0441\\u0441\\u0430\", \"object\": \"\\u0420\\u0430\\u0437\\u0440\\u0430\\u0431\\u043e\\u0442\\u043a\\u0430 \\u0441\\u0442\\u0440\\u0430\\u0442\\u0435\\u0433\\u0438\\u0438 (seo)\"}}, {\"added\": {\"name\": \"\\u042d\\u0442\\u0430\\u043f \\u043f\\u0440\\u043e\\u0446\\u0435\\u0441\\u0441\\u0430\", \"object\": \"\\u0422\\u0435\\u0445\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0430\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u044f (seo)\"}}, {\"added\": {\"name\": \"\\u042d\\u0442\\u0430\\u043f \\u043f\\u0440\\u043e\\u0446\\u0435\\u0441\\u0441\\u0430\", \"object\": \"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\\u043d\\u0430\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u044f (seo)\"}}, {\"added\": {\"name\": \"\\u042d\\u0442\\u0430\\u043f \\u043f\\u0440\\u043e\\u0446\\u0435\\u0441\\u0441\\u0430\", \"object\": \"\\u0412\\u043d\\u0435\\u0448\\u043d\\u044f\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u044f (seo)\"}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1143,6 +1234,258 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 89,
+  "fields": {
+    "name": "Can add Кейс",
+    "content_type": 23,
+    "codename": "add_servicecase"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 90,
+  "fields": {
+    "name": "Can change Кейс",
+    "content_type": 23,
+    "codename": "change_servicecase"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 91,
+  "fields": {
+    "name": "Can delete Кейс",
+    "content_type": 23,
+    "codename": "delete_servicecase"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 92,
+  "fields": {
+    "name": "Can view Кейс",
+    "content_type": 23,
+    "codename": "view_servicecase"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 93,
+  "fields": {
+    "name": "Can add Детальная услуга",
+    "content_type": 24,
+    "codename": "add_servicedetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 94,
+  "fields": {
+    "name": "Can change Детальная услуга",
+    "content_type": 24,
+    "codename": "change_servicedetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 95,
+  "fields": {
+    "name": "Can delete Детальная услуга",
+    "content_type": 24,
+    "codename": "delete_servicedetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 96,
+  "fields": {
+    "name": "Can view Детальная услуга",
+    "content_type": 24,
+    "codename": "view_servicedetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 97,
+  "fields": {
+    "name": "Can add Пункт детальной услуги",
+    "content_type": 25,
+    "codename": "add_servicedetailitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 98,
+  "fields": {
+    "name": "Can change Пункт детальной услуги",
+    "content_type": 25,
+    "codename": "change_servicedetailitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 99,
+  "fields": {
+    "name": "Can delete Пункт детальной услуги",
+    "content_type": 25,
+    "codename": "delete_servicedetailitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 100,
+  "fields": {
+    "name": "Can view Пункт детальной услуги",
+    "content_type": 25,
+    "codename": "view_servicedetailitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 101,
+  "fields": {
+    "name": "Can add Блок объяснения",
+    "content_type": 26,
+    "codename": "add_serviceexplanation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 102,
+  "fields": {
+    "name": "Can change Блок объяснения",
+    "content_type": 26,
+    "codename": "change_serviceexplanation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 103,
+  "fields": {
+    "name": "Can delete Блок объяснения",
+    "content_type": 26,
+    "codename": "delete_serviceexplanation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 104,
+  "fields": {
+    "name": "Can view Блок объяснения",
+    "content_type": 26,
+    "codename": "view_serviceexplanation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 105,
+  "fields": {
+    "name": "Can add Партнер",
+    "content_type": 27,
+    "codename": "add_servicepartner"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 106,
+  "fields": {
+    "name": "Can change Партнер",
+    "content_type": 27,
+    "codename": "change_servicepartner"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 107,
+  "fields": {
+    "name": "Can delete Партнер",
+    "content_type": 27,
+    "codename": "delete_servicepartner"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 108,
+  "fields": {
+    "name": "Can view Партнер",
+    "content_type": 27,
+    "codename": "view_servicepartner"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 109,
+  "fields": {
+    "name": "Can add Тариф",
+    "content_type": 28,
+    "codename": "add_servicepricing"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 110,
+  "fields": {
+    "name": "Can change Тариф",
+    "content_type": 28,
+    "codename": "change_servicepricing"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 111,
+  "fields": {
+    "name": "Can delete Тариф",
+    "content_type": 28,
+    "codename": "delete_servicepricing"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 112,
+  "fields": {
+    "name": "Can view Тариф",
+    "content_type": 28,
+    "codename": "view_servicepricing"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 113,
+  "fields": {
+    "name": "Can add Функция тарифа",
+    "content_type": 29,
+    "codename": "add_servicepricingfeature"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 114,
+  "fields": {
+    "name": "Can change Функция тарифа",
+    "content_type": 29,
+    "codename": "change_servicepricingfeature"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 115,
+  "fields": {
+    "name": "Can delete Функция тарифа",
+    "content_type": 29,
+    "codename": "delete_servicepricingfeature"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 116,
+  "fields": {
+    "name": "Can view Функция тарифа",
+    "content_type": 29,
+    "codename": "view_servicepricingfeature"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -1391,6 +1734,62 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 23,
+  "fields": {
+    "app_label": "services",
+    "model": "servicecase"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 24,
+  "fields": {
+    "app_label": "services",
+    "model": "servicedetail"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 25,
+  "fields": {
+    "app_label": "services",
+    "model": "servicedetailitem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 26,
+  "fields": {
+    "app_label": "services",
+    "model": "serviceexplanation"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 27,
+  "fields": {
+    "app_label": "services",
+    "model": "servicepartner"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 28,
+  "fields": {
+    "app_label": "services",
+    "model": "servicepricing"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 29,
+  "fields": {
+    "app_label": "services",
+    "model": "servicepricingfeature"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "zk4h87h07a26z8jvdvdxju6j5d3q4xdl",
   "fields": {
@@ -1623,18 +2022,41 @@
     "name": "seo",
     "slug": "seo",
     "title": "SEO-продвижение",
-    "description": "Оптимизация сайта для поисковых систем, что позволяет привлекать целевую аудиторию и увеличивать органический трафик.",
+    "description": "<p>Оптимизация сайта для поисковых систем, что позволяет привлекать целевую аудиторию и увеличивать органический трафик</p>",
     "full_description": "<p>Комплексное продвижение вашего сайта в поисковых системах для привлечения целевого трафика и увеличения конверсии.</p>",
     "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122\"></path></svg>",
     "icon": "",
     "image": "",
     "is_active": true,
     "is_featured": true,
-    "meta_title": "SEO-продвижение - Услуги продвижения сайтов",
-    "meta_description": "Профессиональные услуги SEO-продвижения для вашего бизнеса. Увеличение органического трафика и конверсии.",
     "order": 1,
+    "meta_title": "SEO-продвижение - Услуги продвижения сайтов",
+    "meta_description": "<p>Профессиональные услуги SEO-продвижения для вашего бизнеса. Увеличение органического трафика и конверсии.</p>",
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2025-04-12T16:29:28.985Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -1651,11 +2073,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 2,
     "meta_title": "Email-маркетинг - Эффективные стратегии рассылок",
     "meta_description": "Разработка и внедрение эффективных стратегий email-маркетинга для роста продаж и удержания клиентов.",
-    "order": 2,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -1672,11 +2117,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 3,
     "meta_title": "Контент-маркетинг - Создание ценного контента",
     "meta_description": "Профессиональные услуги по созданию и продвижению контента, который привлекает клиентов и повышает доверие к бренду.",
-    "order": 3,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -1693,11 +2161,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 4,
     "meta_title": "SMM-продвижение - Эффективное продвижение в социальных сетях",
     "meta_description": "Профессиональное продвижение вашего бренда в социальных сетях для роста узнаваемости и увеличения продаж.",
-    "order": 4,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -1714,11 +2205,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 5,
     "meta_title": "Репутационный маркетинг - Управление репутацией бренда",
     "meta_description": "Профессиональное управление онлайн-репутацией для создания положительного имиджа вашего бренда и повышения доверия клиентов.",
-    "order": 5,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -1735,11 +2249,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 6,
     "meta_title": "PPC-реклама - Эффективная контекстная реклама",
     "meta_description": "Настройка и управление рекламными кампаниями с оплатой за клик для быстрого привлечения целевых клиентов.",
-    "order": 6,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -1910,7 +2447,7 @@
   "fields": {
     "service": 1,
     "title": "Проверенные стратегии",
-    "description": "Наши подходы основаны на данных и опыте, доказавшие свою эффективность во многих проектах. Мы используем только те методы, которые гарантированно работают и приносят результаты.",
+    "description": "<p>Наши подходы основаны на данных и опыте, доказавшие свою эффективность во многих проектах. Мы используем только те методы, которые гарантированно работают и приносят результаты.</p>",
     "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z\"></path></svg>",
     "order": 1
   }
@@ -1921,7 +2458,7 @@
   "fields": {
     "service": 1,
     "title": "Индивидуальный подход",
-    "description": "Мы создаем уникальные решения, адаптированные под специфику вашего бизнеса и целевой аудитории. Никаких шаблонных стратегий - только индивидуальные планы.",
+    "description": "<p>Мы создаем уникальные решения, адаптированные под специфику вашего бизнеса и целевой аудитории. Никаких шаблонных стратегий - только индивидуальные планы.</p>",
     "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4\"></path></svg>",
     "order": 2
   }
@@ -1932,7 +2469,7 @@
   "fields": {
     "service": 1,
     "title": "Быстрые результаты",
-    "description": "Наши стратегии нацелены на достижение быстрых и устойчивых результатов для вашего бизнеса. Мы начинаем с тех направлений, которые дадут максимальный эффект в короткие сроки.",
+    "description": "<p>Наши стратегии нацелены на достижение быстрых и устойчивых результатов для вашего бизнеса. Мы начинаем с тех направлений, которые дадут максимальный эффект в короткие сроки.</p>",
     "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path></svg>",
     "order": 3
   }
@@ -1943,9 +2480,119 @@
   "fields": {
     "service": 1,
     "title": "Прозрачная отчетность",
-    "description": "Регулярные отчеты о проделанной работе и достигнутых результатах для полной прозрачности. Вы всегда будете знать, на каком этапе находится ваш проект и какие результаты он приносит.",
+    "description": "<p>Регулярные отчеты о проделанной работе и достигнутых результатах для полной прозрачности. Вы всегда будете знать, на каком этапе находится ваш проект и какие результаты он приносит.</p>",
     "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\"></path></svg>",
     "order": 4
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "Аудит и анализ",
+    "description": "<p><span>Проводим комплексный аудит сайта, анализируем конкурентов и текущее положение в поисковой выдаче.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Разработка стратегии",
+    "description": "<p><span>Составляем детальный план продвижения с учетом специфики вашего бизнеса и целевой аудитории.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Техническая оптимизация",
+    "description": "<p><span>Исправляем технические ошибки на сайте, оптимизируем скорость загрузки и внутреннюю структуру.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 4,
+  "fields": {
+    "service": 1,
+    "title": "Контентная оптимизация",
+    "description": "<p><span>Создаем и оптимизируем контент, который нравится и пользователям, и поисковым системам.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 5,
+  "fields": {
+    "service": 1,
+    "title": "Внешняя оптимизация",
+    "description": "<p><span>Наращиваем качественную ссылочную массу, работаем с отзывами и упоминаниями в сети.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "question": "Сколько времени занимает получение результатов SEO?",
+    "answer": "<p><span>SEO &mdash; это долгосрочная стратегия. Первые результаты обычно становятся заметны через 2-3 месяца работы, но значительные изменения в позициях и трафике чаще всего наблюдаются через 4-6 месяцев. На сроки влияют конкуренция в вашей нише, изначальное состояние сайта и агрессивность выбранной стратегии.</span></p>",
+    "is_common": false,
+    "order": 1
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "question": "Можно ли гарантировать результаты SEO продвижения?",
+    "answer": "<p><span>Невозможно гарантировать конкретные позиции по запросам, так как алгоритмы поисковых систем постоянно меняются. Однако мы гарантируем прозрачность работы, соблюдение сроков и использование только белых методов оптимизации. Если в течение первых трех месяцев вы не увидите положительной динамики, мы бесплатно проведем дополнительный аудит и скорректируем стратегию.</span></p>",
+    "is_common": false,
+    "order": 0
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "question": "Для каких сайтов подходит SEO продвижение?",
+    "answer": "<p><span>SEO-продвижение подходит практически для любого сайта, но особенно эффективно для бизнесов, ориентированных на долгосрочную перспективу. Это могут быть интернет-магазины, корпоративные сайты, сайты услуг, информационные порталы. Главное условие &mdash; наличие качественного контента и технически исправного сайта.</span></p>",
+    "is_common": false,
+    "order": 0
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 4,
+  "fields": {
+    "service": 1,
+    "question": "Чем SEO отличается от контекстной рекламы?",
+    "answer": "<p><span>Главное отличие &mdash; в подходе и долгосрочности результатов. Контекстная реклама дает мгновенный эффект, но требует постоянных вложений. При остановке рекламы трафик прекращается. SEO работает медленнее, но дает долгосрочный результат. После прекращения активных работ позиции могут сохраняться месяцами. Также пользователи больше доверяют органической выдаче, чем рекламе.</span></p>",
+    "is_common": false,
+    "order": 0
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 5,
+  "fields": {
+    "service": 1,
+    "question": "Какие отчеты о SEO продвижении вы предоставляете?",
+    "answer": "<p><span>Мы предоставляем регулярные отчеты, включающие данные о позициях сайта по ключевым запросам, динамике органического трафика, поведенческих факторах, конверсии и выполненных работах. Отчеты формируются в наглядной форме с графиками и пояснениями, чтобы вы могли легко оценить эффективность продвижения.</span></p>",
+    "is_common": false,
+    "order": 0
   }
 },
 {

@@ -1,0 +1,541 @@
+{% extends "base.html" %}
+{% load webpack_loader static %}
+{% block schema %}
+    <!-- Schema.org разметка для FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {% for faq in faqs %}
+        {
+          "@type": "Question",
+          "name": "{{ faq.question }}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{ faq.answer|striptags }}"
+          }
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+    </script>
+{% endblock %}
+{% block content %}
+<!-- Герой-секция услуги -->
+<section class="pt-32 pb-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    {% if service.hero_title %}{{ service.hero_title }}{% else %}{{ service.title }}{% endif %}
+                </h1>
+                <p class="text-xl mb-8 text-indigo-100">
+                    {% if service.hero_description %}{{ service.hero_description }}{% else %}{{ service.description }}{% endif %}
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#form"
+                       class="px-8 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors duration-300 text-center">Заказать
+                        услугу</a>
+                    <a href="#benefits"
+                       class="px-8 py-3 border border-white text-white font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors duration-300 text-center">Узнать
+                        больше</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                {% if service.hero_image %}
+                    <img src="{{ service.hero_image.url }}" alt="{{ service.title }}" class="rounded-lg shadow-xl">
+                {% else %}
+                    <img src="/api/placeholder/600/400" alt="{{ service.title }}" class="rounded-lg shadow-xl">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Что такое SEO -->
+{% if explanations %}
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">
+                {% if service.explanation_title %}{{ service.explanation_title }}{% else %}Что такое {{ service.title }}?{% endif %}
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ service.explanation_subtitle|default:"" }}
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for explanation in explanations %}
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        {{ explanation.icon_svg|safe }}
+                    </div>
+                    <h3 class="text-xl font-bold">{{ explanation.title }}</h3>
+                </div>
+                <p class="text-gray-600">{{ explanation.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Как мы работаем -->
+{% if processes %}
+<section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">
+                {% if service.process_title %}{{ service.process_title }}{% else %}Как мы работаем{% endif %}
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ service.process_subtitle|default:"" }}
+            </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+            <!-- Центральная линия -->
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-indigo-200 hidden md:block"></div>
+
+                <div class="space-y-12">
+                    {% for process in processes %}
+                    <!-- Шаг {{ forloop.counter }} -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 {% if forloop.counter|divisibleby:2 %}order-1 md:order-3{% endif %}">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-indigo-600">{{ process.title }}</h3>
+                                <p class="text-gray-600">{{ process.description|safe }}</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 {% if forloop.counter|divisibleby:2 %}order-2{% endif %} relative">
+                            <div class="bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">{{ forloop.counter }}</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-indigo-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12 {% if forloop.counter|divisibleby:2 %}order-3 md:order-1{% endif %}"></div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Наши услуги -->
+{% if details %}
+<section class="py-20 bg-gray-100" id="services">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">
+                {% if service.services_title %}{{ service.services_title }}{% else %}Наши услуги по {{ service.title }}{% endif %}
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ service.services_subtitle|default:"" }}
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for detail in details %}
+            <!-- Услуга {{ forloop.counter }} -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-indigo-100 text-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        {{ detail.icon_svg|safe }}
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">{{ detail.title }}</h3>
+                        <p class="text-gray-600 mb-4">{{ detail.description }}</p>
+                        {% if detail.items.exists %}
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            {% for item in detail.items.all %}
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                {{ item.text }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Преимущества -->
+{% if benefits %}
+<section class="py-20" id="benefits">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">
+                {% if service.benefits_title %}{{ service.benefits_title }}{% else %}Преимущества {{ service.title }}{% endif %}
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ service.benefits_subtitle|default:"" }}
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for benefit in benefits %}
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        {{ benefit.icon|safe }}
+                    </div>
+                    <h3 class="text-xl font-bold">{{ benefit.title }}</h3>
+                </div>
+                <p class="text-gray-600">{{ benefit.description|safe }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Кейсы -->
+{% if cases %}
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">
+                {% if service.cases_title %}{{ service.cases_title }}{% else %}Наши успешные кейсы{% endif %}
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ service.cases_subtitle|default:"Реальные результаты наших клиентов" }}
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {% for case in cases %}
+            <!-- Кейс {{ forloop.counter }} -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                {% if case.image %}
+                <img src="{{ case.image.url }}" alt="{{ case.title }}" class="w-full h-48 object-cover">
+                {% else %}
+                <img src="/api/placeholder/600/350" alt="{{ case.title }}" class="w-full h-48 object-cover">
+                {% endif %}
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-indigo-100 text-indigo-600 text-sm font-medium py-1 px-3 rounded-full mr-2">
+                            {{ case.category }}
+                        </div>
+                        <div class="bg-green-100 text-green-600 text-sm font-medium py-1 px-3 rounded-full">
+                            {{ case.result }}
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">{{ case.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ case.description|truncatechars:120 }}</p>
+                    {% if case.link %}
+                    <a href="{{ case.link }}"
+                       class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                        Подробнее о кейсе
+                        <svg class="w-4 h-4 ml-1" fill="none"
+                             stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="/cases/"
+               class="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300">Смотреть
+                все кейсы</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Тарифы -->
+{% if pricing_plans %}
+<section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">
+                {% if service.pricing_title %}{{ service.pricing_title }}{% else %}Тарифы на {{ service.title }}{% endif %}
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ service.pricing_subtitle|default:"Выберите оптимальный тариф для вашего бизнеса" }}
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {% for plan in pricing_plans %}
+            <!-- Тариф {{ plan.title }} -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:z-10 group">
+                <div class="p-8 text-center border-b border-gray-200 transition-all duration-300 group-hover:bg-indigo-600 group-hover:text-white">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-white">{{ plan.title }}</h3>
+                    <div class="text-indigo-600 font-bold text-4xl mb-4 group-hover:text-white">{{ plan.price }}</div>
+                    <p class="text-gray-600 group-hover:text-white">{{ plan.period }}</p>
+                    {% if plan.badge %}
+                    <div class="mt-2 inline-block bg-white text-indigo-600 text-sm font-medium py-1 px-3 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        {{ plan.badge }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-4">
+                        {% for feature in plan.features.all %}
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">{{ feature.text }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#form" class="block text-center bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Выбрать тариф</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Партнеры -->
+{% if partners %}
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">
+                {% if service.partners_title %}{{ service.partners_title }}{% else %}Наши партнеры и инструменты{% endif %}
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ service.partners_subtitle|default:"Мы используем профессиональные инструменты и сотрудничаем с ведущими платформами" }}
+            </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            {% for partner in partners %}
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                {% if partner.logo %}
+                <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="max-h-12">
+                {% else %}
+                <img src="/api/placeholder/150/80" alt="{{ partner.name }}" class="max-h-12">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- FAQ -->
+{% if faqs %}
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">
+                {% if service.faq_title %}{{ service.faq_title }}{% else %}Часто задаваемые вопросы{% endif %}
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ service.faq_subtitle|default:"Отвечаем на популярные вопросы" }}
+            </p>
+        </div>
+        <div class="max-w-3xl mx-auto" id="faq-accordion">
+            {% for faq in faqs %}
+            <!-- Вопрос {{ forloop.counter }} -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">{{ faq.question }}</span>
+                    <svg class="w-6 h-6 text-indigo-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">{{ faq.answer|safe }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- JavaScript для функциональности FAQ -->
+    <script>
+        function toggleFAQ(element) {
+            // Поиск контейнера ответа
+            const answer = element.nextElementSibling;
+            // Поиск иконки
+            const icon = element.querySelector('svg');
+
+            // Проверка текущего состояния
+            const isExpanded = element.getAttribute('aria-expanded') === 'true';
+
+            // Переключение состояния
+            if (isExpanded) {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+                element.setAttribute('aria-expanded', 'false');
+            } else {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+                element.setAttribute('aria-expanded', 'true');
+            }
+        }
+    </script>
+</section>
+{% endif %}
+
+<!-- Контактная форма -->
+<section class="py-20 bg-gray-100" id="form">
+    <div class="container mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 bg-indigo-600 p-12 text-white">
+                    <h2 class="text-3xl font-bold mb-6">
+                        {% if service.contact_title %}{{ service.contact_title }}{% else %}Закажите {{ service.title }}{% endif %}
+                    </h2>
+                    <p class="text-xl mb-8">
+                        {{ service.contact_subtitle|default:"Заполните форму, и мы свяжемся с вами для обсуждения деталей и составления индивидуального предложения." }}
+                    </p>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4">Почему стоит начать прямо сейчас:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none"
+                                     stroke="currentColor" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Конкуренты уже используют {{ service.title }}</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none"
+                                     stroke="currentColor" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>{{ service.title }} требует времени для результата</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none"
+                                     stroke="currentColor" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Первый месяц со скидкой 20%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4">Контактная информация</h3>
+                        <div class="flex items-center mb-4">
+                            <svg class="w-6 h-6 mr-3" fill="none"
+                                 stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>{{ service.contact_phone|default:"+7 (999) 999-99-99" }}</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <svg class="w-6 h-6 mr-3" fill="none"
+                                 stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>{{ service.contact_email|default:"info@example.com" }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 p-12">
+                    <form method="post" action="{% url 'contact_submit' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="service" value="{{ service.name }}">
+                        <div class="mb-6">
+                            <label for="name"
+                                   class="block text-gray-700 font-medium mb-2">Ваше
+                                имя</label>
+                            <input type="text" id="name" name="name"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                   placeholder="Введите ваше имя" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email"
+                                   class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                   placeholder="Введите ваш email" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone"
+                                   class="block text-gray-700 font-medium mb-2">Телефон</label>
+                            <input type="tel" id="phone" name="phone"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                   placeholder="Введите ваш телефон" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="website"
+                                   class="block text-gray-700 font-medium mb-2">Адрес
+                                сайта</label>
+                            <input type="url" id="website" name="website"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                   placeholder="Например: https://vashsite.ru">
+                        </div>
+                        <div class="mb-6">
+                            <label for="tariff"
+                                   class="block text-gray-700 font-medium mb-2">Интересующий
+                                тариф</label>
+                            <select id="tariff" name="tariff"
+                                    class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                                <option value="" selected disabled>Выберите
+                                    тариф
+                                </option>
+                                {% for plan in pricing_plans %}
+                                <option value="{{ plan.title }}">{{ plan.title }}</option>
+                                {% endfor %}
+                                <option value="consultation">Нужна
+                                    консультация
+                                </option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message"
+                                   class="block text-gray-700 font-medium mb-2">Сообщение</label>
+                            <textarea id="message" name="message" rows="4"
+                                      class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                      placeholder="Расскажите о вашем проекте и целях продвижения"></textarea>
+                        </div>
+                        <button type="submit"
+                                class="w-full bg-indigo-600 text-white font-medium py-3 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                            Отправить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

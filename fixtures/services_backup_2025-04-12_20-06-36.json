@@ -6,18 +6,41 @@
     "name": "seo",
     "slug": "seo",
     "title": "SEO-продвижение",
-    "description": "Оптимизация сайта для поисковых систем, что позволяет привлекать целевую аудиторию и увеличивать органический трафик.",
+    "description": "<p>Оптимизация сайта для поисковых систем, что позволяет привлекать целевую аудиторию и увеличивать органический трафик</p>",
     "full_description": "<p>Комплексное продвижение вашего сайта в поисковых системах для привлечения целевого трафика и увеличения конверсии.</p>",
     "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122\"></path></svg>",
     "icon": "",
     "image": "",
     "is_active": true,
     "is_featured": true,
-    "meta_title": "SEO-продвижение - Услуги продвижения сайтов",
-    "meta_description": "Профессиональные услуги SEO-продвижения для вашего бизнеса. Увеличение органического трафика и конверсии.",
     "order": 1,
+    "meta_title": "SEO-продвижение - Услуги продвижения сайтов",
+    "meta_description": "<p>Профессиональные услуги SEO-продвижения для вашего бизнеса. Увеличение органического трафика и конверсии.</p>",
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2025-04-12T16:29:28.985Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -34,11 +57,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 2,
     "meta_title": "Email-маркетинг - Эффективные стратегии рассылок",
     "meta_description": "Разработка и внедрение эффективных стратегий email-маркетинга для роста продаж и удержания клиентов.",
-    "order": 2,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -55,11 +101,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 3,
     "meta_title": "Контент-маркетинг - Создание ценного контента",
     "meta_description": "Профессиональные услуги по созданию и продвижению контента, который привлекает клиентов и повышает доверие к бренду.",
-    "order": 3,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -76,11 +145,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 4,
     "meta_title": "SMM-продвижение - Эффективное продвижение в социальных сетях",
     "meta_description": "Профессиональное продвижение вашего бренда в социальных сетях для роста узнаваемости и увеличения продаж.",
-    "order": 4,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -97,11 +189,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 5,
     "meta_title": "Репутационный маркетинг - Управление репутацией бренда",
     "meta_description": "Профессиональное управление онлайн-репутацией для создания положительного имиджа вашего бренда и повышения доверия клиентов.",
-    "order": 5,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -118,11 +233,34 @@
     "image": "",
     "is_active": true,
     "is_featured": true,
+    "order": 6,
     "meta_title": "PPC-реклама - Эффективная контекстная реклама",
     "meta_description": "Настройка и управление рекламными кампаниями с оплатой за клик для быстрого привлечения целевых клиентов.",
-    "order": 6,
     "created_at": "2024-01-01T12:00:00Z",
-    "updated_at": "2024-01-01T12:00:00Z"
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "",
+    "hero_description": "",
+    "hero_image": "",
+    "explanation_title": "",
+    "explanation_subtitle": "",
+    "process_title": "",
+    "process_subtitle": "",
+    "services_title": "",
+    "services_subtitle": "",
+    "benefits_title": "",
+    "benefits_subtitle": "",
+    "cases_title": "",
+    "cases_subtitle": "",
+    "pricing_title": "",
+    "pricing_subtitle": "",
+    "partners_title": "",
+    "partners_subtitle": "",
+    "faq_title": "",
+    "faq_subtitle": "",
+    "contact_title": "",
+    "contact_subtitle": "",
+    "contact_phone": "",
+    "contact_email": ""
   }
 },
 {
@@ -293,7 +431,7 @@
   "fields": {
     "service": 1,
     "title": "Проверенные стратегии",
-    "description": "Наши подходы основаны на данных и опыте, доказавшие свою эффективность во многих проектах. Мы используем только те методы, которые гарантированно работают и приносят результаты.",
+    "description": "<p>Наши подходы основаны на данных и опыте, доказавшие свою эффективность во многих проектах. Мы используем только те методы, которые гарантированно работают и приносят результаты.</p>",
     "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z\"></path></svg>",
     "order": 1
   }
@@ -304,7 +442,7 @@
   "fields": {
     "service": 1,
     "title": "Индивидуальный подход",
-    "description": "Мы создаем уникальные решения, адаптированные под специфику вашего бизнеса и целевой аудитории. Никаких шаблонных стратегий - только индивидуальные планы.",
+    "description": "<p>Мы создаем уникальные решения, адаптированные под специфику вашего бизнеса и целевой аудитории. Никаких шаблонных стратегий - только индивидуальные планы.</p>",
     "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4\"></path></svg>",
     "order": 2
   }
@@ -315,7 +453,7 @@
   "fields": {
     "service": 1,
     "title": "Быстрые результаты",
-    "description": "Наши стратегии нацелены на достижение быстрых и устойчивых результатов для вашего бизнеса. Мы начинаем с тех направлений, которые дадут максимальный эффект в короткие сроки.",
+    "description": "<p>Наши стратегии нацелены на достижение быстрых и устойчивых результатов для вашего бизнеса. Мы начинаем с тех направлений, которые дадут максимальный эффект в короткие сроки.</p>",
     "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path></svg>",
     "order": 3
   }
@@ -326,9 +464,119 @@
   "fields": {
     "service": 1,
     "title": "Прозрачная отчетность",
-    "description": "Регулярные отчеты о проделанной работе и достигнутых результатах для полной прозрачности. Вы всегда будете знать, на каком этапе находится ваш проект и какие результаты он приносит.",
+    "description": "<p>Регулярные отчеты о проделанной работе и достигнутых результатах для полной прозрачности. Вы всегда будете знать, на каком этапе находится ваш проект и какие результаты он приносит.</p>",
     "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\"></path></svg>",
     "order": 4
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "Аудит и анализ",
+    "description": "<p><span>Проводим комплексный аудит сайта, анализируем конкурентов и текущее положение в поисковой выдаче.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Разработка стратегии",
+    "description": "<p><span>Составляем детальный план продвижения с учетом специфики вашего бизнеса и целевой аудитории.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Техническая оптимизация",
+    "description": "<p><span>Исправляем технические ошибки на сайте, оптимизируем скорость загрузки и внутреннюю структуру.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 4,
+  "fields": {
+    "service": 1,
+    "title": "Контентная оптимизация",
+    "description": "<p><span>Создаем и оптимизируем контент, который нравится и пользователям, и поисковым системам.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 5,
+  "fields": {
+    "service": 1,
+    "title": "Внешняя оптимизация",
+    "description": "<p><span>Наращиваем качественную ссылочную массу, работаем с отзывами и упоминаниями в сети.</span></p>",
+    "icon": "",
+    "order": 0
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "question": "Сколько времени занимает получение результатов SEO?",
+    "answer": "<p><span>SEO &mdash; это долгосрочная стратегия. Первые результаты обычно становятся заметны через 2-3 месяца работы, но значительные изменения в позициях и трафике чаще всего наблюдаются через 4-6 месяцев. На сроки влияют конкуренция в вашей нише, изначальное состояние сайта и агрессивность выбранной стратегии.</span></p>",
+    "is_common": false,
+    "order": 1
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "question": "Можно ли гарантировать результаты SEO продвижения?",
+    "answer": "<p><span>Невозможно гарантировать конкретные позиции по запросам, так как алгоритмы поисковых систем постоянно меняются. Однако мы гарантируем прозрачность работы, соблюдение сроков и использование только белых методов оптимизации. Если в течение первых трех месяцев вы не увидите положительной динамики, мы бесплатно проведем дополнительный аудит и скорректируем стратегию.</span></p>",
+    "is_common": false,
+    "order": 0
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "question": "Для каких сайтов подходит SEO продвижение?",
+    "answer": "<p><span>SEO-продвижение подходит практически для любого сайта, но особенно эффективно для бизнесов, ориентированных на долгосрочную перспективу. Это могут быть интернет-магазины, корпоративные сайты, сайты услуг, информационные порталы. Главное условие &mdash; наличие качественного контента и технически исправного сайта.</span></p>",
+    "is_common": false,
+    "order": 0
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 4,
+  "fields": {
+    "service": 1,
+    "question": "Чем SEO отличается от контекстной рекламы?",
+    "answer": "<p><span>Главное отличие &mdash; в подходе и долгосрочности результатов. Контекстная реклама дает мгновенный эффект, но требует постоянных вложений. При остановке рекламы трафик прекращается. SEO работает медленнее, но дает долгосрочный результат. После прекращения активных работ позиции могут сохраняться месяцами. Также пользователи больше доверяют органической выдаче, чем рекламе.</span></p>",
+    "is_common": false,
+    "order": 0
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 5,
+  "fields": {
+    "service": 1,
+    "question": "Какие отчеты о SEO продвижении вы предоставляете?",
+    "answer": "<p><span>Мы предоставляем регулярные отчеты, включающие данные о позициях сайта по ключевым запросам, динамике органического трафика, поведенческих факторах, конверсии и выполненных работах. Отчеты формируются в наглядной форме с графиками и пояснениями, чтобы вы могли легко оценить эффективность продвижения.</span></p>",
+    "is_common": false,
+    "order": 0
   }
 }
 ]

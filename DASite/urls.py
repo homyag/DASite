@@ -8,7 +8,8 @@ from django.views.decorators.http import require_GET
 from django.contrib.sitemaps.views import sitemap
 
 
-from DASite.views import ServiceView, ServicesListView, HomePageView
+from DASite.views import HomePageView
+from services.views import ServicesListView, ServiceView
 from contacts.views import contact_view, contact_success_view, \
     contact_submit_view
 from blog.views import PostListView, PostDetailView
@@ -37,8 +38,6 @@ def robots_txt(request):
 
 
 urlpatterns = [
-    # path('', TemplateView.as_view(template_name="pages/home.html"),
-    #      name='home'),
     path('', HomePageView.as_view(), name='home'),
 
     path('contact/submit/', contact_submit_view, name='contact_submit'),  # Только для обработки POST
