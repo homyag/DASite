@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load webpack_loader static %}
-
+{% block title %}
+    {{ post.meta_title|default:post.title }} - Boldrise Agency
+{% endblock %}
+{% block meta_description %}{{ post.meta_description|default:post.preview_text|truncatechars:160 }}{% endblock %}
 {% block schema %}
     <!-- Schema.org разметка для статьи -->
     <script type="application/ld+json">

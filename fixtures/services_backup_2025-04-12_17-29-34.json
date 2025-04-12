@@ -1,0 +1,334 @@
+[
+{
+  "model": "services.service",
+  "pk": 1,
+  "fields": {
+    "name": "seo",
+    "slug": "seo",
+    "title": "SEO-продвижение",
+    "description": "Оптимизация сайта для поисковых систем, что позволяет привлекать целевую аудиторию и увеличивать органический трафик.",
+    "full_description": "<p>Комплексное продвижение вашего сайта в поисковых системах для привлечения целевого трафика и увеличения конверсии.</p>",
+    "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "meta_title": "SEO-продвижение - Услуги продвижения сайтов",
+    "meta_description": "Профессиональные услуги SEO-продвижения для вашего бизнеса. Увеличение органического трафика и конверсии.",
+    "order": 1,
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 2,
+  "fields": {
+    "name": "email",
+    "slug": "email",
+    "title": "Email-маркетинг",
+    "description": "Разработка и реализация стратегий email-маркетинга для построения отношений с клиентами и увеличения продаж.",
+    "full_description": "<p>Эффективные email-кампании для привлечения новых клиентов, удержания существующих и повышения лояльности к бренду.</p>",
+    "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "meta_title": "Email-маркетинг - Эффективные стратегии рассылок",
+    "meta_description": "Разработка и внедрение эффективных стратегий email-маркетинга для роста продаж и удержания клиентов.",
+    "order": 2,
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 3,
+  "fields": {
+    "name": "content",
+    "slug": "content",
+    "title": "Контент-маркетинг",
+    "description": "Создание и продвижение ценного контента для привлечения и удержания целевой аудитории и повышения доверия к бренду.",
+    "full_description": "<p>Стратегическое создание и распространение полезного контента для привлечения целевой аудитории, укрепления репутации бренда и роста продаж.</p>",
+    "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "meta_title": "Контент-маркетинг - Создание ценного контента",
+    "meta_description": "Профессиональные услуги по созданию и продвижению контента, который привлекает клиентов и повышает доверие к бренду.",
+    "order": 3,
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 4,
+  "fields": {
+    "name": "smm",
+    "slug": "smm",
+    "title": "SMM-продвижение",
+    "description": "Разработка и реализация стратегий продвижения в социальных сетях для увеличения узнаваемости бренда и привлечения клиентов.",
+    "full_description": "<p>Комплексное управление вашими аккаунтами в социальных сетях для увеличения охвата, вовлеченности и конверсии.</p>",
+    "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "meta_title": "SMM-продвижение - Эффективное продвижение в социальных сетях",
+    "meta_description": "Профессиональное продвижение вашего бренда в социальных сетях для роста узнаваемости и увеличения продаж.",
+    "order": 4,
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 5,
+  "fields": {
+    "name": "orm",
+    "slug": "orm",
+    "title": "Репутационный маркетинг",
+    "description": "Мониторинг и управление онлайн-репутацией бренда для создания положительного имиджа и повышения доверия.",
+    "full_description": "<p>Комплексное управление репутацией вашего бренда в сети: мониторинг упоминаний, работа с отзывами, нейтрализация негатива и формирование положительного имиджа.</p>",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "meta_title": "Репутационный маркетинг - Управление репутацией бренда",
+    "meta_description": "Профессиональное управление онлайн-репутацией для создания положительного имиджа вашего бренда и повышения доверия клиентов.",
+    "order": 5,
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 6,
+  "fields": {
+    "name": "ppc",
+    "slug": "ppc",
+    "title": "PPC-реклама",
+    "description": "Разработка и управление рекламными кампаниями с оплатой за клик для быстрого привлечения целевой аудитории.",
+    "full_description": "<p>Эффективная контекстная и таргетированная реклама для быстрого привлечения целевых клиентов и увеличения продаж.</p>",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z\"></path><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "meta_title": "PPC-реклама - Эффективная контекстная реклама",
+    "meta_description": "Настройка и управление рекламными кампаниями с оплатой за клик для быстрого привлечения целевых клиентов.",
+    "order": 6,
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z"
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "Техническая оптимизация",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Внутренняя оптимизация",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Внешняя оптимизация",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 4,
+  "fields": {
+    "service": 2,
+    "title": "Welcome-цепочки писем",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 5,
+  "fields": {
+    "service": 2,
+    "title": "Автоматизация рассылок",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 6,
+  "fields": {
+    "service": 2,
+    "title": "Сегментация базы",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 7,
+  "fields": {
+    "service": 3,
+    "title": "Контент-стратегия",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 8,
+  "fields": {
+    "service": 3,
+    "title": "Создание контента",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 9,
+  "fields": {
+    "service": 3,
+    "title": "Продвижение контента",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 10,
+  "fields": {
+    "service": 4,
+    "title": "Контент-план",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 11,
+  "fields": {
+    "service": 4,
+    "title": "Таргетированная реклама",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 12,
+  "fields": {
+    "service": 4,
+    "title": "Коммьюнити-менеджмент",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 13,
+  "fields": {
+    "service": 5,
+    "title": "SERM-стратегия",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 14,
+  "fields": {
+    "service": 5,
+    "title": "Работа с отзывами",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 15,
+  "fields": {
+    "service": 5,
+    "title": "Мониторинг упоминаний",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 16,
+  "fields": {
+    "service": 6,
+    "title": "Контекстная реклама",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 17,
+  "fields": {
+    "service": 6,
+    "title": "Баннерная реклама",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 18,
+  "fields": {
+    "service": 6,
+    "title": "Ремаркетинг",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "Проверенные стратегии",
+    "description": "Наши подходы основаны на данных и опыте, доказавшие свою эффективность во многих проектах. Мы используем только те методы, которые гарантированно работают и приносят результаты.",
+    "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z\"></path></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Индивидуальный подход",
+    "description": "Мы создаем уникальные решения, адаптированные под специфику вашего бизнеса и целевой аудитории. Никаких шаблонных стратегий - только индивидуальные планы.",
+    "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4\"></path></svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Быстрые результаты",
+    "description": "Наши стратегии нацелены на достижение быстрых и устойчивых результатов для вашего бизнеса. Мы начинаем с тех направлений, которые дадут максимальный эффект в короткие сроки.",
+    "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path></svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 4,
+  "fields": {
+    "service": 1,
+    "title": "Прозрачная отчетность",
+    "description": "Регулярные отчеты о проделанной работе и достигнутых результатах для полной прозрачности. Вы всегда будете знать, на каком этапе находится ваш проект и какие результаты он приносит.",
+    "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\"></path></svg>",
+    "order": 4
+  }
+}
+]
