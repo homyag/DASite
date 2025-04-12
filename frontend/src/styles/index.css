@@ -1,9 +1,9 @@
 @import "tailwindcss";
-@import "testimonials-carousel.css";
-@import "dropdown.css";
+@import "./testimonials-carousel.css";
+@import "./dropdown.css";
 
 .jumbotron {
-  /*should be relative path of the entry css file*/
+  /* should be relative path of the entry css file */
   background-image: url("../../vendors/images/sample.jpg");
   background-size: cover;
 }
@@ -23,6 +23,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(calc(-100% - 2rem)); /* Учитываем gap между группами */
   }

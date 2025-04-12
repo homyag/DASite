@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import "./testimonials-carousel.css";
-@import "./dropdown.css";
+@import "testimonials-carousel.css";
+@import "dropdown.css";
 
 .jumbotron {
   /*should be relative path of the entry css file*/

@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'DASite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'boldrise',
+        'USER': 'boldrise_admin',
+        'PASSWORD': 'jV50Sop/z)2+1}cdai*#',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -110,9 +114,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -146,7 +150,7 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 # TINYMCE
 TINYMCE_DEFAULT_CONFIG = {
-    'height': 360,
+    'height': 600,
     'width': '100%',
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
@@ -179,10 +183,10 @@ TINYMCE_DEFAULT_CONFIG = {
     ],
     'valid_elements': '*[*]',  # Можно ограничить разрешенные HTML-теги для повышения безопасности
 }
-TINYMCE_COMPRESSOR = True  # Сжатие JS-кода
+TINYMCE_COMPRESSOR = False  # Сжатие JS-кода
 TINYMCE_SPELLCHECKER = True  # Проверка орфографии
 # Если нужна функциональность загрузки файлов (аналог ckeditor_uploader)
-TINYMCE_FILEBROWSER = True  # Интеграция с django-filebrowser если нужна
+TINYMCE_FILEBROWSER = False  # Интеграция с django-filebrowser если нужна
 
 # reCAPTCHA
 RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY', '')
