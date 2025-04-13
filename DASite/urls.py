@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.http import HttpResponse
@@ -8,7 +7,7 @@ from django.views.decorators.http import require_GET
 from django.contrib.sitemaps.views import sitemap
 
 
-from DASite.views import HomePageView
+from DASite.views import HomePageView, PrivacyPolicyView, TermsOfUseView
 from services.views import ServicesListView, ServiceView
 from contacts.views import contact_view, contact_success_view, \
     contact_submit_view
@@ -79,6 +78,10 @@ urlpatterns = [
     # Cases URLs
     path('cases/', CaseListView.as_view(), name='case_list'),
     path('cases/<slug:slug>/', CaseDetailView.as_view(), name='case_detail'),
+
+    path('privacy-policy/', PrivacyPolicyView.as_view(), name='privacy_policy'),
+
+    path('terms-of-use/', TermsOfUseView.as_view(), name='terms_of_use'),
 
     path('robots.txt', robots_txt),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
