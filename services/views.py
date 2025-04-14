@@ -69,7 +69,9 @@ class ServiceView(TemplateView):
 
         # Возвращаем как специальный шаблон, так и общий шаблон
         # Django попробует использовать первый найденный шаблон
-        return [specific_template, "services/service_detail.html"]
+        # return [specific_template, "services/service_detail.html"]
+        # return [specific_template]
+        return ["services/service_detail.html"]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

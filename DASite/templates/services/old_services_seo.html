@@ -1,0 +1,1384 @@
+{% extends "base.html" %}
+{% load webpack_loader static %}
+{% block schema %}
+    <!-- Schema.org разметка для FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как быстро я увижу результаты от SEO-продвижения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO — это долгосрочная стратегия. Первые результаты обычно становятся заметны через 2-3 месяца работы, но значительные изменения в позициях и трафике чаще всего наблюдаются через 4-6 месяцев. На сроки влияют конкуренция в вашей нише, изначальное состояние сайта и агрессивность выбранной стратегии."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие гарантии вы предоставляете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы не можем гарантировать конкретные позиции по запросам, так как алгоритмы поисковых систем постоянно меняются. Однако мы гарантируем прозрачность работы, соблюдение сроков и использование только белых методов оптимизации. Если в течение первых трех месяцев вы не увидите положительной динамики, мы бесплатно проведем дополнительный аудит и скорректируем стратегию."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Для каких сайтов подходит SEO-продвижение?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO-продвижение подходит практически для любого сайта, но особенно эффективно для бизнесов, ориентированных на долгосрочную перспективу. Это могут быть интернет-магазины, корпоративные сайты, сайты услуг, информационные порталы. Главное условие — наличие качественного контента и технически исправного сайта."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем SEO отличается от контекстной рекламы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Главное отличие — в подходе и долгосрочности результатов. Контекстная реклама дает мгновенный эффект, но требует постоянных вложений. При остановке рекламы трафик прекращается. SEO работает медленнее, но дает долгосрочный результат. После прекращения активных работ позиции могут сохраняться месяцами. Также пользователи больше доверяют органической выдаче, чем рекламе."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие отчеты вы предоставляете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы предоставляем регулярные отчеты, включающие данные о позициях сайта по ключевым запросам, динамике органического трафика, поведенческих факторах, конверсии и выполненных работах. Отчеты формируются в наглядной форме с графиками и пояснениями, чтобы вы могли легко оценить эффективность продвижения."
+          }
+        }
+      ]
+    }
+    </script>
+{% endblock %}
+{% block content %}
+<!-- Герой-секция услуги -->
+<section
+        class="pt-32 pb-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    SEO-продвижение для вашего бизнеса</h1>
+                <p class="text-xl mb-8 text-indigo-100">Оптимизируем ваш сайт
+                    для поисковых систем, увеличивая органический трафик и
+                    привлекая целевую аудиторию.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#form"
+                       class="px-8 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors duration-300 text-center">Заказать
+                        услугу</a>
+                    <a href="#benefits"
+                       class="px-8 py-3 border border-white text-white font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors duration-300 text-center">Узнать
+                        больше</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="/api/placeholder/600/400" alt="SEO продвижение"
+                     class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Что такое SEO -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Что такое SEO-продвижение?</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Почему
+                SEO-продвижение является одним из самых эффективных
+                инструментов digital-маркетинга</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Доступная стоимость</h3>
+                </div>
+                <p class="text-gray-600">SEO является одним из самых
+                    экономически эффективных маркетинговых каналов, особенно в
+                    долгосрочной перспективе.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Долгосрочный эффект</h3>
+                </div>
+                <p class="text-gray-600">Результаты SEO-продвижения сохраняются
+                    надолго, обеспечивая стабильный поток клиентов даже после
+                    завершения активных работ.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Целевая аудитория</h3>
+                </div>
+                <p class="text-gray-600">SEO привлекает пользователей, которые
+                    активно ищут ваши товары или услуги, что повышает процент
+                    конверсии на сайте.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Повышение доверия</h3>
+                </div>
+                <p class="text-gray-600">Высокие позиции в поисковой выдаче
+                    повышают доверие к вашему бренду, так как пользователи
+                    больше доверяют топовым результатам.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Измеримые результаты</h3>
+                </div>
+                <p class="text-gray-600">SEO позволяет отслеживать множество
+                    показателей: позиции, трафик, конверсии, что делает
+                    эффективность работы полностью прозрачной.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Глобальный охват</h3>
+                </div>
+                <p class="text-gray-600">Качественное SEO-продвижение помогает
+                    вашему бизнесу выйти на новые рынки и привлечь клиентов из
+                    других регионов.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Как мы работаем -->
+<section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Как мы работаем</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Прозрачный процесс SEO-продвижения вашего сайта от начала до получения результатов</p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+            <!-- Центральная линия -->
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-indigo-200 hidden md:block"></div>
+
+                <div class="space-y-12">
+                    <!-- Шаг 1 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-indigo-600">Аудит и анализ</h3>
+                                <p class="text-gray-600">Проводим комплексный аудит сайта, анализируем конкурентов и текущее положение в поисковой выдаче.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 relative">
+                            <div class="bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">1</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-indigo-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+
+                    <!-- Шаг 2 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 order-1 md:order-3">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-indigo-600">Разработка стратегии</h3>
+                                <p class="text-gray-600">Составляем детальный план продвижения с учетом специфики вашего бизнеса и целевой аудитории.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 order-2 relative">
+                            <div class="bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">2</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-indigo-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12 order-3 md:order-1"></div>
+                    </div>
+
+                    <!-- Шаг 3 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-indigo-600">Техническая оптимизация</h3>
+                                <p class="text-gray-600">Исправляем технические ошибки на сайте, оптимизируем скорость загрузки и внутреннюю структуру.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 relative">
+                            <div class="bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">3</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-indigo-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+
+                    <!-- Шаг 4 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 order-1 md:order-3">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-indigo-600">Контентная оптимизация</h3>
+                                <p class="text-gray-600">Создаем и оптимизируем контент, который нравится и пользователям, и поисковым системам.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 order-2 relative">
+                            <div class="bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">4</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-indigo-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12 order-3 md:order-1"></div>
+                    </div>
+
+                    <!-- Шаг 5 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-indigo-600">Внешняя оптимизация</h3>
+                                <p class="text-gray-600">Наращиваем качественную ссылочную массу, работаем с отзывами и упоминаниями в сети.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 relative">
+                            <div class="bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">5</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-indigo-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+
+                    <!-- Шаг 6 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 order-1 md:order-3">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full">
+                                <h3 class="text-xl font-bold mb-3 text-indigo-600">Мониторинг и отчетность</h3>
+                                <p class="text-gray-600">Постоянно отслеживаем результаты работы и предоставляем подробные отчеты о достигнутых показателях.</p>
+                            </div>
+                        </div>
+                        <div class="mx-auto md:w-2/12 flex justify-center my-4 md:my-0 order-2 relative">
+                            <div class="bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10">
+                                <span class="text-lg font-bold">6</span>
+                            </div>
+                            <!-- Соединительные линии -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 h-0.5 w-full bg-indigo-200 hidden md:block"></div>
+                        </div>
+                        <div class="md:w-5/12 order-3 md:order-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Наши услуги по SEO -->
+<section class="py-20 bg-gray-100" id="services">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Наши услуги по
+                SEO-продвижению</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Комплексный
+                подход к оптимизации вашего сайта для достижения максимальных
+                результатов</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Услуга 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-indigo-100 text-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">SEO-аудит сайта</h3>
+                        <p class="text-gray-600 mb-4">Комплексный анализ сайта
+                            на наличие технических ошибок, проблем с контентом
+                            и структурой, мешающих продвижению.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Технический аудит
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Анализ юзабилити
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Анализ ссылочного профиля
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-indigo-100 text-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Семантическое
+                            ядро</h3>
+                        <p class="text-gray-600 mb-4">Подбор ключевых слов и
+                            фраз, по которым пользователи будут находить ваш
+                            сайт в поисковых системах.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Сбор и кластеризация запросов
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Анализ конкурентов
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Распределение запросов по страницам
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 3 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-indigo-100 text-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Техническая
+                            оптимизация</h3>
+                        <p class="text-gray-600 mb-4">Исправление технических
+                            ошибок сайта, влияющих на его индексацию и
+                            ранжирование в поисковых системах.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Оптимизация скорости загрузки
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Адаптация под мобильные устройства
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Настройка микроразметки
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 4 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-indigo-100 text-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Оптимизация
+                            контента</h3>
+                        <p class="text-gray-600 mb-4">Создание и оптимизация
+                            текстов для страниц сайта с учетом требований
+                            поисковых систем и интересов пользователей.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Создание SEO-текстов
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Оптимизация заголовков
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Оптимизация meta-тегов
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 5 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-indigo-100 text-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Внешняя
+                            оптимизация</h3>
+                        <p class="text-gray-600 mb-4">Наращивание качественной
+                            ссылочной массы для повышения авторитетности сайта
+                            в глазах поисковых систем.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Размещение статей на внешних ресурсах
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Регистрация в каталогах
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Крауд-маркетинг
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Услуга 6 -->
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-start">
+                    <div class="bg-indigo-100 text-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Мониторинг и
+                            аналитика</h3>
+                        <p class="text-gray-600 mb-4">Постоянный контроль
+                            позиций сайта в поисковых системах и анализ
+                            эффективности проводимых работ.</p>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Отслеживание позиций
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Анализ поведенческих факторов
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-indigo-600 mr-2"
+                                     fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Ежемесячные отчеты
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Преимущества SEO -->
+<section class="py-20" id="benefits">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Преимущества
+                SEO-продвижения</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Почему
+                SEO-продвижение является одним из самых эффективных
+                инструментов digital-маркетинга</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Доступная стоимость</h3>
+                </div>
+                <p class="text-gray-600">SEO является одним из самых
+                    экономически эффективных маркетинговых каналов, особенно в
+                    долгосрочной перспективе.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Долгосрочный эффект</h3>
+                </div>
+                <p class="text-gray-600">Результаты SEO-продвижения сохраняются
+                    надолго, обеспечивая стабильный поток клиентов даже после
+                    завершения активных работ.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Целевая аудитория</h3>
+                </div>
+                <p class="text-gray-600">SEO привлекает пользователей, которые
+                    активно ищут ваши товары или услуги, что повышает процент
+                    конверсии на сайте.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Повышение доверия</h3>
+                </div>
+                <p class="text-gray-600">Высокие позиции в поисковой выдаче
+                    повышают доверие к вашему бренду, так как пользователи
+                    больше доверяют топовым результатам.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Измеримые результаты</h3>
+                </div>
+                <p class="text-gray-600">SEO позволяет отслеживать множество
+                    показателей: позиции, трафик, конверсии, что делает
+                    эффективность работы полностью прозрачной.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">Глобальный охват</h3>
+                </div>
+                <p class="text-gray-600">Качественное SEO-продвижение помогает
+                    вашему бизнесу выйти на новые рынки и привлечь клиентов из
+                    других регионов.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Кейсы SEO -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Наши успешные кейсы</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Реальные
+                результаты SEO-продвижения наших клиентов</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Кейс 1 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="/api/placeholder/600/350" alt="Case Study SEO 1"
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-indigo-100 text-indigo-600 text-sm font-medium py-1 px-3 rounded-full mr-2">
+                            Интернет-магазин
+                        </div>
+                        <div class="bg-green-100 text-green-600 text-sm font-medium py-1 px-3 rounded-full">
+                            +187% трафика
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Увеличение органического
+                        трафика интернет-магазина электроники на 187%</h3>
+                    <p class="text-gray-600 mb-4">Комплексное SEO-продвижение
+                        позволило вывести интернет-магазин в топ-3 по более чем
+                        500 высококонкурентным запросам.</p>
+                    <a href="#"
+                       class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                        Подробнее о кейсе
+                        <svg class="w-4 h-4 ml-1" fill="none"
+                             stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Кейс 2 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="/api/placeholder/600/350" alt="Case Study SEO 2"
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-indigo-100 text-indigo-600 text-sm font-medium py-1 px-3 rounded-full mr-2">
+                            Корпоративный сайт
+                        </div>
+                        <div class="bg-green-100 text-green-600 text-sm font-medium py-1 px-3 rounded-full">
+                            +243% заявок
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Рост числа заявок с
+                        сайта B2B компании на 243% за 6 месяцев</h3>
+                    <p class="text-gray-600 mb-4">Глубокая техническая
+                        оптимизация сайта и работа с коммерческими факторами
+                        позволили увеличить конверсию.</p>
+                    <a href="#"
+                       class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                        Подробнее о кейсе
+                        <svg class="w-4 h-4 ml-1" fill="none"
+                             stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Кейс 3 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="/api/placeholder/600/350" alt="Case Study SEO 3"
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-indigo-100 text-indigo-600 text-sm font-medium py-1 px-3 rounded-full mr-2">
+                            Региональный сайт
+                        </div>
+                        <div class="bg-green-100 text-green-600 text-sm font-medium py-1 px-3 rounded-full">
+                            В топ-3 за 4 месяца
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Вывод медицинского
+                        центра в топ-3 поисковой выдачи за 4 месяца</h3>
+                    <p class="text-gray-600 mb-4">Разработка локальной
+                        SEO-стратегии позволила обойти федеральных конкурентов
+                        по ключевым запросам в регионе.</p>
+                    <a href="#"
+                       class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                        Подробнее о кейсе
+                        <svg class="w-4 h-4 ml-1" fill="none"
+                             stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="#"
+               class="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300">Смотреть
+                все кейсы</a>
+        </div>
+    </div>
+</section>
+
+<!-- Тарифы -->
+<section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Тарифы на SEO-продвижение</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Выберите оптимальный тариф для вашего бизнеса</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Тариф Базовый -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:z-10 group">
+                <div class="p-8 text-center border-b border-gray-200 transition-all duration-300 group-hover:bg-indigo-600 group-hover:text-white">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-white">Базовый</h3>
+                    <div class="text-indigo-600 font-bold text-4xl mb-4 group-hover:text-white">от 30 000 ₽</div>
+                    <p class="text-gray-600 group-hover:text-white">в месяц</p>
+                    <div class="mt-2 inline-block bg-white text-indigo-600 text-sm font-medium py-1 px-3 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        Старт продвижения
+                    </div>
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">До 100 ключевых слов</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Базовый технический аудит</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Оптимизация мета-тегов</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Базовая внутренняя оптимизация</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Ежемесячная отчетность</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#form" class="block text-center bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Выбрать тариф</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Тариф Стандартный -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:z-10 group">
+                <div class="p-8 text-center border-b border-gray-200 transition-all duration-300 group-hover:bg-indigo-600 group-hover:text-white">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-white">Стандартный</h3>
+                    <div class="text-indigo-600 font-bold text-4xl mb-4 group-hover:text-white">от 60 000 ₽</div>
+                    <p class="text-gray-600 group-hover:text-white">в месяц</p>
+                    <div class="mt-2 inline-block bg-white text-indigo-600 text-sm font-medium py-1 px-3 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        Рекомендуемый
+                    </div>
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">До 300 ключевых слов</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Полный технический аудит</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Создание SEO-текстов (до 5 страниц)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Внутренняя перелинковка</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Базовая внешняя оптимизация</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Еженедельная отчетность</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#form" class="block text-center bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Выбрать тариф</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Тариф Премиум -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 hover:z-10 group">
+                <div class="p-8 text-center border-b border-gray-200 transition-all duration-300 group-hover:bg-indigo-600 group-hover:text-white">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-white">Премиум</h3>
+                    <div class="text-indigo-600 font-bold text-4xl mb-4 group-hover:text-white">от 100 000 ₽</div>
+                    <p class="text-gray-600 group-hover:text-white">в месяц</p>
+                    <div class="mt-2 inline-block bg-white text-indigo-600 text-sm font-medium py-1 px-3 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        Максимальный результат
+                    </div>
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Неограниченное количество ключевых слов</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Углубленный технический аудит</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Создание SEO-текстов (до 15 страниц)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Полная внешняя оптимизация</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Персональный SEO-специалист</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Ежедневная отчетность по запросу</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#form" class="block text-center bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Выбрать тариф</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Партнеры -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Наши партнеры и
+                инструменты</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Мы используем
+                профессиональные инструменты и сотрудничаем с ведущими
+                платформами</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 1"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 2"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 3"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 4"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 5"
+                     class="max-h-12">
+            </div>
+            <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="/api/placeholder/150/80" alt="Partner 6"
+                     class="max-h-12">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FAQ -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Часто задаваемые вопросы</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Отвечаем на популярные вопросы о SEO-продвижении</p>
+        </div>
+        <div class="max-w-3xl mx-auto" id="faq-accordion">
+            <!-- Вопрос 1 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Как быстро я увижу результаты от SEO-продвижения?</span>
+                    <svg class="w-6 h-6 text-indigo-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">SEO — это долгосрочная стратегия. Первые результаты обычно становятся заметны через 2-3 месяца работы, но значительные изменения в позициях и трафике чаще всего наблюдаются через 4-6 месяцев. На сроки влияют конкуренция в вашей нише, изначальное состояние сайта и агрессивность выбранной стратегии.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 2 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Какие гарантии вы предоставляете?</span>
+                    <svg class="w-6 h-6 text-indigo-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">Мы не можем гарантировать конкретные позиции по запросам, так как алгоритмы поисковых систем постоянно меняются. Однако мы гарантируем прозрачность работы, соблюдение сроков и использование только белых методов оптимизации. Если в течение первых трех месяцев вы не увидите положительной динамики, мы бесплатно проведем дополнительный аудит и скорректируем стратегию.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 3 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Для каких сайтов подходит SEO-продвижение?</span>
+                    <svg class="w-6 h-6 text-indigo-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">SEO-продвижение подходит практически для любого сайта, но особенно эффективно для бизнесов, ориентированных на долгосрочную перспективу. Это могут быть интернет-магазины, корпоративные сайты, сайты услуг, информационные порталы. Главное условие — наличие качественного контента и технически исправного сайта.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 4 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Чем SEO отличается от контекстной рекламы?</span>
+                    <svg class="w-6 h-6 text-indigo-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">Главное отличие — в подходе и долгосрочности результатов. Контекстная реклама дает мгновенный эффект, но требует постоянных вложений. При остановке рекламы трафик прекращается. SEO работает медленнее, но дает долгосрочный результат. После прекращения активных работ позиции могут сохраняться месяцами. Также пользователи больше доверяют органической выдаче, чем рекламе.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 5 -->
+            <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <span class="text-xl font-bold text-gray-800">Какие отчеты вы предоставляете?</span>
+                    <svg class="w-6 h-6 text-indigo-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="px-6 pb-6 hidden faq-answer">
+                    <p class="text-gray-600">Мы предоставляем регулярные отчеты, включающие данные о позициях сайта по ключевым запросам, динамике органического трафика, поведенческих факторах, конверсии и выполненных работах. Отчеты формируются в наглядной форме с графиками и пояснениями, чтобы вы могли легко оценить эффективность продвижения.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript для функциональности FAQ -->
+    <script>
+        function toggleFAQ(element) {
+            // Поиск контейнера ответа
+            const answer = element.nextElementSibling;
+            // Поиск иконки
+            const icon = element.querySelector('svg');
+
+            // Проверка текущего состояния
+            const isExpanded = element.getAttribute('aria-expanded') === 'true';
+
+            // Переключение состояния
+            if (isExpanded) {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+                element.setAttribute('aria-expanded', 'false');
+            } else {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+                element.setAttribute('aria-expanded', 'true');
+            }
+        }
+    </script>
+</section>
+<!-- Контактная форма -->
+<section class="py-20 bg-gray-100" id="form">
+    <div class="container mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 bg-indigo-600 p-12 text-white">
+                    <h2 class="text-3xl font-bold mb-6">Закажите
+                        SEO-продвижение</h2>
+                    <p class="text-xl mb-8">Заполните форму, и мы свяжемся с
+                        вами для обсуждения деталей и составления
+                        индивидуального предложения.</p>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4">Почему стоит начать
+                            прямо сейчас:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none"
+                                     stroke="currentColor" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Конкуренты уже используют SEO</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none"
+                                     stroke="currentColor" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>SEO требует времени для результата</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none"
+                                     stroke="currentColor" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Первый месяц со скидкой 20%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4">Контактная
+                            информация</h3>
+                        <div class="flex items-center mb-4">
+                            <svg class="w-6 h-6 mr-3" fill="none"
+                                 stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+7 (999) 999-99-99</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <svg class="w-6 h-6 mr-3" fill="none"
+                                 stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@boldrise.ru</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 p-12">
+                    <form>
+                        <div class="mb-6">
+                            <label for="name"
+                                   class="block text-gray-700 font-medium mb-2">Ваше
+                                имя</label>
+                            <input type="text" id="name"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                   placeholder="Введите ваше имя">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email"
+                                   class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                   placeholder="Введите ваш email">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone"
+                                   class="block text-gray-700 font-medium mb-2">Телефон</label>
+                            <input type="tel" id="phone"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                   placeholder="Введите ваш телефон">
+                        </div>
+                        <div class="mb-6">
+                            <label for="website"
+                                   class="block text-gray-700 font-medium mb-2">Адрес
+                                сайта</label>
+                            <input type="url" id="website"
+                                   class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                   placeholder="Например: https://vashsite.ru">
+                        </div>
+                        <div class="mb-6">
+                            <label for="tariff"
+                                   class="block text-gray-700 font-medium mb-2">Интересующий
+                                тариф</label>
+                            <select id="tariff"
+                                    class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                                <option value="" selected disabled>Выберите
+                                    тариф
+                                </option>
+                                <option value="basic">Базовый</option>
+                                <option value="standard">Стандартный</option>
+                                <option value="premium">Премиум</option>
+                                <option value="consultation">Нужна
+                                    консультация
+                                </option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message"
+                                   class="block text-gray-700 font-medium mb-2">Сообщение</label>
+                            <textarea id="message" rows="4"
+                                      class="w-full border-gray-300 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                      placeholder="Расскажите о вашем проекте и целях продвижения"></textarea>
+                        </div>
+                        <button type="submit"
+                                class="w-full bg-indigo-600 text-white font-medium py-3 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                            Отправить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

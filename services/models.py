@@ -5,37 +5,30 @@ from django.utils.text import slugify
 
 class Service(models.Model):
     """Модель для хранения информации об услугах агентства"""
-    # Основная информация
     name = models.CharField('Название услуги', max_length=100)
     slug = models.SlugField('URL-идентификатор', max_length=100, unique=True)
     title = models.CharField('Заголовок страницы', max_length=200)
     description = models.TextField('Краткое описание', max_length=500)
     full_description = models.TextField('Полное описание')
 
-    # Медиа
     icon_svg = models.TextField('SVG-иконка', blank=True, help_text="Вставьте SVG-код иконки")
     icon = models.CharField('Иконка (класс или SVG)', max_length=500, blank=True)
     image = models.ImageField('Изображение услуги', upload_to='services/', blank=True)
 
-    # Настройки отображения
     is_active = models.BooleanField('Активно', default=True)
     is_featured = models.BooleanField('Отображать на главной', default=True)
     order = models.PositiveIntegerField('Порядок отображения', default=0)
 
-    # SEO
     meta_title = models.CharField('Meta Title', max_length=200, blank=True)
     meta_description = models.TextField('Meta Description', max_length=500, blank=True)
 
-    # Даты
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
     updated_at = models.DateTimeField('Дата обновления', auto_now=True)
 
-    # Герой-секция (Hero Section)
     hero_title = models.CharField('Заголовок героической секции', max_length=200, blank=True)
     hero_description = models.TextField('Описание героической секции', blank=True)
     hero_image = models.ImageField('Изображение героической секции', upload_to='services/hero/', blank=True)
 
-    # Заголовки и подзаголовки секций
     explanation_title = models.CharField('Заголовок секции "Что такое"', max_length=200, blank=True)
     explanation_subtitle = models.TextField('Подзаголовок секции "Что такое"', blank=True)
 
