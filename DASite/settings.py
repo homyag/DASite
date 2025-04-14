@@ -154,7 +154,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': '100%',
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
-    'selector': 'textarea',
+    'selector': 'textarea.tinymce',
     'theme': 'silver',
     'plugins': '''
         textcolor save link image media preview codesample contextmenu
@@ -181,6 +181,8 @@ TINYMCE_DEFAULT_CONFIG = {
         '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
         '//www.tinymce.com/css/codepen.min.css'
     ],
+    'entity_encoding': 'raw',  # Отключает кодирование сущностей
+    'extended_valid_elements': 'svg[*],path[*]',
     'valid_elements': '*[*]',  # Можно ограничить разрешенные HTML-теги для повышения безопасности
 }
 TINYMCE_COMPRESSOR = False  # Сжатие JS-кода

@@ -31,7 +31,7 @@
                     {% if service.hero_title %}{{ service.hero_title }}{% else %}{{ service.title }}{% endif %}
                 </h1>
                 <p class="text-xl mb-8 text-indigo-100">
-                    {% if service.hero_description %}{{ service.hero_description }}{% else %}{{ service.description }}{% endif %}
+                    {% if service.hero_description %}{{ service.hero_description|safe }}{% else %}{{ service.description|safe }}{% endif %}
                 </p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="#form"
