@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from .models import Profile, Expertise
+from .models import Profile, Expertise, Newsletter
 
 
 class ProfileInline(admin.StackedInline):
@@ -43,6 +43,25 @@ class ExpertiseAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug')
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ('name',)
+
+
+@admin.register(Newsletter)
+class NewsletterAdmin(admin.ModelAdmin):
+    list_display = ('email', 'is_active', 'created_at')
+    list_filter = ('is_active', 'created_at')
+    search_fields = ('email',)
+    date_hierarchy = 'created_at'
+    actions = ['deactivate_subscribers', 'activate_subscribers']
+
+    def deactivate_subscribers(self, request, queryset):
+        queryset.update(is_active=False)
+        self.message_user(request, f"{queryset.count()} подписчиков деактивировано.")
+    deactivate_subscribers.short_description = "Деактивировать выбранных подписчиков"
+
+    def activate_subscribers(self, request, queryset):
+        queryset.update(is_active=True)
+        self.message_user(request, f"{queryset.count()} подписчиков активировано.")
+    activate_subscribers.short_description = "Активировать выбранных подписчиков"
 
 
 # Перерегистрация модели User с нашей кастомной версией

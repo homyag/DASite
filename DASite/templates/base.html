@@ -15,6 +15,18 @@
 </head>
 <body class="font-sans text-gray-800 bg-gray-50">
 {% include 'includes/header.html' %}
+
+{# Добавляем скрытые сообщения от Django для обработки через JavaScript #}
+{% if messages %}
+<div class="hidden">
+    {% for message in messages %}
+        <div class="django-message" data-type="{% if message.tags %}{{ message.tags }}{% else %}info{% endif %}">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 <main>
 {% block content %}
 {% endblock %}

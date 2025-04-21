@@ -8,6 +8,7 @@ from django.contrib.sitemaps.views import sitemap
 
 
 from DASite.views import HomePageView, PrivacyPolicyView, TermsOfUseView
+from core.views import newsletter_subscribe
 from services.views import ServicesListView, ServiceView
 from contacts.views import contact_view, contact_success_view, \
     contact_submit_view
@@ -82,6 +83,8 @@ urlpatterns = [
     path('privacy-policy/', PrivacyPolicyView.as_view(), name='privacy_policy'),
 
     path('terms-of-use/', TermsOfUseView.as_view(), name='terms_of_use'),
+
+    path('newsletter/subscribe/', newsletter_subscribe, name='newsletter_subscribe'),
 
     path('robots.txt', robots_txt),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),

@@ -113,6 +113,22 @@ class Expertise(models.Model):
         return self.name
 
 
+
+class Newsletter(models.Model):
+    """Модель для хранения подписчиков рассылки."""
+    email = models.EmailField(verbose_name="Email", unique=True)
+    is_active = models.BooleanField(verbose_name="Активен", default=True)
+    created_at = models.DateTimeField(verbose_name="Дата подписки", auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Подписчик рассылки"
+        verbose_name_plural = "Подписчики рассылки"
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.email
+
+
 # Автоматическое создание профиля при создании пользователя
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

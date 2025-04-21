@@ -9,6 +9,8 @@ import BlogCarousel from "../components/blog-carousel";
 import PartnersCarousel from "../components/partners-carousel";
 import { initContactForm } from "../components/ContactForm";
 import CookieConsent from "../components/CookieConsent";
+import NewsletterForm from "../components/NewsletterForm";
+import Notification from "../components/Notification";
 
 window.document.addEventListener("DOMContentLoaded", function () {
   // Инициализация компонентов с выводом дополнительной информации
@@ -80,4 +82,24 @@ try {
 } catch (error) {
   console.error("Ошибка при инициализации компонента согласия на cookie:", error);
 }
+
+try {
+    // Инициализация форм подписки на рассылку
+    new NewsletterForm('.newsletter-form');
+    console.log("Формы подписки на рассылку инициализированы");
+  } catch (error) {
+    console.error("Ошибка при инициализации форм подписки на рассылку:", error);
+  }
+
+try {
+    // Инициализация компонента уведомлений и сохранение его в глобальной области
+    window.notification = new Notification();
+
+    // Проверяем сообщения в URL и Django-сообщения
+    window.notification.checkUrlMessages();
+
+    console.log("Компонент уведомлений инициализирован");
+  } catch (error) {
+    console.error("Ошибка при инициализации компонента уведомлений:", error);
+  }
 });
