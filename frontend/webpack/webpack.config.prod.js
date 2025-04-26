@@ -33,8 +33,6 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
-
-
         ],
       },
     ],

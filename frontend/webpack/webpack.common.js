@@ -33,7 +33,6 @@ module.exports = {
     splitChunks: {
       chunks: "all",
     },
-
     runtimeChunk: "single",
   },
   plugins: [
@@ -47,7 +46,20 @@ module.exports = {
       entrypoints: true,
       output: "manifest.json",
       writeToDisk: true,
-      publicPath: true,
+      publicPath: false,
+      customize: function(key, value) {
+        // Проверяем, что key является строкой
+        if (typeof key === 'string') {
+          // Удаляем хеши из имен файлов в манифесте
+          if (key.endsWith('.js')) {
+            return value.replace(/\.[0-9a-f]{8}\./, '.');
+          }
+          if (key.endsWith('.css')) {
+            return value.replace(/\.[0-9a-f]{8}\./, '.');
+          }
+        }
+        return value;
+      }
     }),
   ],
   resolve: {

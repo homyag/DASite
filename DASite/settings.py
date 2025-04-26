@@ -3,6 +3,10 @@ from pathlib import Path
 
 import ssl
 import certifi
+
+from dotenv import load_dotenv
+load_dotenv()
+
 os.environ['SSL_CERT_FILE'] = certifi.where()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -56,6 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'contacts.middleware.RecaptchaMiddleware',
 ]
 
 ROOT_URLCONF = 'DASite.urls'
@@ -195,8 +200,8 @@ TINYMCE_SPELLCHECKER = True  # Проверка орфографии
 TINYMCE_FILEBROWSER = False  # Интеграция с django-filebrowser если нужна
 
 # reCAPTCHA
-RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY', '')
-RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY', '')
+RECAPTCHA_PUBLIC_KEY = '6LffmiMrAAAAAABKhG7l6895HvbSDF6v8b_zUTuW'
+RECAPTCHA_PRIVATE_KEY = '6LffmiMrAAAAAOglEiMfhEIoS6oaglSCr780f2MQ'
 
 
 LOGGING = {
@@ -267,5 +272,5 @@ EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
-EMAIL_ADMIN = EMAIL_HOST_USER
+EMAIL_ADMIN = 'antonov.iigor@yandex.ru'
 EMAIL_SSL_CERTVERIFY = False

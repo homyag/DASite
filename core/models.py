@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django.utils.translation import gettext_lazy as _
 
 
 class Category(models.Model):
@@ -35,33 +36,72 @@ class Tag(models.Model):
 
 
 class ContactRequest(models.Model):
-    STATUS_CHOICES = (
-        ('new', 'Новая'),
-        ('processing', 'В обработке'),
-        ('completed', 'Обработана'),
-        ('canceled', 'Отменена'),
-    )
+    """Модель для хранения заявок обратной связи."""
 
-    name = models.CharField(max_length=100, verbose_name="Имя")
-    email = models.EmailField(verbose_name="Email")
-    phone = models.CharField(max_length=20, verbose_name="Телефон")
-    service = models.CharField(max_length=100, blank=True, null=True,
-                               verbose_name="Услуга")
-    message = models.TextField(verbose_name="Сообщение")
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES,
-                              default='new', verbose_name="Статус")
-    created_at = models.DateTimeField(auto_now_add=True,
-                                      verbose_name="Дата создания")
-    updated_at = models.DateTimeField(auto_now=True,
-                                      verbose_name="Дата обновления")
+    class StatusChoices(models.TextChoices):
+        NEW = 'new', _('Новая')
+        IN_PROGRESS = 'in_progress', _('В обработке')
+        COMPLETED = 'completed', _('Завершена')
+        CANCELED = 'canceled', _('Отменена')
+
+    class ServiceChoices(models.TextChoices):
+        SEO = 'seo', _('SEO-продвижение')
+        EMAIL = 'email', _('Email-маркетинг')
+        CONTENT = 'content', _('Контент-маркетинг')
+        SMM = 'smm', _('SMM-продвижение')
+        ORM = 'orm', _('Репутационный маркетинг')
+        PPC = 'ppc', _('PPC-реклама')
+        COMPLEX = 'complex', _('Комплексное продвижение')
+        OTHER = 'other', _('Другое')
+
+    # Основная информация
+    name = models.CharField(_('Имя'), max_length=100)
+    email = models.EmailField(_('Email'))
+    phone = models.CharField(_('Телефон'), max_length=17)
+    service = models.CharField(
+        _('Услуга'),
+        max_length=50,
+        choices=ServiceChoices.choices,
+        default=ServiceChoices.OTHER
+    )
+    message = models.TextField(_('Сообщение'))
+
+    # Дополнительные поля для форм
+    company = models.CharField(_('Компания'), max_length=100, blank=True, null=True)
+    website = models.URLField(_('Сайт'), blank=True, null=True)
+    budget = models.CharField(_('Бюджет'), max_length=100, blank=True, null=True)
+    tariff = models.CharField(_('Тариф'), max_length=100, blank=True, null=True)
+
+    # Информация о запросе
+    source = models.CharField(_('Источник заявки'), max_length=200, blank=True, null=True,
+                              help_text=_('Страница, с которой была отправлена форма'))
+    ip_address = models.GenericIPAddressField(_('IP-адрес'), blank=True, null=True)
+    user_agent = models.TextField(_('User-Agent'), blank=True, null=True)
+
+    # Статус и даты
+    status = models.CharField(
+        _('Статус'),
+        max_length=20,
+        choices=StatusChoices.choices,
+        default=StatusChoices.NEW
+    )
+    created_at = models.DateTimeField(_('Дата создания'), auto_now_add=True)
+    updated_at = models.DateTimeField(_('Дата обновления'), auto_now=True)
+
+    # Поля для администрирования
+    admin_notes = models.TextField(_('Заметки администратора'), blank=True, null=True)
+    assigned_to = models.CharField(_('Ответственный'), max_length=100, blank=True, null=True)
+
+    # Honeypot поле (не выводится в админке, используется для отлова спам-ботов)
+    website_honeypot = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
-        verbose_name = "Заявка"
-        verbose_name_plural = "Заявки"
+        verbose_name = _('Заявка')
+        verbose_name_plural = _('Заявки')
         ordering = ['-created_at']
 
     def __str__(self):
-        return f"Заявка от {self.name} ({self.created_at.strftime('%d.%m.%Y')})"
+        return f"{self.name} - {self.email} ({self.get_status_display()})"
 
 
 class Profile(models.Model):

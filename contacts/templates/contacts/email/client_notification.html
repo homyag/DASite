@@ -1,42 +1,197 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+        .header {
+            background-color: #4F46E5;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 20px;
+        }
+        .header img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
             color: #4F46E5;
         }
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        .contacts {
+            background-color: #EEF2FF;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .contacts h2 {
+            margin-top: 0;
+            color: #3730A3;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            background-color: #4F46E5;
+            border-radius: 50%;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon svg {
+            fill: white;
+            width: 16px;
+            height: 16px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .social-link {
+            display: inline-block;
+            margin: 0 10px;
+            background-color: #EEF2FF;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .social-link:hover {
+            background-color: #CBD5E1;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4F46E5;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #3730A3;
+        }
         .footer {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
+            margin-top: 40px;
+            text-align: center;
             font-size: 12px;
-            color: #777;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Спасибо за ваше обращение!</h1>
-        <p>Уважаемый(ая) {{ contact.name }},</p>
-        <p>Благодарим вас за интерес к нашему агентству. Мы получили вашу заявку и свяжемся с вами в ближайшее время.</p>
+        <div class="header">
+            <!-- Если есть логотип, добавьте его здесь -->
+            <!-- <img src="https://boldrise.ru/static/logo.png" alt="Boldrise Agency Logo"> -->
+            <h1>Спасибо за ваше обращение!</h1>
+        </div>
 
-        <p>С уважением,<br>Команда Boldrise Agency</p>
+        <p>Здравствуйте, <strong>{{ contact.name }}</strong>!</p>
+
+        <p>Мы получили вашу заявку и благодарим за интерес к услугам нашего агентства. Ваше обращение уже передано нашим специалистам, и мы свяжемся с вами в ближайшее время для обсуждения деталей.</p>
+
+        <div class="section">
+            <h2>Что дальше?</h2>
+            <p>В течение рабочего дня наш менеджер свяжется с вами по указанным контактным данным, чтобы:</p>
+            <ul>
+                <li>Уточнить детали вашего запроса</li>
+                <li>Ответить на все ваши вопросы</li>
+                <li>Предложить оптимальное решение для вашего бизнеса</li>
+                <li>Обсудить возможные сроки и стоимость работ</li>
+            </ul>
+        </div>
+
+        <div class="contacts">
+            <h2>Наши контакты</h2>
+            <p>Если у вас возникли дополнительные вопросы, вы можете связаться с нами любым удобным способом:</p>
+
+            <div class="contact-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                    </svg>
+                </div>
+                <div>{{ company_email }}</div>
+            </div>
+
+            <div class="contact-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 15.5C18.8 15.5 17.5 15.3 16.4 14.9C16.1 14.8 15.7 14.9 15.5 15.1L13.2 17.4C10.4 15.9 8 13.6 6.6 10.8L8.9 8.5C9.1 8.3 9.2 7.9 9.1 7.6C8.7 6.5 8.5 5.2 8.5 4C8.5 3.5 8 3 7.5 3H4C3.5 3 3 3.5 3 4C3 13.4 10.6 21 20 21C20.5 21 21 20.5 21 20V16.5C21 16 20.5 15.5 20 15.5ZM19 12H21C21 7 17 3 12 3V5C15.9 5 19 8.1 19 12ZM15 12H17C17 9.2 14.8 7 12 7V9C13.7 9 15 10.3 15 12Z"/>
+                    </svg>
+                </div>
+                <div>{{ company_phone }}</div>
+            </div>
+
+            <div class="contact-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.05 1.577c-.904-.515-2.01-.62-3.26-.333-1.067.247-2.142.757-3.192 1.438-1.05.68-1.874 1.459-2.594 2.286-.72.827-1.33 1.683-1.84 2.446-1.312 1.963-1.973 3.808-1.973 5.087 0 1.75.62 3.126 1.742 4.236.565.56 1.257.978 2.18 1.31 1.423.516 3.15.67 5.405.322v-.001c.714-.105 1.437-.275 2.318-.569.967-.325 1.728-.788 2.303-1.27.575-.48 1.078-1.05 1.527-1.675.448-.624.874-1.339 1.302-2.066 1.192-2.025 1.68-3.92 1.68-5.08 0-1.177-.375-2.276-1.14-2.976-.617-.57-1.547-.996-2.458-1.22zm-1.342 9.33c-.35.597-.792 1.298-1.248 1.938-.474.66-.995 1.275-1.608 1.788-.613.514-1.35.987-2.36 1.328-.633.214-1.152.332-1.704.415-.343.053-.698.08-1.203.08-.44 0-.89-.025-1.232-.094-.47-.096-.938-.283-1.394-.548-.456-.266-.805-.612-1.09-.91-.284-.297-.56-.697-.79-1.2-.232-.503-.34-1.065-.34-1.688 0-1.01.55-2.725 1.873-4.703.516-.772 1.123-1.614 1.857-2.458.735-.845 1.706-1.7 2.865-2.442.872-.557 1.778-.988 2.69-1.222.813-.21 1.603-.257 2.268-.068.664.188 1.283.602 1.673 1.223.392.622.573 1.354.573 2.117 0 .952-.47 2.686-1.66 4.694z"/>
+                    </svg>
+                </div>
+                <div><a href="{{ company_telegram }}" style="color: #4F46E5; text-decoration: none;">Наш Telegram</a></div>
+            </div>
+
+            <div class="contact-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93V15.07C2 20.67 3.33 22 8.93 22H15.07C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2ZM18.15 16.27C17.91 16.69 17.08 17.23 16.5 17.28C16.19 17.3 15.79 17.31 15.32 17.15C14.33 16.8 12.23 15.71 10.94 13.73C9.87 12.08 9.19 10.19 9.1 9.42C9.01 8.6 9.52 7.9 10.17 7.67C10.46 7.56 11.06 7.46 11.11 7.46C11.28 7.46 11.46 7.5 11.61 7.85C11.77 8.24 12.25 9.47 12.3 9.61C12.34 9.76 12.36 9.93 12.29 10.12C11.91 11.14 11.33 11.01 11.65 11.6C12.39 12.95 13.29 13.15 14.02 14.12C14.28 14.47 14.47 14.39 14.69 14.28C14.9 14.17 15.91 13.38 16.16 13.04C16.41 12.7 16.67 12.75 16.9 12.82C17.13 12.89 18.11 13.33 18.3 13.42C18.5 13.5 18.89 13.67 18.76 14.08C18.76 14.08 18.53 15.77 18.15 16.27Z"/>
+                    </svg>
+                </div>
+                <div><a href="{{ company_vk }}" style="color: #4F46E5; text-decoration: none;">Наша группа ВКонтакте</a></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://boldrise.ru" class="button">Перейти на сайт</a>
+        </div>
 
         <div class="footer">
-            <p>Это автоматическое письмо, пожалуйста, не отвечайте на него.</p>
-            <p>© 2025 Boldrise Agency. Все права защищены.</p>
+            <p>&copy; {{ contact.created_at|date:"Y" }} Boldrise Agency. Все права защищены.</p>
+            <p>Вы получили это письмо, так как оставили заявку на сайте boldrise.ru</p>
         </div>
     </div>
 </body>

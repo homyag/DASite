@@ -13,7 +13,15 @@ class ContactForm(forms.ModelForm):
         message="Формат телефона: '+999999999'. До 15 цифр разрешено."
     )
     phone = forms.CharField(validators=[phone_regex], max_length=17)
-    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
+    captcha = ReCaptchaField(
+        widget=ReCaptchaV2Checkbox(
+            attrs={
+                'class': 'g-recaptcha',
+                'data-theme': 'light',
+                'data-size': 'normal'
+            }
+        )
+    )
 
     class Meta:
         model = ContactRequest

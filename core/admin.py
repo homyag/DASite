@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from .models import Profile, Expertise, Newsletter
+from .models import Profile, Expertise, Newsletter, ContactRequest
 
 
 class ProfileInline(admin.StackedInline):
@@ -62,6 +62,31 @@ class NewsletterAdmin(admin.ModelAdmin):
         queryset.update(is_active=True)
         self.message_user(request, f"{queryset.count()} подписчиков активировано.")
     activate_subscribers.short_description = "Активировать выбранных подписчиков"
+
+
+@admin.register(ContactRequest)
+class ContactRequestAdmin(admin.ModelAdmin):
+    list_display = (
+    'name', 'email', 'phone', 'service', 'status', 'created_at')
+    list_filter = ('status', 'service', 'created_at')
+    search_fields = ('name', 'email', 'phone', 'message')
+    readonly_fields = ('created_at', 'updated_at')
+    fieldsets = (
+        (None, {
+            'fields': ('name', 'email', 'phone', 'service', 'message')
+        }),
+        ('Статус', {
+            'fields': ('status',)
+        }),
+        ('Даты', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
+
+    def has_add_permission(self, request):
+        # Запрещаем добавление заявок вручную через админку
+        return False
 
 
 # Перерегистрация модели User с нашей кастомной версией

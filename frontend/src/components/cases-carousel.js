@@ -7,46 +7,29 @@ class CasesCarousel {
   constructor(node) {
     this.section = node;
 
-    // Более надежные селекторы с логами
+    // Более надежные селекторы
     this.filterButtons = this.section.querySelectorAll('#case-filter-buttons button');
-    console.log("Кнопки фильтров:", this.filterButtons.length);
-
     this.carouselContainer = this.section.querySelector('#cases-carousel-container');
-    console.log("Контейнер карусели:", this.carouselContainer);
-
     this.gridContainer = this.section.querySelector('#cases-grid-container');
-    console.log("Контейнер сетки:", this.gridContainer);
-
     this.carousel = this.section.querySelector('#cases-carousel');
-    console.log("Карусель:", this.carousel);
-
     this.grid = this.section.querySelector('#cases-grid');
-    console.log("Сетка:", this.grid);
-
     this.prevButton = this.section.querySelector('#prev-slide');
-    console.log("Кнопка 'Назад':", this.prevButton);
-
     this.nextButton = this.section.querySelector('#next-slide');
-    console.log("Кнопка 'Вперед':", this.nextButton);
-
     this.carouselIndicators = this.section.querySelector('#carousel-indicators');
-    console.log("Индикаторы карусели:", this.carouselIndicators);
 
     // Если не найдены основные элементы, прекращаем инициализацию
     if (!this.carousel || !this.filterButtons.length) {
-      console.error("Не найдены основные элементы для карусели кейсов");
       return;
     }
 
     // Сохраняем оригинальные карточки
     this.originalCards = Array.from(this.section.querySelectorAll('.case-card'));
-    console.log("Оригинальные карточки:", this.originalCards.length);
 
     // Переменные для управления каруселью
     this.currentSlide = 0;
     this.slideWidth = 0;
     this.totalSlides = 0;
-    this.cardsPerView = 1; // По умолчанию показываем 1 карточку
+    this.cardsPerView = 1;
 
     this.init();
   }
@@ -58,7 +41,6 @@ class CasesCarousel {
     // Обработчики для кнопок карусели
     if (this.prevButton) {
       this.prevButton.addEventListener('click', () => {
-        console.log("Нажата кнопка 'Назад'");
         if (this.currentSlide > 0) {
           this.currentSlide--;
           this.updateCarousel();
@@ -68,7 +50,6 @@ class CasesCarousel {
 
     if (this.nextButton) {
       this.nextButton.addEventListener('click', () => {
-        console.log("Нажата кнопка 'Вперед'");
         const maxSlide = Math.max(0, this.totalSlides - this.cardsPerView);
         if (this.currentSlide < maxSlide) {
           this.currentSlide++;
@@ -82,7 +63,6 @@ class CasesCarousel {
       button.addEventListener('click', () => {
         // Получаем значение фильтра
         const filterValue = button.getAttribute('data-filter');
-        console.log("Выбран фильтр:", filterValue);
 
         // Обновляем стили кнопок
         this.filterButtons.forEach(btn => {
@@ -114,20 +94,15 @@ class CasesCarousel {
         this.initCarousel();
       }
     });
-
-    console.log("Инициализация карусели кейсов завершена");
   }
 
   // Инициализация карусели
   initCarousel() {
     if (!this.carousel) {
-      console.error("Нет элемента карусели для инициализации");
       return;
     }
 
     const cards = this.carousel.querySelectorAll('.case-card');
-    console.log("Карточки в карусели:", cards.length);
-
     this.totalSlides = cards.length;
 
     // Определяем количество карточек в одном слайде в зависимости от размера экрана
@@ -139,11 +114,8 @@ class CasesCarousel {
       this.cardsPerView = 1; // На маленьких экранах
     }
 
-    console.log("Карточек на экран:", this.cardsPerView);
-
     // Количество индикаторов = всего слайдов - слайдов на экране + 1
     const indicatorCount = Math.max(1, this.totalSlides - this.cardsPerView + 1);
-    console.log("Количество индикаторов:", indicatorCount);
 
     // Очищаем и создаем индикаторы
     if (this.carouselIndicators) {
@@ -165,18 +137,14 @@ class CasesCarousel {
       const style = window.getComputedStyle(firstCard);
       const marginRight = parseInt(style.marginRight) || 0;
       this.slideWidth = firstCard.offsetWidth + marginRight;
-      console.log("Ширина слайда:", this.slideWidth, "с отступом:", marginRight);
 
       // Обновляем состояние карусели
       this.updateCarousel();
-    } else {
-      console.warn("Нет карточек для расчета ширины слайда");
     }
   }
 
   // Перемещаем карусель к определенному слайду
   goToSlide(slideIndex) {
-    console.log("Переход к слайду:", slideIndex);
     this.currentSlide = slideIndex;
     this.updateCarousel();
   }
@@ -187,7 +155,6 @@ class CasesCarousel {
     if (this.carousel) {
       const translateValue = -this.currentSlide * this.slideWidth;
       this.carousel.style.transform = `translateX(${translateValue}px)`;
-      console.log("Обновлена позиция карусели:", translateValue);
     }
 
     // Обновляем индикаторы
@@ -233,13 +200,14 @@ class CasesCarousel {
         this.carousel.innerHTML = '';
         this.originalCards.forEach(card => {
           try {
-            // Создаем клон карточки, чтобы избежать проблем с перемещением
-            const cardClone = card.cloneNode(true);
-            cardClone.classList.add('flex-shrink-0', 'w-full', 'md:w-1/2', 'lg:w-1/3');
-            cardClone.style.display = '';
-            this.carousel.appendChild(cardClone);
-          } catch (error) {
-            console.error("Ошибка при клонировании карточки:", error);
+            const clone = card.cloneNode(true);
+            this.carousel.appendChild(clone);
+          } catch {
+            console.error('Ошибка при загрузке кейсов');
+            // Показываем сообщение об ошибке пользователю
+            if (window.notification) {
+              window.notification.show('Произошла ошибка при загрузке кейсов. Пожалуйста, попробуйте позже.', 'error', 5000);
+            }
           }
         });
 
@@ -265,45 +233,22 @@ class CasesCarousel {
           const categories = card.getAttribute('data-categories')?.split(',') || [];
           if (categories.includes(filterValue)) {
             try {
-              // Создаем клон карточки
-              const cardClone = card.cloneNode(true);
-              // Убираем карусельные классы, если они есть
-              cardClone.classList.remove('flex-shrink-0', 'w-full', 'md:w-1/2', 'lg:w-1/3');
-              cardClone.style.display = '';
-              this.grid.appendChild(cardClone);
+              const clone = card.cloneNode(true);
+              this.grid.appendChild(clone);
               foundItems++;
-            } catch (error) {
-              console.error("Ошибка при клонировании карточки:", error);
+            } catch {
+              console.error('Ошибка при загрузке кейсов');
+              // Показываем сообщение об ошибке пользователю
+              if (window.notification) {
+                window.notification.show('Произошла ошибка при загрузке кейсов. Пожалуйста, попробуйте позже.', 'error', 5000);
+              }
             }
           }
         });
 
-        console.log("Найдено элементов для фильтра:", foundItems);
-
-        // Добавляем сообщение, если ничего не найдено
+        // Если не найдено элементов, показываем сообщение
         if (foundItems === 0) {
-          const emptyMessage = document.createElement('div');
-          emptyMessage.className = 'col-span-full text-center py-12';
-          emptyMessage.innerHTML = `
-<p class="text-gray-500 text-lg">Кейсы по данной категории не найдены</p>
-<button class="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-        data-filter="all">Показать все кейсы</button>
-`;
-          this.grid.appendChild(emptyMessage);
-
-          // Добавляем обработчик для кнопки "Показать все кейсы"
-          const showAllButton = this.grid.querySelector('button[data-filter="all"]');
-          if (showAllButton) {
-            showAllButton.addEventListener('click', () => {
-              // Находим кнопку "Все кейсы" и имитируем клик
-              const allButton = this.section.querySelector('#case-filter-buttons button[data-filter="all"]');
-              if (allButton) {
-                allButton.click();
-              } else {
-                console.error("Не найдена кнопка 'Все кейсы'");
-              }
-            });
-          }
+          this.showNoItemsMessage();
         }
       }
     }
@@ -316,6 +261,30 @@ class CasesCarousel {
       setTimeout(() => {
         container.style.opacity = '1';
       }, 50);
+    }
+  }
+
+  showNoItemsMessage() {
+    const emptyMessage = document.createElement('div');
+    emptyMessage.className = 'col-span-full text-center py-12';
+    emptyMessage.innerHTML = `
+<p class="text-gray-500 text-lg">Кейсы по данной категории не найдены</p>
+<button class="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+        data-filter="all">Показать все кейсы</button>
+`;
+    this.grid.appendChild(emptyMessage);
+
+    // Добавляем обработчик для кнопки "Показать все кейсы"
+    const showAllButton = this.grid.querySelector('button[data-filter="all"]');
+    if (showAllButton) {
+      showAllButton.addEventListener('click', () => {
+        // Находим кнопку "Все кейсы" и имитируем клик
+        const allButton = this.section.querySelector('button[data-filter="all"]');
+        if (!allButton) {
+          return;
+        }
+        allButton.click();
+      });
     }
   }
 }

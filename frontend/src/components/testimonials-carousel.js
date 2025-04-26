@@ -13,7 +13,6 @@ class TestimonialsCarousel {
 
     // Сохраняем количество оригинальных слайдов до клонирования
     this.originalSlides = this.slides.length;
-    console.log(`Найдено ${this.originalSlides} слайдов в карусели отзывов`);
 
     this.prevButton = this.section.querySelector('.testimonial-prev');
     this.nextButton = this.section.querySelector('.testimonial-next');
@@ -26,11 +25,6 @@ class TestimonialsCarousel {
     this.autoplayInterval = null;
     this.isAnimating = false;
 
-    if (this.carousel && this.slides.length > 0) {
-      this.init();
-    } else {
-      console.error("Не удалось найти необходимые элементы для карусели отзывов");
-    }
   }
 
   init() {
@@ -75,7 +69,6 @@ class TestimonialsCarousel {
     // Запускаем автопрокрутку
     this.startAutoplay();
 
-    console.log("Карусель отзывов инициализирована");
   }
 
   // Определение количества слайдов в зависимости от ширины экрана
@@ -91,13 +84,11 @@ class TestimonialsCarousel {
       this.slidesPerView = 1;
     }
 
-    console.log(`Обновлено количество отображаемых слайдов: ${this.slidesPerView}`);
   }
 
   // Подготовка бесконечной карусели
   prepareInfiniteCarousel() {
     if (!this.carousel || this.slides.length < 2) {
-      console.warn("Недостаточно слайдов для бесконечной карусели");
       return;
     }
 
@@ -147,9 +138,12 @@ class TestimonialsCarousel {
       // Начальная позиция
       this.currentSlide = this.slidesPerView; // Индекс первого оригинального слайда
 
-      console.log("Подготовлена бесконечная карусель отзывов, всего слайдов с клонами:", this.slides.length);
-    } catch (error) {
-      console.error("Ошибка при подготовке бесконечной карусели отзывов:", error);
+    } catch (_error) {
+      console.error('Ошибка при загрузке отзывов:', _error);
+      // Показываем сообщение об ошибке пользователю
+      if (window.notification) {
+        window.notification.show('Произошла ошибка при загрузке отзывов. Пожалуйста, попробуйте позже.', 'error', 5000);
+      }
     }
   }
 
@@ -179,7 +173,6 @@ class TestimonialsCarousel {
         this.slideWidth = (availableWidth - gapTotal) / this.slidesPerView;
       }
 
-      console.log("Обновлена ширина слайда:", this.slideWidth, "Gap:", slideGap);
     }
   }
 
@@ -206,7 +199,6 @@ class TestimonialsCarousel {
     // Обновляем индикаторы
     this.updateIndicators();
 
-    console.log("Переход к слайду:", this.currentSlide, "с отступом:", offset);
   }
 
   // Переход к следующему слайду
@@ -243,7 +235,6 @@ class TestimonialsCarousel {
         this.carousel.style.transition = 'transform 500ms ease';
       }, 50);
 
-      console.log("Мгновенный переход к началу");
     } else if (this.currentSlide < this.slidesPerView) {
       // Перескок к концу (с клонированных слайдов на оригинальные)
       this.currentSlide = lastVisibleSlide - this.slidesPerView;
@@ -256,7 +247,6 @@ class TestimonialsCarousel {
         this.carousel.style.transition = 'transform 500ms ease';
       }, 50);
 
-      console.log("Мгновенный переход к концу");
     }
 
     // Обновляем индикаторы

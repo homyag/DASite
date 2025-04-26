@@ -1,4 +1,6 @@
-import Popup from './Popup';
+// Добавляем глобальное определение grecaptcha
+/* global grecaptcha */
+window.grecaptcha = window.grecaptcha || {};
 
 // Функция валидации формы
 function validateForm(form) {
@@ -127,6 +129,11 @@ function applyPhoneMask(input) {
 
 // Добавление honeypot-поля
 function addHoneypotField(form) {
+    // Проверяем, есть ли уже honeypot-поле
+    if (form.querySelector('input[name="website"]')) {
+        return; // Поле уже существует, не добавляем дубликат
+    }
+
     const honeypotField = document.createElement('div');
     honeypotField.className = 'hidden';
     honeypotField.innerHTML = `
@@ -135,140 +142,181 @@ function addHoneypotField(form) {
     form.appendChild(honeypotField);
 }
 
+// Получение CSRF токена из cookies
+function getCsrfToken() {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Ищем cookie с названием 'csrftoken'
+            if (cookie.substring(0, 10) === 'csrftoken=') {
+                cookieValue = decodeURIComponent(cookie.substring(10));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
 // Основная функция инициализации формы
 export function initContactForm() {
-    const contactForm = document.getElementById('contact-form-element');
+    // Находим все формы на странице
+    const contactForms = document.querySelectorAll('#contact-form-element');
 
-    if (!contactForm) return;
-
-    // Создаем экземпляр попапа
-    const popup = new Popup();
-
-    // Делаем попап доступным глобально
-    window.popup = popup;
-
-    // Добавляем маску для телефона
-    const phoneInput = contactForm.querySelector('input[type="tel"]');
-    if (phoneInput) {
-        applyPhoneMask(phoneInput);
-    }
-
-    // Добавляем honeypot-поле
-    addHoneypotField(contactForm);
-
-    // Обработчик отправки формы через AJAX
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Валидация формы
-        if (!validateForm(contactForm)) {
-            return false;
+    contactForms.forEach(function(contactForm) {
+        // Проверяем, что форма найдена
+        if (!contactForm) {
+            return;
         }
 
-        // Очистка форматирования телефона перед отправкой
-    const phoneField = contactForm.querySelector('input[type="tel"]');
-    if (phoneField) {
-        // Создаем скрытое поле для хранения очищенного номера
-        const cleanPhoneField = document.createElement('input');
-        cleanPhoneField.type = 'hidden';
-        cleanPhoneField.name = 'phone';
+        // Создаем экземпляр попапа
+        const popup = window.popup || null;
+        const notification = window.notification || null;
 
-        // Оставляем только + в начале и цифры
-        const phoneValue = phoneField.value;
-        const cleanedPhone = '+' + phoneValue.replace(/\D/g, '');
-        cleanPhoneField.value = cleanedPhone;
-
-        // Добавляем скрытое поле и отключаем оригинальное
-        contactForm.appendChild(cleanPhoneField);
-        phoneField.name = 'phone_display'; // Переименовываем оригинальное поле
-    }
-
-        // Проверка honeypot-поля (если заполнено, это бот)
-        const honeypotValue = contactForm.querySelector('input[name="website"]').value;
-        if (honeypotValue) {
-            console.log('Honeypot field filled - potential spam detected');
-            popup.showSuccessPopup(); // Имитируем успех для бота
-            return false;
+        // Добавляем маску для телефона
+        const phoneInput = contactForm.querySelector('input[type="tel"]');
+        if (phoneInput) {
+            applyPhoneMask(phoneInput);
         }
 
-        // Показываем индикатор загрузки
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `
-            <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            Отправка...
-        `;
+        // Добавляем honeypot-поле
+        addHoneypotField(contactForm);
 
-        // Собираем данные формы
-        const formData = new FormData(contactForm);
+        // Обработчик отправки формы через AJAX
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-        // Добавляем трекинг для аналитики
-        formData.append('form_source', window.location.pathname);
-        formData.append('form_submitted_at', new Date().toISOString());
-
-        // Выполняем AJAX запрос
-        fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest' // Для идентификации AJAX запроса на сервере
+            // Валидация формы
+            if (!validateForm(contactForm)) {
+                return false;
             }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+
+            // Проверка honeypot-поля (если заполнено, это бот)
+            const honeypotField = contactForm.querySelector('input[name="website"]');
+            if (honeypotField && honeypotField.value) {
+                if (notification) {
+                    notification.show('Форма успешно отправлена!', 'success', 3000);
+                } else if (popup && popup.showSuccessPopup) {
+                    popup.showSuccessPopup();
+                }
+                return false;
             }
-            return response.json();
-        })
-        .then(data => {
-            // Сбрасываем состояние кнопки
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnText;
 
-            // Обрабатываем ответ
-            if (data.errors) {
-                // Проверяем формат ошибок и преобразуем их
-                let formattedErrors = {};
+            // Показываем индикатор загрузки
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            if (!submitBtn) {
+                return;
+            }
 
-                for (const field in data.errors) {
-                    if (Array.isArray(data.errors[field])) {
-                        // Если это массив ошибок, берем только текстовые сообщения
-                        formattedErrors[field] = data.errors[field].map(err => {
-                            if (typeof err === 'string') return err;
-                            return err.message || JSON.stringify(err);
-                        });
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Отправка...
+            `;
+
+            // Собираем данные формы
+            const formData = new FormData(contactForm);
+
+            // Добавляем значение reCAPTCHA
+            const recaptchaElement = contactForm.querySelector('.g-recaptcha');
+            if (recaptchaElement) {
+                const recaptchaResponse = grecaptcha.getResponse();
+                if (!recaptchaResponse) {
+                    const recaptchaError = document.createElement('p');
+                    recaptchaError.classList.add('text-red-500', 'text-xs', 'mt-1', 'error-message');
+                    recaptchaError.textContent = 'Пожалуйста, пройдите проверку reCAPTCHA';
+                    recaptchaElement.parentNode.insertBefore(recaptchaError, recaptchaElement.nextSibling);
+                    return false;
+                }
+                formData.append('g-recaptcha-response', recaptchaResponse);
+            } else {
+                return false;
+            }
+
+            // Добавляем информацию о странице
+            formData.append('source_page', window.location.pathname);
+            formData.append('source_url', window.location.href);
+
+            // Добавляем трекинг для аналитики
+            formData.append('form_submitted_at', new Date().toISOString());
+
+            // Получаем CSRF токен
+            const csrfToken = contactForm.querySelector('input[name="csrfmiddlewaretoken"]')
+                ? contactForm.querySelector('input[name="csrfmiddlewaretoken"]').value
+                : getCsrfToken();
+
+            // Проверка наличия CSRF токена
+            if (!csrfToken) {
+                contactForm.submit();
+                return;
+            }
+
+            // Выполняем AJAX запрос
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRFToken': csrfToken
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Ошибка сервера: ${response.status} ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Сбрасываем состояние кнопки
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+
+                // Обрабатываем ответ
+                if (data.errors) {
+                    showFormValidationErrors(contactForm, data.errors);
+                } else if (data.success) {
+                    // Очищаем форму при успехе
+                    contactForm.reset();
+
+                    // Показываем уведомление об успехе
+                    if (notification) {
+                        notification.show(data.message || 'Заявка успешно отправлена!', 'success', 5000);
+                    } else if (popup && popup.showSuccessPopup) {
+                        popup.showSuccessPopup();
                     } else {
-                        // Если это одиночная ошибка
-                        formattedErrors[field] = [data.errors[field].toString()];
+                        alert(data.message || 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+                    }
+
+                    // Задержка перед переадресацией, если указан URL
+                    if (data.redirect_url) {
+                        setTimeout(() => {
+                            window.location.href = data.redirect_url;
+                        }, 1500);
                     }
                 }
+            })
+            .catch(() => {
+                // Сбрасываем состояние кнопки
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
 
-                // Показываем ошибки в форме
-                showFormValidationErrors(contactForm, formattedErrors);
-            } else if (data.success) {
-                // Очищаем форму при успешной отправке
-                contactForm.reset();
+                // Показываем сообщение об ошибке
+                if (notification) {
+                    notification.show('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.', 'error', 5000);
+                } else if (popup && popup.showErrorPopup) {
+                    popup.showErrorPopup();
+                } else {
+                    alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.');
+                }
+            });
 
-                // Показываем попап с успехом
-                popup.showSuccessPopup();
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-
-            // Сбрасываем состояние кнопки
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnText;
-
-            // Показываем попап с ошибкой
-            popup.showErrorPopup();
+            return false;
         });
-
-        return false;
     });
 }
 
@@ -276,13 +324,17 @@ export function initContactForm() {
 export function handleDjangoMessages(messages) {
     if (!messages || messages.length === 0) return;
 
-    const popup = window.popup || new Popup();
-
-    messages.forEach(message => {
-        if (message.tags === 'error') {
-            popup.showErrorPopup();
-        } else if (message.tags === 'success') {
-            popup.showSuccessPopup();
-        }
-    });
+    if (window.notification) {
+        messages.forEach(message => {
+            window.notification.show(message.text, message.tags || 'info', 5000);
+        });
+    } else if (window.popup) {
+        messages.forEach(message => {
+            if (message.tags === 'error') {
+                window.popup.showErrorPopup();
+            } else if (message.tags === 'success') {
+                window.popup.showSuccessPopup();
+            }
+        });
+    }
 }

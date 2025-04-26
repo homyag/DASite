@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+        .header {
+            background-color: #4F46E5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 20px;
+        }
+        h1, h2 {
             color: #4F46E5;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: white;
+            margin: 0;
+        }
+        .source-label {
+            display: inline-block;
+            background-color: #EEF2FF;
+            color: #4F46E5;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
         .details {
             margin-top: 20px;
@@ -26,24 +54,113 @@
         .label {
             font-weight: bold;
             margin-right: 5px;
+            color: #4F46E5;
+        }
+        .value {
+            color: #333;
+        }
+        .field {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .field:last-child {
+            border-bottom: none;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4F46E5;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #3730A3;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Новая заявка с сайта Boldrise Agency</h1>
-        <p>На сайте была оставлена новая заявка от клиента.</p>
-
-        <div class="details">
-            <p><span class="label">Имя:</span> {{ contact.name }}</p>
-            <p><span class="label">Email:</span> {{ contact.email }}</p>
-            <p><span class="label">Телефон:</span> {{ contact.phone }}</p>
-            <p><span class="label">Услуга:</span> {{ contact.service }}</p>
-            <p><span class="label">Сообщение:</span> {{ contact.message }}</p>
-            <p><span class="label">Дата:</span> {{ contact.created_at|date:"d.m.Y H:i" }}</p>
+        <div class="header">
+            <h1>Новая заявка от клиента</h1>
         </div>
 
-        <p>Чтобы просмотреть заявку в панели администратора, <a href="{{ site_url }}/admin/contacts/contactrequest/{{ contact.id }}/">перейдите по этой ссылке</a>.</p>
+        <div class="source-label">{{ source_page }}</div>
+
+        <p>На сайте Boldrise Agency была оставлена новая заявка от клиента:</p>
+
+        <div class="details">
+            <div class="field">
+                <span class="label">Имя:</span>
+                <span class="value">{{ contact.name }}</span>
+            </div>
+
+            <div class="field">
+                <span class="label">Email:</span>
+                <span class="value">{{ contact.email }}</span>
+            </div>
+
+            <div class="field">
+                <span class="label">Телефон:</span>
+                <span class="value">{{ contact.phone }}</span>
+            </div>
+
+            {% if contact.service %}
+            <div class="field">
+                <span class="label">Услуга:</span>
+                <span class="value">{{ contact.service }}</span>
+            </div>
+            {% endif %}
+
+            {% if contact.company %}
+            <div class="field">
+                <span class="label">Компания:</span>
+                <span class="value">{{ contact.company }}</span>
+            </div>
+            {% endif %}
+
+            {% if contact.website %}
+            <div class="field">
+                <span class="label">Сайт:</span>
+                <span class="value">{{ contact.website }}</span>
+            </div>
+            {% endif %}
+
+            {% if contact.tariff %}
+            <div class="field">
+                <span class="label">Тариф:</span>
+                <span class="value">{{ contact.tariff }}</span>
+            </div>
+            {% endif %}
+
+            <div class="field">
+                <span class="label">Сообщение:</span>
+                <div class="value" style="margin-top: 10px;">{{ contact.message }}</div>
+            </div>
+
+            <div class="field">
+                <span class="label">Дата:</span>
+                <span class="value">{{ contact.created_at|date:"d.m.Y H:i" }}</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="{{ admin_url }}" class="button">Посмотреть в админке</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; {{ contact.created_at|date:"Y" }} Boldrise Agency. Все права защищены.</p>
+            <p>Это автоматическое уведомление, не отвечайте на это письмо.</p>
+        </div>
     </div>
 </body>
 </html>

@@ -56,16 +56,6 @@ class NewsletterForm {
     // Проверяем существование поля email перед обращением к нему
     var emailField = form.querySelector('input[type="email"]');
     if (!emailField) {
-      console.error('Ошибка: поле email не найдено в форме');
-      event.preventDefault();
-
-      // Создаем обратную связь для пользователя
-      this.showFeedback(form, 'Ошибка в форме: отсутствует поле email.', 'error');
-
-      if (this.options.onError) {
-        this.options.onError('Ошибка в форме: отсутствует поле email.');
-      }
-
       return false;
     }
 
@@ -83,8 +73,7 @@ class NewsletterForm {
     }
 
     // Базовая валидация email
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailField.value.trim())) {
+    if (!this.validateEmail(emailField.value.trim())) {
       event.preventDefault();
       this.showFeedback(form, 'Пожалуйста, введите корректный email адрес.', 'error');
       emailField.focus();
@@ -103,6 +92,11 @@ class NewsletterForm {
 
     // Если всё в порядке, форма отправится стандартным способом
     return true;
+  }
+
+  validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
   }
 
   /**
@@ -140,13 +134,11 @@ class NewsletterForm {
 
     // Защита от ошибки - проверяем наличие элементов перед использованием
     if (!emailField) {
-      console.error('Email поле не найдено при отправке формы');
       return;
     }
 
     var submitButton = form.querySelector('button[type="submit"]');
     if (!submitButton) {
-      console.error('Кнопка отправки не найдена в форме');
       return;
     }
 
@@ -182,15 +174,12 @@ class NewsletterForm {
     }
 
     if (!csrfToken) {
-      console.error('CSRF токен не найден. Используем стандартную отправку формы.');
-      // Если нет CSRF токена, отправляем форму обычным способом
       form.submit();
       return;
     }
 
     // Отправляем AJAX запрос
     var formData = new FormData(form);
-    var self = this;
 
     fetch(form.action, {
       method: 'POST',
@@ -200,97 +189,31 @@ class NewsletterForm {
         'X-CSRFToken': csrfToken
       }
     })
-    .then(function(response) {
+    .then(response => {
       if (!response.ok) {
-        if (response.status === 403) {
-          throw new Error('Ошибка CSRF защиты. Используем стандартную отправку формы.');
-        }
-        throw new Error('Ошибка сети: ' + response.status + ' ' + response.statusText);
+        throw new Error(`Ошибка сервера: ${response.status} ${response.statusText}`);
       }
       return response.json();
     })
-    .then(function(data) {
-      // Возвращаем кнопку в исходное состояние
+    .then(data => {
       submitButton.disabled = false;
       submitButton.innerHTML = originalButtonText;
 
       if (data.success) {
-        // Очищаем форму при успехе
+        this.showSuccess(form, data.message || 'Вы успешно подписались на рассылку!');
         form.reset();
-
-        // Проверяем, есть ли глобальный объект уведомлений
-        if (window.notification && typeof window.notification.show === 'function') {
-          // Используем глобальный компонент уведомлений для показа попапа
-          window.notification.show(
-            data.message || 'Спасибо за подписку!',
-            'success',
-            5000
-          );
-        } else if (window.popup && typeof window.popup.showSuccessPopup === 'function') {
-          // Если есть глобальный попап компонент, используем его
-          window.popup.showSuccessPopup();
-        } else {
-          // Резервный вариант - показываем уведомление в форме
-          self.showFeedback(form, data.message || 'Спасибо за подписку!', 'success');
-        }
-
-        // Вызываем колбэк onSuccess, если он определен
-        if (self.options.onSuccess) {
-          self.options.onSuccess(data.message || 'Спасибо за подписку!');
-        }
-      } else {
-        // Показываем сообщение об ошибке
-        var errorMessage = data.message || 'Произошла ошибка при подписке.';
-
-        // Проверяем, есть ли глобальный объект уведомлений
-        if (window.notification && typeof window.notification.show === 'function') {
-          // Используем глобальный компонент уведомлений для показа ошибки
-          window.notification.show(errorMessage, 'error', 5000);
-        } else if (window.popup && typeof window.popup.showErrorPopup === 'function') {
-          // Если есть глобальный попап компонент, используем его
-          window.popup.showErrorPopup();
-        } else {
-          // Резервный вариант - показываем уведомление в форме
-          self.showFeedback(form, errorMessage, 'error');
-        }
-
-        // Вызываем колбэк onError, если он определен
-        if (self.options.onError) {
-          self.options.onError(errorMessage);
-        }
+      } else if (data.errors) {
+        this.showError(form, data.errors.email || 'Произошла ошибка при подписке');
       }
     })
-    .catch(function(error) {
-      console.error('Ошибка:', error);
-
-      // Если ошибка связана с CSRF, отправляем форму обычным способом
-      if (error.message.includes('CSRF')) {
-        form.submit();
-        return;
-      }
-
-      // Возвращаем кнопку в исходное состояние
+    .catch(() => {
+      // Сбрасываем состояние кнопки
       submitButton.disabled = false;
       submitButton.innerHTML = originalButtonText;
 
       // Показываем сообщение об ошибке
-      var errorMessage = 'Произошла ошибка при отправке. Пожалуйста, попробуйте позже.';
-
-      // Проверяем, есть ли глобальный объект уведомлений
-      if (window.notification && typeof window.notification.show === 'function') {
-        // Используем глобальный компонент уведомлений для показа ошибки
-        window.notification.show(errorMessage, 'error', 5000);
-      } else if (window.popup && typeof window.popup.showErrorPopup === 'function') {
-        // Если есть глобальный попап компонент, используем его
-        window.popup.showErrorPopup();
-      } else {
-        // Резервный вариант - показываем уведомление в форме
-        self.showFeedback(form, errorMessage, 'error');
-      }
-
-      // Вызываем колбэк onError, если он определен
-      if (self.options.onError) {
-        self.options.onError(errorMessage);
+      if (this.options.onError) {
+        this.options.onError('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.');
       }
     });
   }

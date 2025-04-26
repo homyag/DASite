@@ -5,8 +5,11 @@ class Jumbotron {
 
   constructor(node) {
     this.node = node;
-    console.log(`Jumbotron initialized for node: ${node}`);
-    // do something here
+    this.init();
+  }
+
+  init() {
+    // Инициализация компонента
   }
 }
 

@@ -1108,6 +1108,7 @@
                                   id="contact-form-element">
                                 {% csrf_token %}
 
+
                                 <!-- Имя и телефон в одной строке (на больших экранах) -->
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                     <div>
@@ -1273,7 +1274,7 @@
                                     </label>
                                 </div>
 
-                                <!-- reCAPTCHA - оставляем оригинальный виджет Django -->
+                                <!-- reCAPTCHA -->
                                 <div>
                                     {{ form.captcha }}
                                     {% if form.captcha.errors %}

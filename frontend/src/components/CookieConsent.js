@@ -295,27 +295,15 @@ class CookieConsent {
       localStorage.setItem('cookie_consent_level', 'necessary');
     }
 
-    // Примените настройки (включите/выключите соответствующие скрипты)
+    // Применяем настройки
     this.applySettings(settings);
   }
 
   // Применение настроек
   applySettings(settings) {
-    // Ваш код для включения/отключения различных скриптов в зависимости от настроек
-
-    // Пример: Если настройки аналитики отключены, удаляем Google Analytics
-    if (!settings.analytics) {
-      // Отключение Google Analytics и других аналитических скриптов
-      this.disableAnalytics();
-    }
-
-    // Пример: Если маркетинговые cookie отключены, отключаем соответствующие скрипты
-    if (!settings.marketing) {
-      // Отключение маркетинговых скриптов
-      this.disableMarketing();
-    }
-
-    console.log('Применены настройки cookie:', settings);
+    // Применяем настройки
+    this.settings = settings;
+    this.saveSettings();
   }
 
   // Сохранение выбора пользователя
@@ -339,20 +327,16 @@ class CookieConsent {
 
   // Отключение аналитических скриптов
   disableAnalytics() {
-    // Здесь код для отключения аналитических скриптов, например:
-    // - Google Analytics
-    // - Яндекс.Метрика
-    // - и др.
-    console.log('Аналитические cookie отключены');
+    // Отключаем аналитические cookie
+    this.settings.analytics = false;
+    this.saveSettings();
   }
 
   // Отключение маркетинговых скриптов
   disableMarketing() {
-    // Здесь код для отключения маркетинговых скриптов, например:
-    // - Facebook Pixel
-    // - Google Ads
-    // - и др.
-    console.log('Маркетинговые cookie отключены');
+    // Отключаем маркетинговые cookie
+    this.settings.marketing = false;
+    this.saveSettings();
   }
 
   // Скрытие баннера
