@@ -80,9 +80,12 @@
                 </div>
                 <div class="md:w-1/2 relative">
                     <div class="bg-white bg-opacity-10 p-2 rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                        <img src="{% static 'vendors/images/home_hero_section_1.jpeg' %}"
-                             alt="Digital Marketing"
-                             class="w-full max-w-md mx-auto rounded-lg shadow-xl relative z-10">
+                        <picture>
+                            <source srcset="{% static 'vendors/images/home_hero_section_1.jpeg' %}" type="image/jpeg">
+                            <img src="{% static 'vendors/images/home_hero_section_1.jpeg' %}"
+                                 alt="Digital Marketing"
+                                 class="w-full max-w-md mx-auto rounded-lg shadow-xl relative z-10">
+                        </picture>
                         <!-- Декоративные элементы на изображении -->
                         <div class="absolute -right-5 -bottom-5 w-32 h-32 bg-gradient-to-r from-pink-500 to-yellow-500 rounded-lg opacity-50 blur-sm -z-10"></div>
                     </div>
@@ -1102,10 +1105,9 @@
                             {% endif %}
 
                             <!-- Гибридная форма: HTML + Django -->
-                            <form method="post"
+                            <form id="contact-form-element" class="universal-contact-form" method="post"
                                   action="{% url 'contact_submit' %}"
-                                  class="space-y-4 md:space-y-6"
-                                  id="contact-form-element">
+                                  class="space-y-4 md:space-y-6">
                                 {% csrf_token %}
 
 
@@ -1272,14 +1274,6 @@
                                         даю согласие на обработку персональных
                                         данных
                                     </label>
-                                </div>
-
-                                <!-- reCAPTCHA -->
-                                <div>
-                                    {{ form.captcha }}
-                                    {% if form.captcha.errors %}
-                                        <p class="text-red-500 text-xs mt-1">{{ form.captcha.errors|join:", " }}</p>
-                                    {% endif %}
                                 </div>
 
                                 <!-- Кнопка отправки -->

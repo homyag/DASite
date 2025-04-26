@@ -1,0 +1,249 @@
+[
+{
+  "model": "core.category",
+  "pk": 1,
+  "fields": {
+    "name": "Email-маркетинг",
+    "slug": "email-marketing",
+    "description": "Всё об эффективных email-кампаниях: от основ до продвинутых техник. Гайды по повышению открываемости и конверсии, разборы современных трендов, кейсы успешных рассылок и советы по выбору сервисов"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 2,
+  "fields": {
+    "name": "SEO",
+    "slug": "seo",
+    "description": "Всё о поисковой оптимизации: свежие алгоритмы Google и Яндекса, работа с трафиком, SEO-аналитика и прогнозы. Практические руководства, кейсы и разборы трендов для маркетологов, владельцев бизнеса и веб-мастеров."
+  }
+},
+{
+  "model": "core.category",
+  "pk": 3,
+  "fields": {
+    "name": "SMM",
+    "slug": "smm",
+    "description": "Всё о SMM: стратегии продвижения, тренды соцсетей, работа с контентом и таргетированной рекламой. Практические кейсы, инструкции и лайфхаки для привлечения клиентов через Facebook, Instagram, TikTok и другие платформы."
+  }
+},
+{
+  "model": "core.tag",
+  "pk": 1,
+  "fields": {
+    "name": "Email",
+    "slug": "email"
+  }
+},
+{
+  "model": "core.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Гайды",
+    "slug": "gajdy"
+  }
+},
+{
+  "model": "core.tag",
+  "pk": 3,
+  "fields": {
+    "name": "SEO",
+    "slug": "seo"
+  }
+},
+{
+  "model": "core.tag",
+  "pk": 4,
+  "fields": {
+    "name": "SMM",
+    "slug": "smm"
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 1,
+  "fields": {
+    "name": "Игорь Александрович Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "smm",
+    "message": "dasfdsafasdfaf",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T19:52:30.301Z",
+    "updated_at": "2025-04-26T19:52:30.301Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 2,
+  "fields": {
+    "name": "Игорь Александрович Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "content",
+    "message": "12123123ывфывфывф",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T19:58:28.230Z",
+    "updated_at": "2025-04-26T19:58:28.230Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 3,
+  "fields": {
+    "name": "Василич",
+    "email": "e002kx78@gmail.com",
+    "phone": "+72222222222",
+    "service": "seo",
+    "message": "смотри какую хуйню сделал",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T20:00:33.811Z",
+    "updated_at": "2025-04-26T20:00:33.811Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 4,
+  "fields": {
+    "name": "Игорь Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "seo",
+    "message": "проверка попапа",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T20:06:59.668Z",
+    "updated_at": "2025-04-26T20:06:59.668Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 5,
+  "fields": {
+    "name": "Игорь Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "ppc",
+    "message": "проверка попапа 2",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T20:13:37.342Z",
+    "updated_at": "2025-04-26T20:13:37.342Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "photo": "",
+    "bio": null,
+    "position": null,
+    "company": null,
+    "linkedin_url": null,
+    "twitter_url": null,
+    "github_url": null,
+    "website_url": null,
+    "years_experience": 0,
+    "expertise": []
+  }
+},
+{
+  "model": "core.profile",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "photo": "",
+    "bio": null,
+    "position": null,
+    "company": null,
+    "linkedin_url": null,
+    "twitter_url": null,
+    "github_url": null,
+    "website_url": null,
+    "years_experience": 0,
+    "expertise": []
+  }
+},
+{
+  "model": "core.profile",
+  "pk": 5,
+  "fields": {
+    "user": 3,
+    "photo": "",
+    "bio": null,
+    "position": null,
+    "company": null,
+    "linkedin_url": null,
+    "twitter_url": null,
+    "github_url": null,
+    "website_url": null,
+    "years_experience": 0,
+    "expertise": []
+  }
+},
+{
+  "model": "core.profile",
+  "pk": 6,
+  "fields": {
+    "user": 4,
+    "photo": "",
+    "bio": null,
+    "position": null,
+    "company": null,
+    "linkedin_url": null,
+    "twitter_url": null,
+    "github_url": null,
+    "website_url": null,
+    "years_experience": 0,
+    "expertise": []
+  }
+}
+]
