@@ -19,6 +19,13 @@ class PartnersCarousel {
       });
     }
   }
+
+  init() {
+    // Инициализация карусели
+    if (this.carousel) {
+      console.log('Карусель партнеров инициализирована');
+    }
+  }
 }
 
 export default PartnersCarousel;
