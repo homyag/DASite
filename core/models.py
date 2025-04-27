@@ -57,7 +57,7 @@ class ContactRequest(models.Model):
     # Основная информация
     name = models.CharField(_('Имя'), max_length=100)
     email = models.EmailField(_('Email'))
-    phone = models.CharField(_('Телефон'), max_length=17)
+    phone = models.CharField(_('Телефон'), max_length=32)
     service = models.CharField(
         _('Услуга'),
         max_length=50,

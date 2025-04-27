@@ -37,7 +37,6 @@ INSTALLED_APPS = [
 
     'webpack_boilerplate',
     'tinymce',
-    'django_recaptcha',
     'crispy_forms',
     'crispy_tailwind',
     'django_cleanup.apps.CleanupConfig',
@@ -60,7 +59,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'contacts.middleware.RecaptchaMiddleware',
 ]
 
 ROOT_URLCONF = 'DASite.urls'
@@ -199,10 +197,20 @@ TINYMCE_SPELLCHECKER = True  # Проверка орфографии
 # Если нужна функциональность загрузки файлов (аналог ckeditor_uploader)
 TINYMCE_FILEBROWSER = False  # Интеграция с django-filebrowser если нужна
 
-# reCAPTCHA
-RECAPTCHA_PUBLIC_KEY = '6LffmiMrAAAAAABKhG7l6895HvbSDF6v8b_zUTuW'
-RECAPTCHA_PRIVATE_KEY = '6LffmiMrAAAAAOglEiMfhEIoS6oaglSCr780f2MQ'
-
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+# EMAIL_PORT = 587
+EMAIL_HOST_USER = 'antonov.iigor@yandex.ru'
+EMAIL_HOST_PASSWORD = 'dxhbunxixnjkeslc'
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = 'antonov.iigor@yandex.ru'
+EMAIL_SSL_CERTVERIFY = False
 
 LOGGING = {
     'version': 1,
@@ -259,18 +267,3 @@ LOGGING = {
         },
     },
 }
-
-# Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
-# EMAIL_PORT = 587
-EMAIL_HOST_USER = 'antonov.iigor@yandex.ru'
-EMAIL_HOST_PASSWORD = 'dxhbunxixnjkeslc'
-EMAIL_USE_SSL = True
-EMAIL_USE_TLS = False
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-SERVER_EMAIL = EMAIL_HOST_USER
-EMAIL_ADMIN = 'antonov.iigor@yandex.ru'
-EMAIL_SSL_CERTVERIFY = False

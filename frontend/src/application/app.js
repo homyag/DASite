@@ -98,8 +98,8 @@ window.document.addEventListener("DOMContentLoaded", async function () {
     // Инициализация формы контактов
     const contactForms = document.querySelectorAll('#contact-form-element');
     if (contactForms.length > 0) {
-      const { initContactForm } = await import('../components/ContactForm');
-      initContactForm();
+      const { default: ContactForm } = await import('../components/ContactForm');
+      const contactForm = new ContactForm();
     }
   } catch (error) {
     console.error('Ошибка при инициализации формы контактов:', error);

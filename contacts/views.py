@@ -47,116 +47,55 @@ def contact_submit_view(request):
                     return redirect('contact_success')
 
             # Проверяем валидность формы
-            is_valid = form.is_valid()
-            logger.info(f"Форма валидна: {is_valid}")
-
-            if not is_valid:
-                logger.warning(f"Ошибки валидации формы: {form.errors}")
-
-                # Для AJAX-запроса возвращаем ошибки валидации
-                if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                    return JsonResponse({
-                        'success': False,
-                        'errors': json.loads(form.errors.as_json())
-                    })
-
-                # Если форма не валидна, добавляем сообщение об ошибке
-                messages.error(request, 'Пожалуйста, проверьте правильность заполнения формы.')
-
-                # Возвращаем на предыдущую страницу
-                if referer:
-                    return redirect(referer)
-                return render(request, 'contacts/contact.html', {'form': form})
-
-            # Если форма валидна, сохраняем данные
-            try:
-                # Определяем источник формы
-                source_page = "Неизвестная страница"
-                if referer:
-                    if '/service/' in referer:
-                        service_name = referer.split('/service/')[-1].split('/')[0]
-                        if service_name:
-                            source_page = f"Страница услуги: {service_name}"
-                    elif '/contact' in referer:
-                        source_page = "Страница контактов"
-                    elif referer.endswith('/'):
-                        source_page = "Главная страница"
-
-                # Сохраняем заявку в базу данных
-                contact = form.save()
-
-                # Добавляем информацию об источнике
+            if form.is_valid():
+                # Сохраняем форму в базу данных
+                contact = form.save(commit=False)
+                # Определяем страницу, с которой была отправлена форма
+                source_page = resolve(referer.replace(request.build_absolute_uri('/'), '/')).url_name if referer else 'unknown'
                 contact.source = source_page
-                contact.ip_address = request.META.get('REMOTE_ADDR', '')
-                contact.user_agent = request.META.get('HTTP_USER_AGENT', '')
                 contact.save()
-
-                logger.info(f"Заявка успешно сохранена в БД: ID={contact.id}, Источник={source_page}")
-
-                # Отправляем email-уведомления
+                
+                # Отправляем уведомления
                 try:
-                    # Отправка уведомления администратору
                     send_admin_notification(request, contact, source_page)
-                    logger.info(f"Email администратору успешно отправлен")
-
-                    # Отправка подтверждения клиенту
                     send_client_confirmation(contact)
-                    logger.info(f"Email клиенту успешно отправлен")
-                except Exception as email_error:
-                    logger.error(f"Ошибка при отправке email: {email_error}")
-                    logger.error(traceback.format_exc())
+                except Exception as e:
+                    logger.error(f"Ошибка при отправке уведомлений: {str(e)}")
+                    # Продолжаем выполнение, так как форма уже сохранена
 
-                # Для AJAX-запроса возвращаем JSON
                 if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                     return JsonResponse({
                         'success': True,
-                        'message': 'Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.',
-                        'redirect_url': reverse('contact_success')
+                        'message': 'Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.'
                     })
-
-                # Устанавливаем сообщение об успехе
-                messages.success(request, 'Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.')
-
-                # Перенаправляем на страницу успеха
-                return redirect('contact_success')
-
-            except Exception as save_error:
-                logger.error(f"Ошибка при сохранении формы: {save_error}")
-                logger.error(traceback.format_exc())
-
-                # Если запрос через AJAX, возвращаем ошибку
+                else:
+                    messages.success(request, 'Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.')
+                    return redirect('contact_success')
+            else:
+                logger.warning(f"Ошибки валидации формы: {form.errors}")
                 if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                     return JsonResponse({
                         'success': False,
-                        'message': 'Произошла ошибка при обработке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.'
-                    })
+                        'errors': form.errors
+                    }, status=400)
+                else:
+                    messages.error(request, 'Пожалуйста, исправьте ошибки в форме.')
+                    return redirect('contact')
 
-                messages.error(request,
-                               'Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.')
-
-                if referer:
-                    return redirect(referer)
-                return redirect('home')
-
-        except Exception as form_error:
-            logger.error(f"Общая ошибка обработки формы: {form_error}")
+        except Exception as e:
+            logger.error(f"Ошибка при сохранении формы: {str(e)}")
             logger.error(traceback.format_exc())
-
             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                 return JsonResponse({
                     'success': False,
-                    'message': 'Произошла ошибка при обработке запроса.'
-                })
+                    'message': 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.'
+                }, status=500)
+            else:
+                messages.error(request, 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.')
+                return redirect('contact')
 
-            messages.error(request, 'Произошла ошибка при обработке запроса.')
-
-            if referer:
-                return redirect(referer)
-            return redirect('home')
-    else:
-        # GET запрос - просто перенаправляем на главную
-        logger.warning(f"Получен GET-запрос вместо POST в contact_submit_view")
-        return redirect('home')
+    # Если метод не POST
+    return JsonResponse({'error': 'Method not allowed'}, status=405)
 
 
 def send_admin_notification(request, contact, source_page):
