@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
 from services.models import (
@@ -77,8 +78,44 @@ class ServiceView(TemplateView):
         context = super().get_context_data(**kwargs)
         service_name = self.kwargs.get('service_name')
 
-        # Получаем информацию об услуге из базы данных
-        service = get_object_or_404(Service, name=service_name, is_active=True)
+        # Отладочная информация
+        print(f"Ищем услугу с service_name: {service_name}")
+
+        # Посмотрим, какие услуги есть в базе
+        all_services = Service.objects.filter(is_active=True)
+        print("Доступные услуги:")
+        for svc in all_services:
+            print(f"  - name: '{svc.name}', slug: '{svc.slug}', title: '{svc.title}'")
+
+        # Пробуем найти услугу по разным полям
+        service = None
+
+        # Сначала пробуем по slug (рекомендуемый способ)
+        try:
+            service = Service.objects.get(slug=service_name, is_active=True)
+            print(f"Найдена услуга по slug: {service.name}")
+        except Service.DoesNotExist:
+            print(f"Услуга с slug '{service_name}' не найдена")
+
+        # Если не найдена по slug, пробуем по name
+        if not service:
+            try:
+                service = Service.objects.get(name=service_name, is_active=True)
+                print(f"Найдена услуга по name: {service.name}")
+            except Service.DoesNotExist:
+                print(f"Услуга с name '{service_name}' не найдена")
+
+        # Если все еще не найдена, пробуем по name (case insensitive)
+        if not service:
+            try:
+                service = Service.objects.get(name__iexact=service_name, is_active=True)
+                print(f"Найдена услуга по name (case insensitive): {service.name}")
+            except Service.DoesNotExist:
+                print(f"Услуга с name '{service_name}' (case insensitive) не найдена")
+
+        # Если все еще не найдена, возвращаем 404
+        if not service:
+            raise Http404(f"Услуга '{service_name}' не найдена")
 
         # Получаем связанные данные
         features = service.features.all().order_by('order')
@@ -94,7 +131,23 @@ class ServiceView(TemplateView):
 
         # Получаем FAQs для услуги и общие FAQs
         faqs = list(service.faqs.filter(is_common=False).order_by('order'))
-        common_faqs = list(service.faqs.filter(is_common=True).order_by('order'))
+        common_faqs = list(FAQ.objects.filter(is_common=True).order_by('order'))
+
+        # Отладочная информация о данных
+        print(f"Данные для услуги '{service.name}':")
+        print(f"  - features: {features.count()}")
+        print(f"  - benefits: {benefits.count()}")
+        print(f"  - processes: {processes.count()}")
+        print(f"  - explanations: {explanations.count()}")
+        print(f"  - details: {details.count()}")
+        print(f"  - cases: {cases.count()}")
+        print(f"  - pricing_plans: {pricing_plans.count()}")
+        print(f"  - partners: {partners.count()}")
+        print(f"  - faqs: {len(faqs)}")
+        print(f"  - common_faqs: {len(common_faqs)}")
+        print(f"  - hero_image: {bool(service.hero_image)}")
+        print(f"  - image: {bool(service.image)}")
+        print(f"  - get_hero_image_url: {service.get_hero_image_url()}")
 
         # Добавляем все данные в контекст
         context.update({

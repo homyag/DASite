@@ -64,6 +64,22 @@ class Service(models.Model):
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
+    def get_hero_image_url(self):
+        """Безопасное получение URL героического изображения"""
+        if self.hero_image:
+            return self.hero_image.url
+        elif self.image:
+            return self.image.url
+        return None
+
+    def get_hero_title(self):
+        """Получение заголовка для героической секции"""
+        return self.hero_title if self.hero_title else self.title
+
+    def get_hero_description(self):
+        """Получение описания для героической секции"""
+        return self.hero_description if self.hero_description else self.description
+
     def __str__(self):
         return self.name
 
