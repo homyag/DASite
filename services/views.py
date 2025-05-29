@@ -3,8 +3,10 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
 from services.models import (
     Service, ServiceFeature, ServiceBenefit, ServiceProcess, FAQ,
-    ServiceExplanation, ServiceDetail, ServiceCase, ServicePricing, ServicePartner
+    ServiceExplanation, ServiceDetail, ServicePricing, ServicePartner
 )
+from cases.models import Case
+
 
 class ServicesListView(TemplateView):
     template_name = 'services/list.html'
@@ -33,9 +35,11 @@ class ServiceView(TemplateView):
         # Получаем данные из новых моделей
         explanations = service.explanations.all().order_by('order')
         details = service.details.all().prefetch_related('items').order_by('order')
-        cases = service.cases.all().order_by('order')
         pricing_plans = service.pricing.all().prefetch_related('features').order_by('order')
         partners = service.partners.all().order_by('order')
+
+        # Получаем кейсы через новую связь из приложения cases
+        cases = service.get_related_cases()[:6]  # Ограничиваем количество кейсов
 
         # Получаем FAQs для услуги и общие FAQs
         faqs = list(service.faqs.filter(is_common=False).order_by('order'))
@@ -50,7 +54,7 @@ class ServiceView(TemplateView):
             'processes': processes,
             'explanations': explanations,
             'details': details,
-            'cases': cases,
+            'cases': cases,  # Теперь используем кейсы из приложения cases
             'pricing_plans': pricing_plans,
             'partners': partners,
             'faqs': faqs + common_faqs

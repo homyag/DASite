@@ -80,6 +80,11 @@ class Service(models.Model):
         """Получение описания для героической секции"""
         return self.hero_description if self.hero_description else self.description
 
+    def get_related_cases(self):
+        """Получение связанных кейсов через ManyToMany связь в модели Case"""
+        from cases.models import Case
+        return Case.objects.filter(services=self, is_published=True).order_by('-created_at')
+
     def __str__(self):
         return self.name
 
@@ -89,7 +94,6 @@ class Service(models.Model):
         ordering = ['order', 'name']
 
 
-# Оставляем существующие модели без изменений
 class ServiceFeature(models.Model):
     """Модель для хранения особенностей/пунктов услуг"""
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='features')
@@ -162,7 +166,6 @@ class FAQ(models.Model):
         ordering = ['order']
 
 
-# Добавляем новые модели для поддержки всех секций страницы
 class ServiceExplanation(models.Model):
     """Модель для блоков с объяснением (Что такое SEO, преимущества и т.д.)"""
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='explanations')
@@ -212,24 +215,7 @@ class ServiceDetailItem(models.Model):
         ordering = ['order']
 
 
-class ServiceCase(models.Model):
-    """Кейсы услуг"""
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='cases')
-    title = models.CharField('Заголовок', max_length=200)
-    description = models.TextField('Описание')
-    image = models.ImageField('Изображение', upload_to='services/cases/')
-    category = models.CharField('Категория', max_length=100)
-    result = models.CharField('Результат', max_length=100)
-    link = models.URLField('Ссылка на подробности', blank=True)
-    order = models.PositiveIntegerField('Порядок отображения', default=0)
-
-    def __str__(self):
-        return f"{self.title} ({self.service.name})"
-
-    class Meta:
-        verbose_name = 'Кейс'
-        verbose_name_plural = 'Кейсы'
-        ordering = ['order']
+# УДАЛЕНА МОДЕЛЬ ServiceCase - теперь используем cases.models.Case
 
 
 class ServicePricing(models.Model):

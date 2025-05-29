@@ -1,0 +1,57 @@
+<!-- Компонент кейсов для использования в шаблонах услуг -->
+
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">{{ title|default:"Наши успешные кейсы" }}</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">{{ subtitle|default:"Реальные результаты наших клиентов" }}</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {% for case in cases %}
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                {% if case.featured_image %}
+                <img src="{{ case.featured_image.url }}" alt="{{ case.title }}" class="w-full h-48 object-cover">
+                {% else %}
+                <img src="/api/placeholder/600/350" alt="{{ case.title }}" class="w-full h-48 object-cover">
+                {% endif %}
+                <div class="p-6">
+                    <div class="flex items-center mb-3 flex-wrap">
+                        {% for related_service in case.services.all %}
+                        <div class="bg-indigo-100 text-indigo-600 text-sm font-medium py-1 px-3 rounded-full mr-2 mb-2">
+                            {{ related_service.title }}
+                        </div>
+                        {% endfor %}
+                        {% for category in case.categories.all %}
+                        <div class="bg-gray-100 text-gray-600 text-sm font-medium py-1 px-3 rounded-full mr-2 mb-2">
+                            {{ category.name }}
+                        </div>
+                        {% endfor %}
+                        {% if case.result %}
+                        <div class="bg-green-100 text-green-600 text-sm font-medium py-1 px-3 rounded-full mb-2">
+                            {{ case.result|truncatechars:25 }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">{{ case.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ case.short_description|truncatechars:120 }}</p>
+                    <a href="{{ case.get_absolute_url }}" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                        Подробнее о кейсе
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if show_view_all_button %}
+        <div class="text-center mt-12">
+            <a href="{% url 'case_list' %}{% if service %}?service={{ service.slug }}{% endif %}"
+               class="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                Смотреть все кейсы{% if service %} по {{ service.title }}{% endif %}
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>

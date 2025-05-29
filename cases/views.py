@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.db.models import Q
 from .models import Case
 from core.models import Category
+from services.models import Service
 
 
 class CaseListView(ListView):
@@ -19,6 +20,11 @@ class CaseListView(ListView):
         if category_slug:
             queryset = queryset.filter(categories__slug=category_slug)
 
+        # НОВЫЙ ФИЛЬТР: Фильтрация по услуге
+        service_slug = self.request.GET.get('service')
+        if service_slug:
+            queryset = queryset.filter(services__slug=service_slug)
+
         # Поиск
         query = self.request.GET.get('q')
         if query:
@@ -28,14 +34,16 @@ class CaseListView(ListView):
                 Q(content__icontains=query)
             ).distinct()
 
-        return queryset
+        return queryset.distinct()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
+        context['services'] = Service.objects.filter(is_active=True)  # НОВОЕ: Добавляем список услуг
 
         # Получаем параметры фильтрации
         context['current_category'] = self.request.GET.get('category', '')
+        context['current_service'] = self.request.GET.get('service', '')  # НОВОЕ: Текущая выбранная услуга
         context['query'] = self.request.GET.get('q', '')
 
         return context
@@ -54,10 +62,15 @@ class CaseDetailView(DetailView):
 
         # Получаем связанные кейсы
         case = self.get_object()
-        context['related_cases'] = Case.objects.filter(
-            categories__in=case.categories.all(),
+
+        # УЛУЧШЕННЫЙ АЛГОРИТМ: Ищем похожие кейсы по категориям И услугам
+        related_cases = Case.objects.filter(
+            Q(categories__in=case.categories.all()) |
+            Q(services__in=case.services.all()),
             is_published=True
         ).exclude(id=case.id).distinct()[:3]
+
+        context['related_cases'] = related_cases
 
         return context
 
@@ -70,4 +83,3 @@ class FeaturedCaseListView(ListView):
 
     def get_queryset(self):
         return Case.objects.filter(is_published=True, is_featured=True).order_by('-created_at')[:6]
-

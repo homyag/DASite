@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (
     Service, ServiceFeature, ServiceBenefit, ServiceProcess, FAQ,
-    ServiceExplanation, ServiceDetail, ServiceDetailItem, ServiceCase,
+    ServiceExplanation, ServiceDetail, ServiceDetailItem,
     ServicePricing, ServicePricingFeature, ServicePartner
 )
 
@@ -50,9 +50,7 @@ class ServiceDetailInline(admin.TabularInline):
     show_change_link = True
 
 
-class ServiceCaseInline(admin.TabularInline):
-    model = ServiceCase
-    extra = 1
+# УДАЛЕН ServiceCaseInline - теперь кейсы управляются через приложение cases
 
 
 class ServicePricingFeatureInline(admin.TabularInline):
@@ -79,9 +77,30 @@ class ServicePartnerInline(admin.TabularInline):
     extra = 1
 
 
+class RelatedCasesInline(admin.TabularInline):
+    """Inline для отображения связанных кейсов (только для чтения)"""
+    from cases.models import Case
+    model = Case.services.through
+    extra = 0
+    readonly_fields = ('case_link',)
+    fields = ('case_link',)
+    verbose_name = 'Связанный кейс'
+    verbose_name_plural = 'Связанные кейсы'
+
+    def case_link(self, obj):
+        from django.utils.html import format_html
+        from django.urls import reverse
+        if obj.case:
+            url = reverse('admin:cases_case_change', args=[obj.case.pk])
+            return format_html('<a href="{}">{}</a>', url, obj.case.title)
+        return '-'
+
+    case_link.short_description = 'Кейс'
+
+
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'title', 'slug', 'is_active', 'is_featured', 'order')
+    list_display = ('name', 'title', 'slug', 'is_active', 'is_featured', 'order', 'get_cases_count')
     list_filter = ('is_active', 'is_featured')
     search_fields = ('name', 'title', 'description')
     prepopulated_fields = {'slug': ('name',)}
@@ -92,9 +111,9 @@ class ServiceAdmin(admin.ModelAdmin):
         FAQInline,
         ServiceExplanationInline,
         ServiceDetailInline,
-        ServiceCaseInline,
         ServicePricingInline,
-        ServicePartnerInline
+        ServicePartnerInline,
+        RelatedCasesInline,  # Заменили ServiceCaseInline на RelatedCasesInline
     ]
 
     fieldsets = (
@@ -137,6 +156,12 @@ class ServiceAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('created_at', 'updated_at')
 
+    def get_cases_count(self, obj):
+        """Показывает количество связанных кейсов"""
+        return obj.get_related_cases().count()
+
+    get_cases_count.short_description = 'Кейсы'
+
 
 @admin.register(FAQ)
 class FAQAdmin(admin.ModelAdmin):
@@ -152,11 +177,7 @@ class ServicePartnerAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
-@admin.register(ServiceCase)
-class ServiceCaseAdmin(admin.ModelAdmin):
-    list_display = ('title', 'service', 'order')
-    list_filter = ('service',)
-    search_fields = ('title', 'description')
+# УДАЛЕН ServiceCaseAdmin - кейсы теперь управляются через cases.admin
 
 
 @admin.register(ServiceExplanation)

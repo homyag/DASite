@@ -5,7 +5,7 @@ from cases.models import Case
 from testimonials.models import Testimonial
 from services.models import (
     Service, ServiceFeature, ServiceBenefit, ServiceProcess, FAQ,
-    ServiceExplanation, ServiceDetail, ServiceCase, ServicePricing, ServicePartner
+    ServiceExplanation, ServiceDetail, ServicePricing, ServicePartner
 )
 
 
