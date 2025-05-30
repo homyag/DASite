@@ -1,0 +1,507 @@
+[
+{
+  "model": "core.category",
+  "pk": 1,
+  "fields": {
+    "name": "Email-маркетинг",
+    "slug": "email-marketing",
+    "description": "Всё об эффективных email-кампаниях: от основ до продвинутых техник. Гайды по повышению открываемости и конверсии, разборы современных трендов, кейсы успешных рассылок и советы по выбору сервисов"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 2,
+  "fields": {
+    "name": "SEO",
+    "slug": "seo",
+    "description": "Всё о поисковой оптимизации: свежие алгоритмы Google и Яндекса, работа с трафиком, SEO-аналитика и прогнозы. Практические руководства, кейсы и разборы трендов для маркетологов, владельцев бизнеса и веб-мастеров."
+  }
+},
+{
+  "model": "core.category",
+  "pk": 3,
+  "fields": {
+    "name": "SMM",
+    "slug": "smm",
+    "description": "Всё о SMM: стратегии продвижения, тренды соцсетей, работа с контентом и таргетированной рекламой. Практические кейсы, инструкции и лайфхаки для привлечения клиентов через Facebook, Instagram, TikTok и другие платформы."
+  }
+},
+{
+  "model": "core.category",
+  "pk": 4,
+  "fields": {
+    "name": "Интернет-магазин",
+    "slug": "",
+    "description": "Категория кейсов: Интернет-магазин"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 5,
+  "fields": {
+    "name": "B2B-компания",
+    "slug": "b2b",
+    "description": "Категория кейсов: B2B-компания"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 6,
+  "fields": {
+    "name": "E-commerce",
+    "slug": "ecommerce",
+    "description": "Интернет-магазины и электронная коммерция"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 7,
+  "fields": {
+    "name": "Медицина",
+    "slug": "healthcare",
+    "description": "Медицинские услуги и здравоохранение"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 8,
+  "fields": {
+    "name": "Образование",
+    "slug": "education",
+    "description": "Образовательные услуги и курсы"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 9,
+  "fields": {
+    "name": "Финансы",
+    "slug": "finance",
+    "description": "Финансовые услуги и банки"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 10,
+  "fields": {
+    "name": "Недвижимость",
+    "slug": "realestate",
+    "description": "Агентства недвижимости и застройщики"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 11,
+  "fields": {
+    "name": "PPC",
+    "slug": "ppc",
+    "description": ""
+  }
+},
+{
+  "model": "core.category",
+  "pk": 12,
+  "fields": {
+    "name": "ORM",
+    "slug": "orm",
+    "description": ""
+  }
+},
+{
+  "model": "core.tag",
+  "pk": 1,
+  "fields": {
+    "name": "Email",
+    "slug": "email"
+  }
+},
+{
+  "model": "core.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Гайды",
+    "slug": "gajdy"
+  }
+},
+{
+  "model": "core.tag",
+  "pk": 3,
+  "fields": {
+    "name": "SEO",
+    "slug": "seo"
+  }
+},
+{
+  "model": "core.tag",
+  "pk": 4,
+  "fields": {
+    "name": "SMM",
+    "slug": "smm"
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 1,
+  "fields": {
+    "name": "Игорь Александрович Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "smm",
+    "message": "dasfdsafasdfaf",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T19:52:30.301Z",
+    "updated_at": "2025-04-26T19:52:30.301Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 2,
+  "fields": {
+    "name": "Игорь Александрович Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "content",
+    "message": "12123123ывфывфывф",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T19:58:28.230Z",
+    "updated_at": "2025-04-26T19:58:28.230Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 3,
+  "fields": {
+    "name": "Василич",
+    "email": "e002kx78@gmail.com",
+    "phone": "+72222222222",
+    "service": "seo",
+    "message": "смотри какую хуйню сделал",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T20:00:33.811Z",
+    "updated_at": "2025-04-26T20:00:33.811Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 4,
+  "fields": {
+    "name": "Игорь Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "seo",
+    "message": "проверка попапа",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T20:06:59.668Z",
+    "updated_at": "2025-04-26T20:06:59.668Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 5,
+  "fields": {
+    "name": "Игорь Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "ppc",
+    "message": "проверка попапа 2",
+    "company": null,
+    "website": null,
+    "budget": null,
+    "tariff": null,
+    "source": null,
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-26T20:13:37.342Z",
+    "updated_at": "2025-04-26T20:13:37.342Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 6,
+  "fields": {
+    "name": "Игорь Александрович Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "smm",
+    "message": "лтьбтьбтбьтбьтб",
+    "company": "TechStore",
+    "website": null,
+    "budget": "100000-300000",
+    "tariff": null,
+    "source": "home",
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-27T17:59:21.471Z",
+    "updated_at": "2025-04-27T17:59:21.471Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 7,
+  "fields": {
+    "name": "Игорь Александрович Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "smm",
+    "message": "лтьбтьбтбьтбьтб",
+    "company": "TechStore",
+    "website": null,
+    "budget": "100000-300000",
+    "tariff": null,
+    "source": "home",
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-27T17:59:24.661Z",
+    "updated_at": "2025-04-27T17:59:24.661Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 8,
+  "fields": {
+    "name": "Игорь",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "seo",
+    "message": "тест кнопки",
+    "company": "ООО Какие Люди",
+    "website": null,
+    "budget": "50000-100000",
+    "tariff": null,
+    "source": "home",
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-27T18:05:35.528Z",
+    "updated_at": "2025-04-27T18:05:35.528Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 9,
+  "fields": {
+    "name": "Игорь Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "ppc",
+    "message": "sdfsdfsf",
+    "company": "TechStore",
+    "website": null,
+    "budget": "300000-500000",
+    "tariff": null,
+    "source": "home",
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-27T18:08:50.602Z",
+    "updated_at": "2025-04-27T18:08:50.603Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 10,
+  "fields": {
+    "name": "Игорь Александрович Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "smm",
+    "message": "ячсясячсячс",
+    "company": "TechStore",
+    "website": null,
+    "budget": "100000-300000",
+    "tariff": null,
+    "source": "home",
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-27T18:19:24.018Z",
+    "updated_at": "2025-04-27T18:19:24.018Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 11,
+  "fields": {
+    "name": "Игорь Александрович Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "email",
+    "message": "12313123123123",
+    "company": "TechStore",
+    "website": null,
+    "budget": "100000-300000",
+    "tariff": null,
+    "source": "home",
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-27T18:22:56.030Z",
+    "updated_at": "2025-04-27T18:22:56.030Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.contactrequest",
+  "pk": 12,
+  "fields": {
+    "name": "Игорь Александрович Антонов",
+    "email": "homyaga@gmail.com",
+    "phone": "+79217404123",
+    "service": "smm",
+    "message": "редирект и алерт",
+    "company": "FashionStore",
+    "website": null,
+    "budget": "300000-500000",
+    "tariff": null,
+    "source": "home",
+    "ip_address": null,
+    "user_agent": null,
+    "status": "new",
+    "created_at": "2025-04-27T18:27:21.734Z",
+    "updated_at": "2025-04-27T18:27:21.734Z",
+    "admin_notes": null,
+    "assigned_to": null,
+    "website_honeypot": null
+  }
+},
+{
+  "model": "core.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "photo": "",
+    "bio": null,
+    "position": null,
+    "company": null,
+    "linkedin_url": null,
+    "twitter_url": null,
+    "github_url": null,
+    "website_url": null,
+    "years_experience": 0,
+    "expertise": []
+  }
+},
+{
+  "model": "core.profile",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "photo": "",
+    "bio": null,
+    "position": null,
+    "company": null,
+    "linkedin_url": null,
+    "twitter_url": null,
+    "github_url": null,
+    "website_url": null,
+    "years_experience": 0,
+    "expertise": []
+  }
+},
+{
+  "model": "core.profile",
+  "pk": 5,
+  "fields": {
+    "user": 3,
+    "photo": "",
+    "bio": null,
+    "position": null,
+    "company": null,
+    "linkedin_url": null,
+    "twitter_url": null,
+    "github_url": null,
+    "website_url": null,
+    "years_experience": 0,
+    "expertise": []
+  }
+},
+{
+  "model": "core.profile",
+  "pk": 6,
+  "fields": {
+    "user": 4,
+    "photo": "",
+    "bio": null,
+    "position": null,
+    "company": null,
+    "linkedin_url": null,
+    "twitter_url": null,
+    "github_url": null,
+    "website_url": null,
+    "years_experience": 0,
+    "expertise": []
+  }
+},
+{
+  "model": "core.newsletter",
+  "pk": 12,
+  "fields": {
+    "email": "homyaga@gmail.com",
+    "is_active": true,
+    "created_at": "2025-04-27T18:32:14.077Z"
+  }
+}
+]
