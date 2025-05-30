@@ -1,0 +1,2300 @@
+[
+{
+  "model": "services.service",
+  "pk": 1,
+  "fields": {
+    "name": "seo",
+    "slug": "seo",
+    "title": "SEO-продвижение",
+    "description": "Комплексно оптимизируем ваш сайт для поисковых систем, устойчиво увеличивая органический трафик и качественно привлекая целевую аудиторию.",
+    "full_description": "Комплексное продвижение вашего сайта в поисковых системах для привлечения целевого трафика и увеличения конверсии.",
+    "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122\"></path></svg>",
+    "icon": "",
+    "image": "services/boldrise_seo_hero.webp",
+    "is_active": true,
+    "is_featured": true,
+    "order": 1,
+    "meta_title": "SEO-продвижение - Услуги продвижения сайтов",
+    "meta_description": "Профессиональные услуги SEO-продвижения для вашего бизнеса. Увеличение органического трафика и конверсии.",
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2025-05-27T19:12:50.530Z",
+    "hero_title": "SEO-продвижение для вашего бизнеса",
+    "hero_description": "Оптимизируем ваш сайт для поисковых систем, увеличивая органический трафик и привлекая целевую аудиторию.",
+    "hero_image": "",
+    "explanation_title": "Что такое SEO-продвижение?",
+    "explanation_subtitle": "Почему SEO-продвижение является одним из самых эффективных инструментов digital-маркетинга",
+    "process_title": "Как мы работаем",
+    "process_subtitle": "Прозрачный процесс SEO-продвижения вашего сайта от начала до получения результатов",
+    "services_title": "Наши услуги по SEO-продвижению",
+    "services_subtitle": "Комплексный подход к оптимизации вашего сайта для достижения максимальных результатов",
+    "benefits_title": "Преимущества SEO-продвижения",
+    "benefits_subtitle": "Почему SEO-продвижение является одним из самых эффективных инструментов digital-маркетинга",
+    "cases_title": "Наши успешные кейсы в SEO продвижении",
+    "cases_subtitle": "Реальные результаты SEO-продвижения наших клиентов",
+    "pricing_title": "Тарифы на SEO-продвижение",
+    "pricing_subtitle": "Выберите оптимальный тариф для вашего бизнеса",
+    "partners_title": "Наши партнеры и инструменты",
+    "partners_subtitle": "Мы используем профессиональные инструменты и сотрудничаем с ведущими платформами",
+    "faq_title": "Часто задаваемые вопросы о SEO",
+    "faq_subtitle": "Отвечаем на популярные вопросы о SEO-продвижении",
+    "contact_title": "Закажите SEO-продвижение",
+    "contact_subtitle": "Заполните форму, и мы свяжемся с вами для обсуждения деталей и составления индивидуального предложения.",
+    "contact_phone": "+7 (999) 999-99-99",
+    "contact_email": "info@boldrise.ru"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 2,
+  "fields": {
+    "name": "email",
+    "slug": "email",
+    "title": "Email-маркетинг",
+    "description": "Разработка и реализация эффективных стратегий email-маркетинга для построения долгосрочных отношений с клиентами и увеличения продаж.",
+    "full_description": "Эффективные email-кампании для повышения лояльности клиентов, роста продаж и развития вашего бренда.",
+    "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "order": 2,
+    "meta_title": "Email-маркетинг - Эффективные стратегии рассылок",
+    "meta_description": "Разработка и внедрение эффективных стратегий email-маркетинга для роста продаж и удержания клиентов.",
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2025-05-27T19:11:05.795Z",
+    "hero_title": "Email-маркетинг для вашего бизнеса",
+    "hero_description": "Разработка и реализация стратегий email-маркетинга для построения отношений с клиентами и увеличения продаж.",
+    "hero_image": "",
+    "explanation_title": "Что такое Email-маркетинг?",
+    "explanation_subtitle": "Комплексный инструмент цифровой коммуникации для построения долгосрочных отношений с аудиторией",
+    "process_title": "Как мы работаем",
+    "process_subtitle": "Прозрачный процесс организации email-маркетинга от стратегии до анализа результатов",
+    "services_title": "Наши услуги по Email-маркетингу",
+    "services_subtitle": "Комплексные решения для эффективного взаимодействия с вашими клиентами через email",
+    "benefits_title": "Преимущества Email-маркетинга",
+    "benefits_subtitle": "Почему Email-маркетинг является неотъемлемой частью успешной digital-стратегии",
+    "cases_title": "Наши успешные кейсы в email маркетинге",
+    "cases_subtitle": "Реальные результаты email-маркетинга для наших клиентов",
+    "pricing_title": "Тарифы на Email-маркетинг",
+    "pricing_subtitle": "Выберите оптимальный тариф для вашего бизнеса",
+    "partners_title": "Наши партнеры и инструменты",
+    "partners_subtitle": "Мы используем лучшие платформы и технологии для реализации эффективных email-кампаний",
+    "faq_title": "Часто задаваемые вопросы",
+    "faq_subtitle": "Отвечаем на популярные вопросы о email-маркетинге",
+    "contact_title": "Закажите Email-маркетинг",
+    "contact_subtitle": "Заполните форму, и мы свяжемся с вами для обсуждения деталей и составления индивидуального предложения.",
+    "contact_phone": "+7 (999) 999-99-99",
+    "contact_email": "info@boldrise.ru"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 3,
+  "fields": {
+    "name": "content",
+    "slug": "content",
+    "title": "Контент-маркетинг",
+    "description": "Создание и продвижение ценного контента для привлечения и удержания целевой аудитории и повышения доверия к бренду.",
+    "full_description": "Стратегическое создание и распространение полезного контента для привлечения целевой аудитории, укрепления репутации бренда и роста продаж.",
+    "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "order": 3,
+    "meta_title": "Контент-маркетинг - Создание ценного контента",
+    "meta_description": "Профессиональные услуги по созданию и продвижению контента, который привлекает клиентов и повышает доверие к бренду.",
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2025-05-28T19:47:06.622Z",
+    "hero_title": "Контент-маркетинг для вашего бизнеса",
+    "hero_description": "Создаем стратегический контент, который привлекает, вовлекает и конвертирует вашу целевую аудиторию в клиентов.",
+    "hero_image": "",
+    "explanation_title": "Что такое контент маркетинг?",
+    "explanation_subtitle": "Почему контент-маркетинг является мощным инструментом для привлечения и удержания клиентов",
+    "process_title": "Как мы работаем",
+    "process_subtitle": "Прозрачный процесс создания и реализации контент-стратегии для достижения ваших бизнес-целей",
+    "services_title": "Наши услуги по контент-маркетингу",
+    "services_subtitle": "Комплексный подход к созданию и продвижению контента для разных целей и каналов",
+    "benefits_title": "Преимущества контент-маркетинга",
+    "benefits_subtitle": "Почему контент-маркетинг является мощным инструментом для привлечения и удержания клиентов",
+    "cases_title": "Наши успешные кейсы в контент-маркетинге",
+    "cases_subtitle": "Реальные результаты контент-маркетинга для наших клиентов",
+    "pricing_title": "Тарифы на контент-маркетинг",
+    "pricing_subtitle": "Выберите оптимальный тариф для вашего бизнеса",
+    "partners_title": "Наши партнеры и инструменты",
+    "partners_subtitle": "Мы сотрудничаем с ведущими платформами и используем профессиональные инструменты для создания эффективного контента",
+    "faq_title": "Часто задаваемые вопросы о контент-маркетинге",
+    "faq_subtitle": "Отвечаем на популярные вопросы о контент-маркетинге",
+    "contact_title": "Закажите контент маркетинг",
+    "contact_subtitle": "Заполните форму, и мы свяжемся с вами для обсуждения деталей и составления индивидуального предложения.",
+    "contact_phone": "+7 (999) 999-99-99",
+    "contact_email": "info@boldrise.ru"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 4,
+  "fields": {
+    "name": "smm",
+    "slug": "smm",
+    "title": "SMM-продвижение",
+    "description": "Разработка и реализация стратегий продвижения в социальных сетях для увеличения узнаваемости бренда и привлечения клиентов.",
+    "full_description": "Комплексное управление вашими аккаунтами в социальных сетях для увеличения охвата, вовлеченности и конверсии.",
+    "icon_svg": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "order": 4,
+    "meta_title": "SMM-продвижение - Эффективное продвижение в социальных сетях",
+    "meta_description": "Профессиональное продвижение вашего бренда в социальных сетях для роста узнаваемости и увеличения продаж.",
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "SMM-продвижение для вашего бизнеса",
+    "hero_description": "Эффективное продвижение в социальных сетях для привлечения целевой аудитории и повышения узнаваемости бренда.",
+    "hero_image": "",
+    "explanation_title": "Что такое SMM-продвижение?",
+    "explanation_subtitle": "Почему SMM-продвижение является одним из самых эффективных инструментов современного маркетинга",
+    "process_title": "Как мы работаем",
+    "process_subtitle": "Прозрачный процесс SMM-продвижения вашего бизнеса от начала до получения результатов",
+    "services_title": "Наши услуги по SMM-продвижению",
+    "services_subtitle": "Комплексный подход к продвижению вашего бизнеса в социальных сетях для достижения максимальных\n                результатов",
+    "benefits_title": "Преимущества SMM-продвижения",
+    "benefits_subtitle": "Почему SMM-продвижение является одним из самых эффективных инструментов современного маркетинга",
+    "cases_title": "Наши успешные кейсы продвижения в социальных сетях",
+    "cases_subtitle": "Реальные результаты SMM-продвижения наших клиентов",
+    "pricing_title": "Тарифы на SMM-продвижение",
+    "pricing_subtitle": "Выберите оптимальный тариф для вашего бизнеса",
+    "partners_title": "Наши партнеры и инструменты",
+    "partners_subtitle": "Мы используем профессиональные инструменты и сотрудничаем с ведущими платформами для максимальной эффективности SMM-продвижения",
+    "faq_title": "Часто задаваемые вопросы о SMM",
+    "faq_subtitle": "Отвечаем на популярные вопросы о SMM-продвижении",
+    "contact_title": "Закажите SMM-продвижение",
+    "contact_subtitle": "Заполните форму, и мы свяжемся с вами для обсуждения деталей и составления индивидуального предложения.",
+    "contact_phone": "+7 (999) 999-99-99",
+    "contact_email": "info@boldrise.ru"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 5,
+  "fields": {
+    "name": "orm",
+    "slug": "orm",
+    "title": "Репутационный маркетинг",
+    "description": "Мониторинг и управление онлайн-репутацией бренда для создания положительного имиджа и повышения доверия.",
+    "full_description": "Комплексное управление репутацией вашего бренда в сети: мониторинг упоминаний, работа с отзывами, нейтрализация негатива и формирование положительного имиджа.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "order": 5,
+    "meta_title": "Репутационный маркетинг - Управление репутацией бренда",
+    "meta_description": "Профессиональное управление онлайн-репутацией для создания положительного имиджа вашего бренда и повышения доверия клиентов.",
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "Репутационный маркетинг для вашего бизнеса",
+    "hero_description": "Создаем и поддерживаем положительный имидж вашей компании в интернете, нейтрализуя негатив и усиливая позитивные отзывы.",
+    "hero_image": "",
+    "explanation_title": "Что такое репутационный маркетинг?",
+    "explanation_subtitle": "Почему управление репутацией становится ключевым фактором успеха для современного бизнеса",
+    "process_title": "Как мы работаем",
+    "process_subtitle": "Системный подход к управлению репутацией вашего бизнеса от анализа до построения долгосрочной стратегии",
+    "services_title": "Наши услуги по репутационному маркетингу",
+    "services_subtitle": "Комплексный подход к управлению репутацией вашего бизнеса для максимального результата",
+    "benefits_title": "Преимущества репутационного маркетинга",
+    "benefits_subtitle": "Почему управление репутацией становится ключевым фактором успеха для современного бизнеса",
+    "cases_title": "Наши успешные кейсы в репутационном маркетинге",
+    "cases_subtitle": "Реальные результаты управления репутацией для наших клиентов",
+    "pricing_title": "Тарифы на ORM-маркетинг",
+    "pricing_subtitle": "Выберите оптимальный тариф для вашего бизнеса",
+    "partners_title": "Наши партнеры и инструменты",
+    "partners_subtitle": "Мы используем профессиональные сервисы и сотрудничаем с ведущими платформами для мониторинга и управления репутацией",
+    "faq_title": "Часто задаваемые вопросы об ORM-маркетинге",
+    "faq_subtitle": "Отвечаем на популярные вопросы о репутационном маркетинге",
+    "contact_title": "Закажите услуги по репутационному маркетингу",
+    "contact_subtitle": "Заполните форму, и мы свяжемся с вами для обсуждения деталей и составления индивидуального предложения.",
+    "contact_phone": "+7 (999) 999-99-99",
+    "contact_email": "info@boldrise.ru"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 6,
+  "fields": {
+    "name": "ppc",
+    "slug": "ppc",
+    "title": "PPC-реклама",
+    "description": "Разработка и управление рекламными кампаниями с оплатой за клик для быстрого привлечения целевой аудитории.",
+    "full_description": "Эффективная контекстная и таргетированная реклама для быстрого привлечения целевых клиентов и увеличения продаж.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z\"></path><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z\"></path></svg>",
+    "icon": "",
+    "image": "",
+    "is_active": true,
+    "is_featured": true,
+    "order": 6,
+    "meta_title": "PPC-реклама - Эффективная контекстная реклама",
+    "meta_description": "Настройка и управление рекламными кампаниями с оплатой за клик для быстрого привлечения целевых клиентов.",
+    "created_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z",
+    "hero_title": "PPC-реклама для вашего бизнеса",
+    "hero_description": "Настраиваем эффективную контекстную рекламу, которая приводит целевых клиентов и увеличивает продажи.",
+    "hero_image": "",
+    "explanation_title": "Что такое PPC-реклама?",
+    "explanation_subtitle": "Почему PPC-реклама является одним из самых быстрых и эффективных инструментов digital-маркетинга",
+    "process_title": "Как мы работаем",
+    "process_subtitle": "Прозрачный процесс создания и ведения ваших рекламных кампаний от анализа до масштабирования",
+    "services_title": "Наши услуги по PPC-рекламе",
+    "services_subtitle": "Комплексный подход к контекстной рекламе для максимального привлечения\n                целевых клиентов",
+    "benefits_title": "Преимущества PPC-рекламы",
+    "benefits_subtitle": "Почему PPC-реклама является одним из самых быстрых и эффективных инструментов digital-маркетинга",
+    "cases_title": "Наши успешные кейсы в контекстной рекламе",
+    "cases_subtitle": "Реальные результаты PPC-рекламы наших клиентов",
+    "pricing_title": "Тарифы ведения PPC кампаний",
+    "pricing_subtitle": "Выберите оптимальный тариф для вашего бизнеса",
+    "partners_title": "Наши партнеры и инструменты",
+    "partners_subtitle": "Рекламные платформы и инструменты",
+    "faq_title": "Часто задаваемые вопросы о PPC",
+    "faq_subtitle": "Отвечаем на популярные вопросы о PPC-рекламе",
+    "contact_title": "Закажите услуги по контекстной рекламе",
+    "contact_subtitle": "Заполните форму, и мы свяжемся с вами для обсуждения деталей и составления индивидуального предложения.",
+    "contact_phone": "+7 (999) 999-99-99",
+    "contact_email": "info@boldrise.ru"
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "Техническая оптимизация",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Внутренняя оптимизация",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Внешняя оптимизация",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 4,
+  "fields": {
+    "service": 2,
+    "title": "Welcome-цепочки писем",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 5,
+  "fields": {
+    "service": 2,
+    "title": "Автоматизация рассылок",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 6,
+  "fields": {
+    "service": 2,
+    "title": "Сегментация базы",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 7,
+  "fields": {
+    "service": 3,
+    "title": "Контент-стратегия",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 8,
+  "fields": {
+    "service": 3,
+    "title": "Создание контента",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 9,
+  "fields": {
+    "service": 3,
+    "title": "Продвижение контента",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 10,
+  "fields": {
+    "service": 4,
+    "title": "Контент-план",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 11,
+  "fields": {
+    "service": 4,
+    "title": "Таргетированная реклама",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 12,
+  "fields": {
+    "service": 4,
+    "title": "Коммьюнити-менеджмент",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 13,
+  "fields": {
+    "service": 5,
+    "title": "SERM-стратегия",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 14,
+  "fields": {
+    "service": 5,
+    "title": "Работа с отзывами",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 15,
+  "fields": {
+    "service": 5,
+    "title": "Мониторинг упоминаний",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 16,
+  "fields": {
+    "service": 6,
+    "title": "Контекстная реклама",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 17,
+  "fields": {
+    "service": 6,
+    "title": "Баннерная реклама",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicefeature",
+  "pk": 18,
+  "fields": {
+    "service": 6,
+    "title": "Ремаркетинг",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "Проверенные стратегии",
+    "description": "Наши подходы основаны на данных и опыте, доказавшие свою эффективность во многих проектах. Мы используем только те методы, которые гарантированно работают и приносят результаты.",
+    "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z\"></path></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Индивидуальный подход",
+    "description": "Мы создаем уникальные решения, адаптированные под специфику вашего бизнеса и целевой аудитории. Никаких шаблонных стратегий - только индивидуальные планы.",
+    "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4\"></path></svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Быстрые результаты",
+    "description": "Наши стратегии нацелены на достижение быстрых и устойчивых результатов для вашего бизнеса. Мы начинаем с тех направлений, которые дадут максимальный эффект в короткие сроки.",
+    "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path></svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 5,
+  "fields": {
+    "service": 1,
+    "title": "Доступная стоимость",
+    "description": "SEO является одним из самых экономически эффективных маркетинговых каналов, особенно в долгосрочной перспективе.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 6,
+  "fields": {
+    "service": 1,
+    "title": "Долгосрочный эффект",
+    "description": "Результаты SEO-продвижения сохраняются надолго, обеспечивая стабильный поток клиентов даже после завершения активных работ.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 7,
+  "fields": {
+    "service": 1,
+    "title": "Целевая аудитория",
+    "description": "SEO привлекает пользователей, которые активно ищут ваши товары или услуги, что повышает процент конверсии на сайте.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path></svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 8,
+  "fields": {
+    "service": 1,
+    "title": "Повышение доверия",
+    "description": "Высокие позиции в поисковой выдаче повышают доверие к вашему бренду, так как пользователи больше доверяют топовым результатам.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z\"></path></svg>",
+    "order": 4
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 9,
+  "fields": {
+    "service": 1,
+    "title": "Измеримые результаты",
+    "description": "SEO позволяет отслеживать множество показателей: позиции, трафик, конверсии, что делает эффективность работы полностью прозрачной.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\"></path></svg>",
+    "order": 5
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 10,
+  "fields": {
+    "service": 1,
+    "title": "Глобальный охват",
+    "description": "Качественное SEO-продвижение помогает вашему бизнесу выйти на новые рынки и привлечь клиентов из других регионов.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5\"></path></svg>",
+    "order": 6
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 11,
+  "fields": {
+    "service": 2,
+    "title": "Высокий ROI",
+    "description": "Email-маркетинг обеспечивает один из самых высоких показателей ROI среди всех маркетинговых каналов — в среднем 40 рублей с каждого потраченного рубля.",
+    "icon": "<svg class=\"w-7 h-7 md:w-8 md:h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z\"></path></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 12,
+  "fields": {
+    "service": 2,
+    "title": "Персонализация",
+    "description": "Возможность персонализировать сообщения для каждого подписчика повышает эффективность коммуникации и конверсию.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">                             <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path>",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 13,
+  "fields": {
+    "service": 2,
+    "title": "Измеримые результаты",
+    "description": "Email-маркетинг предоставляет детальную аналитику и позволяет отслеживать эффективность каждой кампании в реальном времени.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">                             <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z\"></path></svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 14,
+  "fields": {
+    "service": 2,
+    "title": "Автоматизация",
+    "description": "Автоматические цепочки писем позволяют взаимодействовать с клиентами на всех этапах воронки продаж без ручного вмешательства.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "order": 4
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 15,
+  "fields": {
+    "service": 2,
+    "title": "Быстрый запуск",
+    "description": "Email-кампании можно запустить быстрее большинства других маркетинговых инструментов, получая результаты практически сразу.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path></svg>",
+    "order": 5
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 16,
+  "fields": {
+    "service": 2,
+    "title": "Низкая стоимость",
+    "description": "По сравнению с другими каналами привлечения клиентов, email-маркетинг требует минимальных затрат при максимальной отдаче.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"> <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "order": 6
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 17,
+  "fields": {
+    "service": 3,
+    "title": "Окупаемость инвестиций",
+    "description": "Контент-маркетинг обеспечивает до 3 раз более высокую отдачу от инвестиций по сравнению с традиционной рекламой при меньших затратах.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 19,
+  "fields": {
+    "service": 3,
+    "title": "Устойчивый результат",
+    "description": "Качественный контент продолжает привлекать трафик и генерировать лиды в течение долгого времени после публикации, создавая кумулятивный эффект.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 20,
+  "fields": {
+    "service": 3,
+    "title": "Качественная аудитория",
+    "description": "Контент привлекает заинтересованных пользователей, которые активно ищут информацию по вашей теме, что обеспечивает более высокую конверсию.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path></svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 21,
+  "fields": {
+    "service": 3,
+    "title": "Повышение авторитетности",
+    "description": "Регулярная публикация экспертного контента формирует образ компании как лидера отрасли и повышает доверие потенциальных клиентов.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z\"></path></svg>",
+    "order": 4
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 22,
+  "fields": {
+    "service": 3,
+    "title": "Измеримые результаты",
+    "description": "Современные инструменты аналитики позволяют отслеживать эффективность контента и корректировать стратегию на основе данных.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\"></path></svg>",
+    "order": 5
+  }
+},
+{
+  "model": "services.servicebenefit",
+  "pk": 23,
+  "fields": {
+    "service": 3,
+    "title": "Многоканальное использование",
+    "description": "Один качественный материал можно адаптировать для различных каналов коммуникации, максимизируя охват и эффективность маркетинговых усилий.",
+    "icon": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"> <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5\"></path></svg>",
+    "order": 6
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "Аудит и анализ",
+    "description": "Проводим комплексный аудит сайта, анализируем конкурентов и текущее положение в поисковой выдаче.",
+    "icon": "",
+    "order": 1
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Разработка стратегии",
+    "description": "Составляем детальный план продвижения с учетом специфики вашего бизнеса и целевой аудитории.",
+    "icon": "",
+    "order": 2
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Техническая оптимизация",
+    "description": "Исправляем технические ошибки на сайте, оптимизируем скорость загрузки и внутреннюю структуру.",
+    "icon": "",
+    "order": 3
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 4,
+  "fields": {
+    "service": 1,
+    "title": "Контентная оптимизация",
+    "description": "Создаем и оптимизируем контент, который нравится и пользователям, и поисковым системам.",
+    "icon": "",
+    "order": 4
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 5,
+  "fields": {
+    "service": 1,
+    "title": "Внешняя оптимизация",
+    "description": "Наращиваем качественную ссылочную массу, работаем с отзывами и упоминаниями в сети.",
+    "icon": "",
+    "order": 5
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 11,
+  "fields": {
+    "service": 1,
+    "title": "Мониторинг и отчетность",
+    "description": "Постоянно отслеживаем результаты работы и предоставляем подробные отчеты о достигнутых показателях.",
+    "icon": "",
+    "order": 6
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 12,
+  "fields": {
+    "service": 2,
+    "title": "Аудит и стратегия",
+    "description": "Анализируем вашу целевую аудиторию, текущее состояние базы подписчиков и разрабатываем стратегию email-кампаний.",
+    "icon": "",
+    "order": 1
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 13,
+  "fields": {
+    "service": 2,
+    "title": "Создание контента",
+    "description": "Разрабатываем привлекательный и эффективный контент для писем, включая тексты, дизайн и оптимальные призывы к действию.",
+    "icon": "",
+    "order": 2
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 14,
+  "fields": {
+    "service": 2,
+    "title": "Техническая настройка",
+    "description": "Настраиваем систему email-маркетинга, включая интеграцию с вашим сайтом, CRM-системами и настройку защитных протоколов.",
+    "icon": "",
+    "order": 3
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 15,
+  "fields": {
+    "service": 2,
+    "title": "Сегментация базы",
+    "description": "Разделяем вашу базу подписчиков на сегменты для более персонализированных и релевантных рассылок, повышающих конверсию.",
+    "icon": "",
+    "order": 4
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 16,
+  "fields": {
+    "service": 2,
+    "title": "Запуск кампаний",
+    "description": "Запускаем регулярные рассылки и автоматические цепочки писем в соответствии с разработанной стратегией и календарным планом.",
+    "icon": "",
+    "order": 5
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 17,
+  "fields": {
+    "service": 2,
+    "title": "Анализ и оптимизация",
+    "description": "Анализируем эффективность кампаний, тестируем различные подходы и постоянно оптимизируем стратегию для достижения лучших результатов.",
+    "icon": "",
+    "order": 6
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 18,
+  "fields": {
+    "service": 3,
+    "title": "Анализ и исследование",
+    "description": "Изучаем ваш бизнес, целевую аудиторию, конкурентов и отрасль для формирования эффективной контент-стратегии.",
+    "icon": "",
+    "order": 1
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 19,
+  "fields": {
+    "service": 3,
+    "title": "Разработка контент-стратегии",
+    "description": "Создаем детальный план публикаций с определением типов контента, каналов распространения и KPI для каждого материала.",
+    "icon": "",
+    "order": 2
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 20,
+  "fields": {
+    "service": 3,
+    "title": "Создание контента",
+    "description": "Наша команда экспертов пишет, редактирует и оптимизирует контент, который вовлекает аудиторию и соответствует поисковым запросам.",
+    "icon": "",
+    "order": 3
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 21,
+  "fields": {
+    "service": 3,
+    "title": "Публикация и продвижение",
+    "description": "Размещаем контент на оптимальных площадках и каналах, дополнительно продвигая его для увеличения охвата и вовлеченности.",
+    "icon": "",
+    "order": 4
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 22,
+  "fields": {
+    "service": 3,
+    "title": "Анализ эффективности",
+    "description": "Отслеживаем ключевые метрики и показатели эффективности контента, выявляя наиболее успешные форматы и темы.",
+    "icon": "",
+    "order": 5
+  }
+},
+{
+  "model": "services.serviceprocess",
+  "pk": 23,
+  "fields": {
+    "service": 3,
+    "title": "Оптимизация и масштабирование",
+    "description": "Корректируем контент-стратегию на основе аналитики и полученных результатов, масштабируя успешные подходы и форматы.",
+    "icon": "",
+    "order": 6
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "question": "Сколько времени занимает получение результатов SEO?",
+    "answer": "SEO это долгосрочная стратегия. Первые результаты обычно становятся заметны через 2-3 месяца работы, но значительные изменения в позициях и трафике чаще всего наблюдаются через 4-6 месяцев. На сроки влияют конкуренция в вашей нише, изначальное состояние сайта и агрессивность выбранной стратегии.",
+    "is_common": false,
+    "order": 1
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 7,
+  "fields": {
+    "service": 1,
+    "question": "Какие гарантии вы предоставляете?",
+    "answer": "Мы не можем гарантировать конкретные позиции по запросам, так как алгоритмы поисковых систем постоянно меняются. Однако мы гарантируем прозрачность работы, соблюдение сроков и использование только белых методов оптимизации. Если в течение первых трех месяцев вы не увидите положительной динамики, мы бесплатно проведем дополнительный аудит и скорректируем стратегию.",
+    "is_common": false,
+    "order": 2
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 8,
+  "fields": {
+    "service": 1,
+    "question": "Для каких сайтов подходит SEO-продвижение?",
+    "answer": "SEO-продвижение подходит практически для любого сайта, но особенно эффективно для бизнесов, ориентированных на долгосрочную перспективу. Это могут быть интернет-магазины, корпоративные сайты, сайты услуг, информационные порталы. Главное условие &mdash; наличие качественного контента и технически исправного сайта.",
+    "is_common": false,
+    "order": 3
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 9,
+  "fields": {
+    "service": 1,
+    "question": "Чем SEO отличается от контекстной рекламы?",
+    "answer": "Главное отличие в подходе и долгосрочности результатов. Контекстная реклама дает мгновенный эффект, но требует постоянных вложений. При остановке рекламы трафик прекращается. SEO работает медленнее, но дает долгосрочный результат. После прекращения активных работ позиции могут сохраняться месяцами. Также пользователи больше доверяют органической выдаче, чем рекламе.",
+    "is_common": false,
+    "order": 4
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 10,
+  "fields": {
+    "service": 1,
+    "question": "Какие отчеты вы предоставляете?",
+    "answer": "Мы предоставляем регулярные отчеты, включающие данные о позициях сайта по ключевым запросам, динамике органического трафика, поведенческих факторах, конверсии и выполненных работах. Отчеты формируются в наглядной форме с графиками и пояснениями, чтобы вы могли легко оценить эффективность продвижения.",
+    "is_common": false,
+    "order": 5
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 12,
+  "fields": {
+    "service": 2,
+    "question": "Какие гарантии вы предоставляете?",
+    "answer": "Мы гарантируем соблюдение всех норм законодательства о персональных данных и спаме, качественную техническую реализацию рассылок и прозрачную аналитику результатов. Мы также гарантируем минимальный процент доставляемости писем в зависимости от состояния вашей базы. Если кампания не достигает оговоренных KPI, мы проводим дополнительную оптимизацию бесплатно.",
+    "is_common": false,
+    "order": 2
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 13,
+  "fields": {
+    "service": 2,
+    "question": "Для каких кампаний подходит email-маркетинг?",
+    "answer": "Email-маркетинг эффективен практически для любого бизнеса: от интернет-магазинов и сервисных компаний до B2B-сектора и информационных проектов. Особенно хорошие результаты показывает в сферах, где важно регулярное взаимодействие с клиентами, образовательный контент и персонализированные предложения. Главное условие — наличие качественной базы контактов или стратегии ее наращивания.",
+    "is_common": false,
+    "order": 3
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 14,
+  "fields": {
+    "service": 2,
+    "question": "Мои письма не будут попадать в спам?",
+    "answer": "Мы используем все современные технические протоколы (DKIM, SPF, DMARC) для защиты ваших писем от попадания в спам. Кроме того, мы следуем лучшим практикам по созданию контента, который не вызывает подозрений у спам-фильтров. Регулярный мониторинг репутации отправителя и «прогрев» домена также являются частью нашей стратегии. В результате, доставляемость писем в папку «Входящие» составляет не менее 95%.",
+    "is_common": false,
+    "order": 4
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 15,
+  "fields": {
+    "service": 2,
+    "question": "Какие метрики email-маркетинга вы отслеживаете?",
+    "answer": "Мы отслеживаем все ключевые метрики email-маркетинга: процент доставляемости, Open Rate (открытия), Click Rate (клики), процент отписок, конверсии, ROI кампаний. Также анализируем поведенческие факторы: время, проведенное за чтением письма, устройства, с которых открываются письма, популярные ссылки. Все эти данные предоставляются в наглядных отчетах с рекомендациями по улучшению показателей.",
+    "is_common": false,
+    "order": 5
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 16,
+  "fields": {
+    "service": 2,
+    "question": "Как быстро email-маркетинг начнет приносить результаты?",
+    "answer": "Email-маркетинг может начать приносить результаты уже после первой рассылки. Однако для достижения стабильных показателей и максимальной эффективности требуется 2-3 месяца регулярных кампаний. За это время мы сможем проанализировать поведение аудитории, протестировать различные подходы и оптимизировать стратегию.",
+    "is_common": false,
+    "order": 1
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 17,
+  "fields": {
+    "service": 3,
+    "question": "Как долго нужно заниматься контент-маркетингом, чтобы увидеть результаты?",
+    "answer": "Контент-маркетинг — долгосрочная стратегия. Первые результаты можно увидеть через 3-4 месяца регулярной работы. Это увеличение органического трафика, рост позиций в поиске, повышение вовлеченности аудитории. Значимые бизнес-показатели обычно улучшаются через 6-12 месяцев системной работы с контентом.",
+    "is_common": false,
+    "order": 1
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 18,
+  "fields": {
+    "service": 3,
+    "question": "Какие типы контента наиболее эффективны?",
+    "answer": "Эффективность контента зависит от вашей целевой аудитории и стадии воронки продаж. Для привлечения трафика работают информационные статьи и исследования, для конверсии — обзоры продуктов и сравнения, для удержания — кейсы и экспертные материалы. Мы проводим анализ вашей ниши и аудитории, чтобы определить оптимальный контент-микс.",
+    "is_common": false,
+    "order": 2
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 19,
+  "fields": {
+    "service": 3,
+    "question": "Как измеряется эффективность контент-маркетинга?",
+    "answer": "Мы отслеживаем как прямые показатели контента (количество просмотров, время на странице, глубина просмотра), так и бизнес-метрики (конверсия, количество лидов, продажи). Для каждого типа контента устанавливаются свои KPI. Ежемесячно мы предоставляем подробную аналитику и корректируем стратегию для достижения максимальной эффективности.",
+    "is_common": false,
+    "order": 3
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 20,
+  "fields": {
+    "service": 3,
+    "question": "Сколько контента нужно создавать ежемесячно?",
+    "answer": "Оптимальный объем контента зависит от ваших целей, ресурсов и конкурентной среды. Для большинства бизнесов эффективным решением будет 4-8 материалов в месяц. Важнее не количество, а качество, регулярность и соответствие контента потребностям целевой аудитории. Мы разработаем для вас оптимальный контент-план с учетом всех факторов.",
+    "is_common": false,
+    "order": 4
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 21,
+  "fields": {
+    "service": 3,
+    "question": "Как контент-маркетинг сочетается с другими каналами продвижения?",
+    "answer": "Контент-маркетинг усиливает эффективность всех каналов продвижения. Он создает базу для SEO, обеспечивает материалы для email-рассылок, наполняет социальные сети и рекламные кампании. Мы разрабатываем омниканальную стратегию, где контент является центральным элементом, который адаптируется под специфику каждого канала для достижения максимального эффекта.",
+    "is_common": false,
+    "order": 5
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 22,
+  "fields": {
+    "service": 5,
+    "question": "Как быстро можно улучшить репутацию компании в интернете?",
+    "answer": "Скорость улучшения репутации зависит от текущего состояния и масштаба проблем. Первые результаты обычно видны через 2-4 недели, когда начинают появляться новые положительные упоминания. Для значительного изменения общего тона упоминаний требуется 3-6 месяцев системной работы. В случае серьезного репутационного кризиса процесс может занять от 6 до 12 месяцев.",
+    "is_common": false,
+    "order": 1
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 23,
+  "fields": {
+    "service": 5,
+    "question": "Можно ли полностью удалить негативные отзывы?",
+    "answer": "Полное удаление негативных отзывов возможно только в случаях явной клеветы, нарушения правил площадки или законодательства. В большинстве случаев мы работаем над вытеснением негатива положительным контентом, грамотным ответом на критику и исправлением реальных проблем бизнеса. Это более эффективная и долгосрочная стратегия, чем попытки удаления отзывов.",
+    "is_common": false,
+    "order": 2
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 24,
+  "fields": {
+    "service": 5,
+    "question": "Как отличить настоящие отзывы от заказных?",
+    "answer": "Заказные отзывы часто имеют общие признаки: избыток положительных эмоций без конкретики, отсутствие упоминаний минусов, однотипность текстов, новые аккаунты без истории, необычная активность (много отзывов за короткий период). Мы помогаем клиентам получать органические отзывы от реальных клиентов, которые выглядят естественно и вызывают доверие у целевой аудитории.",
+    "is_common": false,
+    "order": 3
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 25,
+  "fields": {
+    "service": 5,
+    "question": "Что включает в себя репутационный маркетинг?",
+    "answer": "Репутационный маркетинг включает комплекс мер: мониторинг упоминаний бренда в сети, работу с отзывами на различных площадках, управление социальными медиа, создание положительного контента, SERM (управление репутацией в поисковых системах), антикризисный PR, разработку стратегии коммуникации и обучение сотрудников правильному взаимодействию с клиентами.",
+    "is_common": false,
+    "order": 4
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 26,
+  "fields": {
+    "service": 5,
+    "question": "Какие метрики используются для оценки эффективности?",
+    "answer": "Основные метрики: тональность упоминаний (соотношение позитивных, нейтральных и негативных), видимость позитивных материалов в поисковой выдаче, рейтинги на отзовиках и агрегаторах, количество и качество отзывов, индекс NPS (готовность рекомендовать), уровень вовлеченности в социальных сетях, количество упоминаний бренда и динамика их изменения, скорость и качество реакции на обращения клиентов.",
+    "is_common": false,
+    "order": 5
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 27,
+  "fields": {
+    "service": 6,
+    "question": "Когда я увижу результаты от PPC-рекламы?",
+    "answer": "PPC-реклама даёт результаты практически мгновенно. Как только ваша рекламная кампания будет одобрена и запущена, вы начнёте получать клики и конверсии. Обычно это занимает от нескольких часов до 1-2 дней с момента запуска кампании.",
+    "is_common": false,
+    "order": 1
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 28,
+  "fields": {
+    "service": 6,
+    "question": "Какой бюджет нужен для запуска PPC-рекламы?",
+    "answer": "Минимальный бюджет зависит от вашей ниши и конкуренции. Для тестирования и настройки кампаний мы рекомендуем начать с бюджета от 30 000 рублей в месяц. Это позволит собрать достаточно данных для оптимизации и увидеть первые результаты. С ростом эффективности бюджет можно масштабировать пропорционально росту прибыли.",
+    "is_common": false,
+    "order": 2
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 29,
+  "fields": {
+    "service": 6,
+    "question": "В каких системах вы настраиваете PPC-рекламу?",
+    "answer": "Мы настраиваем рекламу на всех ключевых рекламных площадках: Яндекс.Директ, Google Ads, ВКонтакте, MyTarget (Mail.ru), Instagram* и Meta*. Выбор площадок зависит от вашей целевой аудитории, продукта и маркетинговых целей. (*площадки признаны экстремистскими в РФ)",
+    "is_common": false,
+    "order": 3
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 30,
+  "fields": {
+    "service": 6,
+    "question": "Чем PPC отличается от SEO-продвижения?",
+    "answer": "Главное отличие — в скорости получения результата и механике оплаты. PPC-реклама даёт мгновенный результат, но вы платите за каждый клик. При остановке рекламы трафик прекращается. SEO работает медленнее, но даёт долгосрочный результат без оплаты за клики. Оптимальная стратегия обычно включает оба канала: PPC для быстрого старта и SEO для долгосрочного результата.",
+    "is_common": false,
+    "order": 4
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 31,
+  "fields": {
+    "service": 6,
+    "question": "Какие отчеты по PPC-рекламе вы предоставляете?",
+    "answer": "Мы предоставляем подробные еженедельные и ежемесячные отчеты с ключевыми метриками: количество показов, кликов, конверсий, стоимость клика и конверсии, ROI и ROAS. Отчеты включают рекомендации по оптимизации и план работ на следующий период. Все данные представлены в наглядной форме с графиками и пояснениями.",
+    "is_common": false,
+    "order": 5
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 32,
+  "fields": {
+    "service": 4,
+    "question": "Как быстро можно увидеть результаты от SMM-продвижения?",
+    "answer": "Первые результаты SMM-продвижения можно заметить уже в первые недели работы. Увеличение охвата и вовлеченности часто становится заметным в течение 2-4 недель. Однако для достижения устойчивого результата и формирования активного сообщества обычно требуется 3-6 месяцев системной работы. Скорость получения результатов зависит от вашей ниши, активности конкурентов и выбранной стратегии.",
+    "is_common": false,
+    "order": 1
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 33,
+  "fields": {
+    "service": 4,
+    "question": "Какие социальные сети лучше использовать для моего бизнеса?",
+    "answer": "Выбор социальных сетей зависит от вашей целевой аудитории и типа бизнеса. Для B2B компаний обычно эффективны LinkedIn и Telegram, для визуально ориентированных брендов - Instagram и Pinterest, для широкой аудитории подойдут ВКонтакте и Одноклассники. Мы проводим анализ вашей целевой аудитории и конкурентов, чтобы определить оптимальный набор площадок именно для вашего бизнеса.",
+    "is_common": false,
+    "order": 2
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 34,
+  "fields": {
+    "service": 4,
+    "question": "Что входит в услуги SMM-продвижения?",
+    "answer": "Наши услуги SMM-продвижения включают: разработку стратегии присутствия в социальных сетях, создание и оформление аккаунтов, разработку контент-плана, создание и публикацию контента, комьюнити-менеджмент (ответы на комментарии и сообщения), таргетированную рекламу, анализ эффективности и регулярную отчетность. Мы также предлагаем работу с лидерами мнений и организацию активностей для вовлечения аудитории.",
+    "is_common": false,
+    "order": 3
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 35,
+  "fields": {
+    "service": 4,
+    "question": "Как измеряется эффективность SMM-продвижения?",
+    "answer": "Эффективность SMM-продвижения измеряется рядом ключевых метрик: ростом подписчиков, охватом публикаций, показателями вовлеченности (лайки, комментарии, репосты), кликами по ссылкам, переходами на сайт, конверсиями и продажами. Для каждого бизнеса мы определяем ключевые KPI в зависимости от ваших маркетинговых целей и регулярно предоставляем отчеты с анализом результатов.",
+    "is_common": false,
+    "order": 4
+  }
+},
+{
+  "model": "services.faq",
+  "pk": 36,
+  "fields": {
+    "service": 4,
+    "question": "Кто будет создавать контент для социальных сетей?",
+    "answer": "Контент для ваших социальных сетей создает наша команда профессионалов: SMM-специалисты, копирайтеры, дизайнеры и фотографы. Мы можем как полностью взять на себя создание контента, так и работать с вашими материалами или в смешанном формате. Все публикации согласовываются с вами перед размещением, и мы учитываем ваши пожелания по стилю и тону коммуникации.",
+    "is_common": false,
+    "order": 5
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "Доступная стоимость",
+    "description": "SEO является одним из самых экономически эффективных маркетинговых каналов, особенно в долгосрочной перспективе.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Долгосрочный эффект",
+    "description": "Результаты SEO-продвижения сохраняются надолго, обеспечивая стабильный поток клиентов даже после завершения активных работ.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Целевая аудитория",
+    "description": "SEO привлекает пользователей, которые активно ищут ваши товары или услуги, что повышает процент конверсии на сайте.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path></svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 4,
+  "fields": {
+    "service": 1,
+    "title": "Повышение доверия",
+    "description": "Высокие позиции в поисковой выдаче повышают доверие к вашему бренду, так как пользователи больше доверяют топовым результатам.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z\"></path></svg>",
+    "order": 4
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 5,
+  "fields": {
+    "service": 1,
+    "title": "Измеримые результаты",
+    "description": "SEO позволяет отслеживать множество показателей: позиции, трафик, конверсии, что делает эффективность работы полностью прозрачной.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\"></path></svg>",
+    "order": 5
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 6,
+  "fields": {
+    "service": 1,
+    "title": "Глобальный охват",
+    "description": "Качественное SEO-продвижение помогает вашему бизнесу выйти на новые рынки и привлечь клиентов из других регионов.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5\"></path></svg>",
+    "order": 6
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 7,
+  "fields": {
+    "service": 2,
+    "title": "Прямая коммуникация",
+    "description": "Email-маркетинг – это прямой канал взаимодействия с аудиторией, позволяющий доставлять сообщения напрямую в личный почтовый ящик подписчика.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z\"></path>\r\n                        </svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 8,
+  "fields": {
+    "service": 2,
+    "title": "Регулярность контакта",
+    "description": "Систематическое взаимодействие с клиентами через плановые рассылки, обеспечивающее постоянное присутствие бренда в информационном поле аудитории.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\"></path>\r\n                        </svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 9,
+  "fields": {
+    "service": 2,
+    "title": "Разнообразие форматов",
+    "description": "Включает в себя различные типы рассылок: информационные, транзакционные, триггерные, промо-письма и образовательный контент в едином канале.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\"></path>\r\n                        </svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 10,
+  "fields": {
+    "service": 2,
+    "title": "Структурированный подход",
+    "description": "Стратегический инструмент с четкой сегментацией, планированием контента и аналитикой каждого этапа взаимодействия с подписчиками.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\"></path>\r\n                        </svg>",
+    "order": 4
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 11,
+  "fields": {
+    "service": 2,
+    "title": "Путь клиента",
+    "description": "Email-маркетинг сопровождает клиента на всех этапах - от первого знакомства с брендом до постоянного взаимодействия и повторных покупок.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 7h8m0 0v8m0-8l-8 8-4-4-6 6\"></path>\r\n                        </svg>",
+    "order": 5
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 12,
+  "fields": {
+    "service": 2,
+    "title": "Контентная платформа",
+    "description": "Полноценный медиа-канал, позволяющий транслировать ценности бренда, экспертизу и полезную информацию, формируя образ компании.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z\"></path>\r\n                        </svg>",
+    "order": 6
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 13,
+  "fields": {
+    "service": 3,
+    "title": "Привлечение аудитории",
+    "description": "Качественный контент привлекает целевую аудиторию, решая их проблемы и отвечая на важные вопросы без навязчивой рекламы.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122\"></path>\r\n                        </svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 14,
+  "fields": {
+    "service": 3,
+    "title": "Экспертное позиционирование",
+    "description": "Регулярная публикация экспертного контента формирует образ компании как лидера мнений в своей нише и повышает доверие.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z\"></path>\r\n                        </svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 15,
+  "fields": {
+    "service": 3,
+    "title": "Улучшение видимости в поиске",
+    "description": "Контент-маркетинг является основой SEO-стратегии, помогая привлекать бесплатный органический трафик из поисковых систем.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path>\r\n                        </svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 16,
+  "fields": {
+    "service": 3,
+    "title": "Вовлечение аудитории",
+    "description": "Интересный контент побуждает к взаимодействию, обсуждению, стимулирует пользователей подписываться на обновления и делиться материалами.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path>\r\n                        </svg>",
+    "order": 4
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 17,
+  "fields": {
+    "service": 3,
+    "title": "Поддержка продаж",
+    "description": "Контент помогает преодолевать возражения, объяснять преимущества продуктов и услуг, сопровождая клиента через все этапы воронки продаж.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z\"></path>\r\n                        </svg>",
+    "order": 5
+  }
+},
+{
+  "model": "services.serviceexplanation",
+  "pk": 18,
+  "fields": {
+    "service": 3,
+    "title": "Долгосрочный результат",
+    "description": "В отличие от рекламы, контент-маркетинг работает на перспективу, создавая постоянный поток трафика и лидов на долгие годы.",
+    "icon_svg": "<svg class=\"w-7 h-7\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path>\r\n                        </svg>",
+    "order": 6
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "SEO-аудит сайта",
+    "description": "Комплексный анализ сайта на наличие технических ошибок, проблем с контентом и структурой, мешающих продвижению.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01\"></path></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Семантическое ядро",
+    "description": "Подбор ключевых слов и фраз, по которым пользователи будут находить ваш сайт в поисковых системах.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z\"></path></svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Техническая оптимизация",
+    "description": "Исправление технических ошибок сайта, влияющих на его индексацию и ранжирование в поисковых системах.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4\"></path></svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 4,
+  "fields": {
+    "service": 1,
+    "title": "Оптимизация контента",
+    "description": "Создание и оптимизация текстов для страниц сайта с учетом требований поисковых систем и интересов пользователей.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z\"></path></svg>",
+    "order": 4
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 5,
+  "fields": {
+    "service": 1,
+    "title": "Внешняя оптимизация",
+    "description": "Наращивание качественной ссылочной массы для повышения авторитетности сайта в глазах поисковых систем.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1\"></path></svg>",
+    "order": 5
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 6,
+  "fields": {
+    "service": 1,
+    "title": "Мониторинг и аналитика",
+    "description": "Постоянный контроль позиций сайта в поисковых системах и анализ эффективности проводимых работ.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z\"></path></svg>",
+    "order": 6
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 7,
+  "fields": {
+    "service": 2,
+    "title": "A/B-тестирование и аналитика",
+    "description": "Регулярное тестирование различных элементов писем и глубокий анализ эффективности email-кампаний.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z\"></path></svg>",
+    "order": 5
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 8,
+  "fields": {
+    "service": 2,
+    "title": "Техническая оптимизация доставляемости",
+    "description": "Настройка технических аспектов отправки писем для обеспечения максимальной доставляемости в папку \"Входящие\".",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4\"></path>\r\n</svg>",
+    "order": 6
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 9,
+  "fields": {
+    "service": 2,
+    "title": "Аудит и стратегия email-маркетинга",
+    "description": "Комплексный анализ вашей текущей email-стратегии и разработка эффективного плана для достижения бизнес-целей.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01\"></path></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 10,
+  "fields": {
+    "service": 2,
+    "title": "Создание и дизайн писем",
+    "description": "Разработка привлекательных и эффективных email-шаблонов, адаптированных под все устройства и почтовые клиенты.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\"></path></svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 11,
+  "fields": {
+    "service": 2,
+    "title": "Сегментация и персонализация",
+    "description": "Разделение базы подписчиков на сегменты для более персонализированных и релевантных рассылок, повышающих конверсию.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z\"></path>\r\n                        </svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 12,
+  "fields": {
+    "service": 2,
+    "title": "Настройка автоматических цепочек",
+    "description": "Создание автоматических сценариев email-рассылок, реагирующих на действия пользователей в реальном времени.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"></path>\r\n                        </svg>",
+    "order": 4
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 13,
+  "fields": {
+    "service": 3,
+    "title": "Разработка контент-стратегии",
+    "description": "Создание комплексного плана по созданию и продвижению контента, соответствующего бизнес-целям и потребностям целевой аудитории.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\"></path>\r\n                        </svg>",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 14,
+  "fields": {
+    "service": 3,
+    "title": "Создание контента для сайта",
+    "description": "Разработка информативных, оптимизированных для поиска материалов, которые отвечают на запросы пользователей и помогают в продвижении продуктов и услуг.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z\"></path>\r\n                        </svg>",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 15,
+  "fields": {
+    "service": 3,
+    "title": "Контент для социальных сетей",
+    "description": "Разработка вовлекающего контента для социальных платформ, который формирует сообщество вокруг вашего бренда и стимулирует взаимодействие с аудиторией.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z\"></path>\r\n                        </svg>",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 16,
+  "fields": {
+    "service": 3,
+    "title": "Email-маркетинг",
+    "description": "Создание эффективных email-кампаний, которые поддерживают связь с клиентами, информируют о новинках и стимулируют повторные продажи.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\"></path>\r\n                        </svg>",
+    "order": 4
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 17,
+  "fields": {
+    "service": 3,
+    "title": "Видео-контент",
+    "description": "Создание видеоматериалов для разных платформ, которые повышают вовлеченность аудитории и эффективно представляют ваши продукты и услуги.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z\"></path>\r\n                        </svg>",
+    "order": 5
+  }
+},
+{
+  "model": "services.servicedetail",
+  "pk": 18,
+  "fields": {
+    "service": 3,
+    "title": "Аналитика и оптимизация",
+    "description": "Мониторинг эффективности контент-маркетинга, анализ показателей и корректировка стратегии для достижения максимальных результатов.",
+    "icon_svg": "<svg class=\"w-8 h-8\" fill=\"none\" stroke=\"currentColor\"\r\n                             viewBox=\"0 0 24 24\"\r\n                             xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path stroke-linecap=\"round\"\r\n                                  stroke-linejoin=\"round\" stroke-width=\"2\"\r\n                                  d=\"M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z\"></path>\r\n                        </svg>",
+    "order": 6
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 1,
+  "fields": {
+    "detail": 1,
+    "text": "Технический аудит",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 2,
+  "fields": {
+    "detail": 1,
+    "text": "Анализ юзабилити",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 3,
+  "fields": {
+    "detail": 1,
+    "text": "Анализ ссылочного профиля",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 4,
+  "fields": {
+    "detail": 2,
+    "text": "Сбор и кластеризация запросов",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 5,
+  "fields": {
+    "detail": 2,
+    "text": "Анализ конкурентов",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 6,
+  "fields": {
+    "detail": 2,
+    "text": "Распределение запросов по страницам",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 7,
+  "fields": {
+    "detail": 3,
+    "text": "Оптимизация скорости загрузки",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 8,
+  "fields": {
+    "detail": 3,
+    "text": "Адаптация под мобильные устройства",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 9,
+  "fields": {
+    "detail": 3,
+    "text": "Настройка микроразметки",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 10,
+  "fields": {
+    "detail": 4,
+    "text": "Создание SEO-текстов",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 11,
+  "fields": {
+    "detail": 4,
+    "text": "Оптимизация заголовков",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 12,
+  "fields": {
+    "detail": 4,
+    "text": "Оптимизация meta-тегов",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 13,
+  "fields": {
+    "detail": 5,
+    "text": "Размещение статей на внешних ресурсах",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 14,
+  "fields": {
+    "detail": 5,
+    "text": "Регистрация в каталогах",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 15,
+  "fields": {
+    "detail": 5,
+    "text": "Крауд-маркетинг",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 16,
+  "fields": {
+    "detail": 6,
+    "text": "Отслеживание позиций",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 17,
+  "fields": {
+    "detail": 6,
+    "text": "Анализ поведенческих факторов",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 18,
+  "fields": {
+    "detail": 6,
+    "text": "Ежемесячные отчеты",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 19,
+  "fields": {
+    "detail": 9,
+    "text": "Анализ текущих показателей",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 20,
+  "fields": {
+    "detail": 9,
+    "text": "Разработка контент-плана",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 21,
+  "fields": {
+    "detail": 9,
+    "text": "Определение KPI и метрик",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 22,
+  "fields": {
+    "detail": 10,
+    "text": "Адаптивный дизайн писем",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 23,
+  "fields": {
+    "detail": 10,
+    "text": "Создание уникальных шаблонов",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 24,
+  "fields": {
+    "detail": 10,
+    "text": "Копирайтинг для email-рассылок",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 25,
+  "fields": {
+    "detail": 11,
+    "text": "Создание сегментов по поведению",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 26,
+  "fields": {
+    "detail": 11,
+    "text": "Динамический контент",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 27,
+  "fields": {
+    "detail": 11,
+    "text": "Персонализированные предложения",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 28,
+  "fields": {
+    "detail": 12,
+    "text": "Приветственные серии писем",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 29,
+  "fields": {
+    "detail": 12,
+    "text": "Триггерные письма",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 30,
+  "fields": {
+    "detail": 12,
+    "text": "Реактивационные кампании",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 31,
+  "fields": {
+    "detail": 7,
+    "text": "Тестирование тем писем",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 32,
+  "fields": {
+    "detail": 7,
+    "text": "Оптимизация времени отправки",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 33,
+  "fields": {
+    "detail": 7,
+    "text": "Подробные аналитические отчеты",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 34,
+  "fields": {
+    "detail": 8,
+    "text": "Настройка SPF, DKIM, DMARC",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 35,
+  "fields": {
+    "detail": 8,
+    "text": "Прогрев IP и домена",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 36,
+  "fields": {
+    "detail": 8,
+    "text": "Очистка и валидация базы",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 37,
+  "fields": {
+    "detail": 13,
+    "text": "Аудит существующего контента",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 38,
+  "fields": {
+    "detail": 13,
+    "text": "Анализ конкурентов и отрасли",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 39,
+  "fields": {
+    "detail": 13,
+    "text": "Разработка редакционного календаря",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 40,
+  "fields": {
+    "detail": 14,
+    "text": "Информационные и коммерческие статьи",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 41,
+  "fields": {
+    "detail": 14,
+    "text": "Лендинги и продуктовые страницы",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 42,
+  "fields": {
+    "detail": 14,
+    "text": "Кейсы и отзывы клиентов",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 43,
+  "fields": {
+    "detail": 15,
+    "text": "Посты и сторис для соцсетей",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 44,
+  "fields": {
+    "detail": 15,
+    "text": "Интерактивный и вирусный контент",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 45,
+  "fields": {
+    "detail": 15,
+    "text": "Контент-планы для соцсетей",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 46,
+  "fields": {
+    "detail": 16,
+    "text": "Промо-рассылки и дайджесты",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 47,
+  "fields": {
+    "detail": 16,
+    "text": "Автоматические серии писем",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 48,
+  "fields": {
+    "detail": 16,
+    "text": "A/B-тестирование и аналитика",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 49,
+  "fields": {
+    "detail": 17,
+    "text": "Промо-ролики и видеообзоры",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 50,
+  "fields": {
+    "detail": 17,
+    "text": "Обучающие видео и вебинары",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 51,
+  "fields": {
+    "detail": 17,
+    "text": "Видеоконтент для соцсетей",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 52,
+  "fields": {
+    "detail": 18,
+    "text": "Отчеты по эффективности контента",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 53,
+  "fields": {
+    "detail": 18,
+    "text": "Оптимизация и A/B-тестирование",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicedetailitem",
+  "pk": 54,
+  "fields": {
+    "detail": 18,
+    "text": "Рекомендации по улучшению",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicepricing",
+  "pk": 1,
+  "fields": {
+    "service": 1,
+    "title": "Базовый",
+    "price": "от 30 000 ₽",
+    "period": "в месяц",
+    "description": "Оптимальный тариф для малого бизнеса",
+    "badge": "Старт продвижения",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicepricing",
+  "pk": 2,
+  "fields": {
+    "service": 1,
+    "title": "Стандартный",
+    "price": "от 60 000 ₽",
+    "period": "в месяц",
+    "description": "Для бизнеса со средней конкуренцией",
+    "badge": "Рекомендуемый",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicepricing",
+  "pk": 3,
+  "fields": {
+    "service": 1,
+    "title": "Премиум",
+    "price": "от 100 000 ₽",
+    "period": "в месяц",
+    "description": "Для бизнеса с высокой конкуренцией",
+    "badge": "Максимальный результат",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicepricing",
+  "pk": 4,
+  "fields": {
+    "service": 2,
+    "title": "Базовый",
+    "price": "от 25 000 ₽",
+    "period": "в месяц",
+    "description": "Оптимальный тариф для малого бизнеса",
+    "badge": "Старт email-маркетинга",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicepricing",
+  "pk": 5,
+  "fields": {
+    "service": 2,
+    "title": "Стандартный",
+    "price": "от 50 000 ₽",
+    "period": "в месяц",
+    "description": "Для бизнеса со средней конкуренцией",
+    "badge": "Рекомендуемый",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicepricing",
+  "pk": 6,
+  "fields": {
+    "service": 2,
+    "title": "Премиум",
+    "price": "от 80 000 ₽",
+    "period": "в месяц",
+    "description": "Для бизнеса с высокой конкуренцией",
+    "badge": "Максимальный результат",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 1,
+  "fields": {
+    "pricing": 1,
+    "text": "До 100 ключевых слов",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 2,
+  "fields": {
+    "pricing": 1,
+    "text": "Базовый технический аудит",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 3,
+  "fields": {
+    "pricing": 1,
+    "text": "Оптимизация мета-тегов",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 4,
+  "fields": {
+    "pricing": 1,
+    "text": "Базовая внутренняя оптимизация",
+    "order": 4
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 5,
+  "fields": {
+    "pricing": 1,
+    "text": "Ежемесячная отчетность",
+    "order": 5
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 6,
+  "fields": {
+    "pricing": 2,
+    "text": "До 300 ключевых слов",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 7,
+  "fields": {
+    "pricing": 2,
+    "text": "Полный технический аудит",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 8,
+  "fields": {
+    "pricing": 2,
+    "text": "Создание SEO-текстов (до 5 страниц)",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 9,
+  "fields": {
+    "pricing": 2,
+    "text": "Внутренняя перелинковка",
+    "order": 4
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 10,
+  "fields": {
+    "pricing": 2,
+    "text": "Базовая внешняя оптимизация",
+    "order": 5
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 11,
+  "fields": {
+    "pricing": 2,
+    "text": "Еженедельная отчетность",
+    "order": 6
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 12,
+  "fields": {
+    "pricing": 3,
+    "text": "Неограниченное количество ключевых слов",
+    "order": 1
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 13,
+  "fields": {
+    "pricing": 3,
+    "text": "Углубленный технический аудит",
+    "order": 2
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 14,
+  "fields": {
+    "pricing": 3,
+    "text": "Создание SEO-текстов (до 15 страниц)",
+    "order": 3
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 15,
+  "fields": {
+    "pricing": 3,
+    "text": "Полная внешняя оптимизация",
+    "order": 4
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 16,
+  "fields": {
+    "pricing": 3,
+    "text": "Персональный SEO-специалист",
+    "order": 5
+  }
+},
+{
+  "model": "services.servicepricingfeature",
+  "pk": 17,
+  "fields": {
+    "pricing": 3,
+    "text": "Ежедневная отчетность по запросу",
+    "order": 6
+  }
+}
+]

@@ -33,12 +33,19 @@ class CaseAdminForm(forms.ModelForm):
 class CaseAdmin(admin.ModelAdmin):
     form = CaseAdminForm
     inlines = [CaseImageInline]
-    list_display = ('title', 'client', 'is_published', 'is_featured', 'created_at')
-    list_filter = ('is_published', 'is_featured', 'categories')
-    list_editable = ('is_published', 'is_featured')
-    search_fields = ('title', 'short_description', 'content', 'client')
+    list_display = ('title', 'client', 'is_published', 'is_featured', 'get_services',)
+    list_filter = ('is_published', 'is_featured', 'categories', 'services',)
+    list_editable = ('is_published', 'is_featured',)
+    search_fields = ('title', 'content', 'client',)
     prepopulated_fields = {'slug': ('title',)}
-    filter_horizontal = ('categories',)
+    filter_horizontal = ('categories', 'services',)
+
+    def get_services(self, obj):
+        """Показывает связанные услуги, Many-to-Many нельзя напрямую добавить в list_display"""
+        return ", ".join([service.title for service in obj.services.all()])
+
+    get_services.short_description = 'Услуги'  # ← Заголовок колонки
+
     fieldsets = (
         (None, {
             'fields': (
@@ -47,7 +54,7 @@ class CaseAdmin(admin.ModelAdmin):
             )
         }),
         ('Категоризация', {
-            'fields': ('categories',)
+            'fields': ('categories', 'services',)
         }),
         ('Настройки публикации', {
             'fields': ('is_published', 'is_featured', 'created_at')

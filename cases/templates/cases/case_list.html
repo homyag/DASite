@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Кейсы - {{ block.super }}{% endblock %}
+
+{% block content %}
+<!-- Герой-секция -->
+<section class="pt-32 pb-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Наши успешные кейсы
+            </h1>
+            <p class="text-xl mb-8 text-indigo-100 max-w-3xl mx-auto">
+                Реальные результаты digital-маркетинга для различных отраслей бизнеса.
+                Изучите наши проекты и убедитесь в эффективности наших решений.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Фильтры и поиск -->
+<section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <form method="get" class="flex flex-col md:flex-row gap-4">
+                <!-- Поиск -->
+                <div class="flex-1">
+                    <input type="text"
+                           name="q"
+                           value="{{ query }}"
+                           placeholder="Поиск по кейсам..."
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+
+                <!-- Фильтр по категориям -->
+                <div>
+                    <select name="category" class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">Все категории</option>
+                        {% for category in categories %}
+                        <option value="{{ category.slug }}" {% if current_category == category.slug %}selected{% endif %}>
+                            {{ category.name }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Фильтр по услугам -->
+                <div>
+                    <select name="service" class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">Все услуги</option>
+                        {% for service in services %}
+                        <option value="{{ service.slug }}" {% if current_service == service.slug %}selected{% endif %}>
+                            {{ service.title }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button type="submit"
+                        class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                    Найти
+                </button>
+            </form>
+        </div>
+
+        <!-- Активные фильтры -->
+        {% if query or current_category or current_service %}
+        <div class="mb-6">
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="text-gray-600">Активные фильтры:</span>
+
+                {% if query %}
+                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+                    Поиск: "{{ query }}"
+                    <a href="?{% if current_category %}category={{ current_category }}&{% endif %}{% if current_service %}service={{ current_service }}{% endif %}"
+                       class="ml-2 text-indigo-600 hover:text-indigo-800">×</a>
+                </span>
+                {% endif %}
+
+                {% if current_category %}
+                {% for category in categories %}
+                    {% if category.slug == current_category %}
+                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+                        {{ category.name }}
+                        <a href="?{% if query %}q={{ query }}&{% endif %}{% if current_service %}service={{ current_service }}{% endif %}"
+                           class="ml-2 text-indigo-600 hover:text-indigo-800">×</a>
+                    </span>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+
+                {% if current_service %}
+                {% for service in services %}
+                    {% if service.slug == current_service %}
+                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+                        {{ service.title }}
+                        <a href="?{% if query %}q={{ query }}&{% endif %}{% if current_category %}category={{ current_category }}{% endif %}"
+                           class="ml-2 text-indigo-600 hover:text-indigo-800">×</a>
+                    </span>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+
+                <a href="{% url 'case_list' %}"
+                   class="text-gray-500 hover:text-gray-700 text-sm underline">Сбросить все</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Список кейсов -->
+<section class="py-12">
+    <div class="container mx-auto px-4">
+        {% if cases %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for case in cases %}
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <!-- Изображение кейса -->
+                <div class="relative">
+                    {% if case.featured_image %}
+                    <img src="{{ case.featured_image.url }}"
+                         alt="{{ case.title }}"
+                         class="w-full h-48 object-cover">
+                    {% else %}
+                    <div class="w-full h-48 bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    {% endif %}
+
+                    <!-- Результат -->
+                    {% if case.result %}
+                    <div class="absolute top-4 right-4 bg-green-500 text-white text-sm font-medium py-1 px-3 rounded-full">
+                        {{ case.result|truncatechars:20 }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Контент кейса -->
+                <div class="p-6">
+                    <!-- Теги категорий и услуг -->
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        {% for service in case.services.all %}
+                        <span class="bg-indigo-100 text-indigo-600 text-xs font-medium py-1 px-2 rounded-full">
+                            {{ service.title }}
+                        </span>
+                        {% endfor %}
+
+                        {% for category in case.categories.all %}
+                        <span class="bg-gray-100 text-gray-600 text-xs font-medium py-1 px-2 rounded-full">
+                            {{ category.name }}
+                        </span>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Заголовок -->
+                    <h3 class="text-xl font-bold mb-3 line-clamp-2">
+                        {{ case.title }}
+                    </h3>
+
+                    <!-- Клиент -->
+                    <p class="text-indigo-600 font-medium mb-2">{{ case.client }}</p>
+
+                    <!-- Описание -->
+                    <p class="text-gray-600 mb-4 line-clamp-3">
+                        {{ case.short_description }}
+                    </p>
+
+                    <!-- Дата и ссылка -->
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400 text-sm">
+                            {{ case.created_at|date:"d.m.Y" }}
+                        </span>
+
+                        <a href="{{ case.get_absolute_url }}"
+                           class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors duration-300 inline-flex items-center">
+                            Подробнее
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Пагинация -->
+        {% if is_paginated %}
+        <div class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2">
+                {% if page_obj.has_previous %}
+                <a href="?page=1{% if query %}&q={{ query }}{% endif %}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_service %}&service={{ current_service }}{% endif %}"
+                   class="px-3 py-2 text-gray-500 hover:text-indigo-600 transition-colors">
+                    « Первая
+                </a>
+                <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_service %}&service={{ current_service }}{% endif %}"
+                   class="px-3 py-2 text-gray-500 hover:text-indigo-600 transition-colors">
+                    ‹ Назад
+                </a>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <span class="px-4 py-2 bg-indigo-600 text-white font-medium rounded">{{ num }}</span>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a href="?page={{ num }}{% if query %}&q={{ query }}{% endif %}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_service %}&service={{ current_service }}{% endif %}"
+                       class="px-4 py-2 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded transition-colors">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_service %}&service={{ current_service }}{% endif %}"
+                   class="px-3 py-2 text-gray-500 hover:text-indigo-600 transition-colors">
+                    Вперёд ›
+                </a>
+                <a href="?page={{ page_obj.paginator.num_pages }}{% if query %}&q={{ query }}{% endif %}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_service %}&service={{ current_service }}{% endif %}"
+                   class="px-3 py-2 text-gray-500 hover:text-indigo-600 transition-colors">
+                    Последняя »
+                </a>
+                {% endif %}
+            </nav>
+        </div>
+        {% endif %}
+
+        {% else %}
+        <!-- Пустое состояние -->
+        <div class="text-center py-16">
+            <svg class="mx-auto h-24 w-24 text-gray-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Кейсы не найдены</h3>
+            <p class="text-gray-600 mb-6">
+                {% if query or current_category or current_service %}
+                    Попробуйте изменить параметры поиска или сбросить фильтры.
+                {% else %}
+                    В данный момент нет опубликованных кейсов.
+                {% endif %}
+            </p>
+            {% if query or current_category or current_service %}
+            <a href="{% url 'case_list' %}"
+               class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                Показать все кейсы
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- CTA секция -->
+<section class="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Хотите стать нашим следующим успешным кейсом?</h2>
+        <p class="text-xl mb-8 text-indigo-100 max-w-2xl mx-auto">
+            Свяжитесь с нами для обсуждения вашего проекта и получения индивидуального предложения
+        </p>
+        <a href="{% url 'contact' %}"
+           class="px-8 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors duration-300 inline-flex items-center">
+            Обсудить проект
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+        </a>
+    </div>
+</section>
+
+{#<style>#}
+{#/* Ограничение строк для лучшего отображения */#}
+{#.line-clamp-2 {#}
+{#    display: -webkit-box;#}
+{#    -webkit-line-clamp: 2;#}
+{#    -webkit-box-orient: vertical;#}
+{#    overflow: hidden;#}
+{#}#}
+{##}
+{#.line-clamp-3 {#}
+{#    display: -webkit-box;#}
+{#    -webkit-line-clamp: 3;#}
+{#    -webkit-box-orient: vertical;#}
+{#    overflow: hidden;#}
+{#}#}
+{#</style>#}
+{% endblock %}
